@@ -19,11 +19,9 @@ const MealList = () => {
       </div>
 
       <div className="menuList">
-        {
-            MenuListItems[currentMeal.toLowerCase()].map(menu => (
-                <MenuList menu={menu} key={menu.id}/>
-            ))
-        }
+        {MenuListItems[currentMeal.toLowerCase()].map((menu) => (
+          <MenuList menu={menu} key={menu.id} />
+        ))}
       </div>
     </div>
   );

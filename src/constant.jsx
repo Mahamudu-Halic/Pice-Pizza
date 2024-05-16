@@ -10,14 +10,14 @@ import cafe from "./assets/Cafe.png";
 import hamburger from "./assets/Hamburger.png";
 import meal from "./assets/Meal.png";
 
-import Rectangle18 from "./assets/Rectangle 18.png";
-import Rectangle19 from "./assets/Rectangle 19.png";
-import Rectangle20 from "./assets/Rectangle 20.png";
+// import Rectangle18 from "./assets/Rectangle 18.png";
+// import Rectangle19 from "./assets/Rectangle 19.png";
+// import Rectangle20 from "./assets/Rectangle 20.png";
 import Rectangle21 from "./assets/Rectangle 21.png";
 import Rectangle22 from "./assets/Rectangle 22.png";
 import Rectangle23 from "./assets/Rectangle 23.png";
 import Rectangle24 from "./assets/Rectangle 24.png";
-import Rectangle25 from "./assets/Rectangle 25.png";
+// import Rectangle25 from "./assets/Rectangle 25.png";
 
 import arancini from "./assets/menu/arancini.jpeg";
 import arugula from "./assets/menu/arugula.jpeg";
@@ -177,7 +177,7 @@ export const MenuListItems = {
     {
       image: Rectangle24,
       title: "Freshly squeezed orange juice",
-      desc: "",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
       price: 4.99,
       id: nanoid(),
     },
@@ -186,8 +186,7 @@ export const MenuListItems = {
       image: Smoked,
       title: "Smoked Salmon & Arugula Flatbread",
       desc: "A lighter option for breakfast. A crispy flatbread base topped with creamy ricotta cheese, smoked salmon slices, fresh arugula, and a squeeze of lemon.pen_spark",
-      price: 10.99
-      ,
+      price: 10.99,
       id: nanoid(),
     },
   ],
