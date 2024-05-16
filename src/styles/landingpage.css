@@ -1,0 +1,228 @@
+.landingPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* homepage */
+.homePage {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  position: relative;
+}
+
+.homePageContainer {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.homePageContainer .homePageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  width: 100%;
+  color: white;
+  z-index: 2;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.homePageContainer h1 {
+  font-size: 40px;
+  z-index: 2;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.homePageContent h2 {
+  font-size: 40px;
+  /* width: 650px; */
+}
+
+.homePageContent p {
+  font-size: 20px;
+  color: #ffffff88;
+  line-height: 32px;
+}
+
+.heroContent {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; */
+  z-index: 100;
+}
+
+body .absolute{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+}
+
+.navbar .navLinks {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.navLinks a {
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.heroContentImage {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroContentImage img {
+  width: 400px;
+  height: 400px;
+}
+
+/* cardList */
+
+.cardList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  width: 80%;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.card {
+  background-color: #f3f3f3;
+  box-shadow: 5px 5px 5px 1px #00000079;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  flex: 1;
+  min-height: 250px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cardTitle {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.cardDesc {
+  line-height: 25px;
+  font-size: 18px;
+}
+
+/* about us */
+.about {
+  display: flex;
+  justify-content: space-between;
+  min-height: 70vh;
+}
+
+.imageGridContainer {
+  flex: 1;
+}
+
+.aboutContentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+.aboutTitle {
+  position: relative;
+  font-size: 25px;
+  letter-spacing: 3px;
+  width: 100%;
+}
+.aboutTitle::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 180px;
+  right: 0;
+  top: 50%;
+  bottom: 50%;
+  background-color: #F70303;
+}
+
+.aboutContent{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutSubtitle{
+  font-size: 30px;
+}
+
+.aboutContent p{
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/* testimonyList */
+
+.testimonyList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimony{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.testimonialSubtitle{
+  font-size: 35px;
+}
+
+.testimonyDesc p{
+  font-size: 20px;
+  line-height: 30px;
+  color: #333;
+}
+
+.testimonyProfile img{
+  background-color: #333;
+  border-radius: 50%;
+  padding: 5px;
+  object-fit: cover;
+}

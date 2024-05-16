@@ -1,0 +1,99 @@
+.menuScreen{
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.menuHeader {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuHeaderContentContainer{
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+}
+
+.menuHeaderContent h1{
+    font-size: 100px;
+}
+
+.meal{
+    position: relative;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.activeMeal::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: solid 3px #F70303;
+    border-radius: 10px;
+}
+.inActiveMeal::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: solid 3px #f7030373;
+    border-radius: 10px;
+}
+
+.mealContainer{
+    display: flex;
+    align-items: center;
+}
+
+.mealTitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu, .mealList{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.menuList{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.menuListItem{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menuItemContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.topMenuItemContent{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bottomMenuItemContent{
+    font-size: 18px;
+    line-height: 25px;
+}
