@@ -18,20 +18,27 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 50px;
 }
 
-.homePageContainer .homePageContent {
+.homePageContainer .homePageContentContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 40px;
-  width: 100%;
   color: white;
   z-index: 2;
+}
+
+.homePageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
   gap: 40px;
-  margin: 0 auto;
 }
 
 .homePageContainer h1 {
@@ -41,15 +48,19 @@
   margin-bottom: 20px;
 }
 
-.homePageContent h2 {
+.homePageContentContainer h2 {
   font-size: 40px;
   /* width: 650px; */
 }
 
-.homePageContent p {
+.homePageContentContainer p {
   font-size: 20px;
   color: #ffffff88;
   line-height: 32px;
+}
+
+.homePageContentContainer button {
+  margin-top: auto;
 }
 
 .heroContent {
@@ -70,12 +81,11 @@
   z-index: 100;
 }
 
-body .absolute{
+body .absolute {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  
 }
 
 .navbar .navLinks {
@@ -177,50 +187,49 @@ body .absolute{
   right: 0;
   top: 50%;
   bottom: 50%;
-  background-color: #F70303;
+  background-color: #f70303;
 }
 
-.aboutContent{
+.aboutContent {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.aboutSubtitle{
+.aboutSubtitle {
   font-size: 30px;
 }
 
-.aboutContent p{
+.aboutContent p {
   font-size: 20px;
   line-height: 30px;
 }
 
 /* testimonyList */
 
-.testimonyList{
+.testimonyList {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.testimony{
+.testimony {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-
-.testimonialSubtitle{
+.testimonialSubtitle {
   font-size: 35px;
 }
 
-.testimonyDesc p{
+.testimonyDesc p {
   font-size: 20px;
   line-height: 30px;
   color: #333;
 }
 
-.testimonyProfile img{
+.testimonyProfile img {
   background-color: #333;
   border-radius: 50%;
   padding: 5px;

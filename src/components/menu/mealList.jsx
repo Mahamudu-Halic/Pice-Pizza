@@ -20,7 +20,7 @@ const MealList = () => {
 
       <div className="menuList">
         {
-            MenuListItems.map(menu => (
+            MenuListItems[currentMeal.toLowerCase()].map(menu => (
                 <MenuList menu={menu} key={menu.id}/>
             ))
         }

@@ -13,15 +13,18 @@ const Homepage = () => {
             <img src={bgImage} alt="bgImage" />
           </div>
 
-          <div className="homePageContent">
-            <h2>
-              ENJOY OUR <br /> DELICIOUS MEALS
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Aliquam etiam erat velit scelerisque in.
-            </p>
+          <div className="homePageContentContainer">
+            <div className="homePageContent">
+              <h2>
+                ENJOY OUR <br /> DELICIOUS MEALS
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Aliquam etiam erat velit scelerisque in.
+              </p>
+            </div>
+
             <button className="redButton">ORDER NOW</button>
           </div>
         </div>
