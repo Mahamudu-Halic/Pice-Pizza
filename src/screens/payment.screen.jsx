@@ -8,6 +8,10 @@ const Payment = () => {
       <Navbar style="white" bg="blueBg" />
 
       <h1>CONFIRM AND ORDER</h1>
+      <div className="">
+        <div className=""></div>
+        <div className=""></div>
+      </div>
     </div>
   );
 };

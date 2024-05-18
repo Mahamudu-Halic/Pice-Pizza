@@ -28,7 +28,7 @@ const Navbar = ({
             {item.title}
           </Link>
         ))}
-        {/* <UserButton /> */}
+        <UserButton />
         {shoppingCart && (
           <Link to={"/shopping-cart"} className="shoppingCartBtn">
             <div className="cartNumberContainer">

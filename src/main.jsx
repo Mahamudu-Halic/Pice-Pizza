@@ -47,8 +47,7 @@ function ClerkProviderWithRoutes() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <ClerkProviderWithRoutes /> */}
-      <App />
+      <ClerkProviderWithRoutes />
     </BrowserRouter>
   </React.StrictMode>
 );
