@@ -128,7 +128,7 @@ export const MenuListItems = {
   breakfast: [
     {
       image: BreakfastBruschetta,
-      title: "Breakfast Bruschetta:",
+      title: "Breakfast Bruschetta",
       desc: "Toasted bread layered with creamy ricotta cheese, scrambled eggs, fresh chopped tomatoes, and a sprinkle of chives. (Vegetarian)",
       price: 8.99,
       id: nanoid(),

@@ -1,7 +1,8 @@
 const Heading = (props) => {
+  const { fontFamily = "leckerliOne", title = "" } = props;
   return (
     <div className="headingContainer">
-      <h2 className="leckerliOne red headingTitle">{props?.title}</h2>
+      <h2 className={`red headingTitle ${fontFamily}`}>{title}</h2>
     </div>
   );
 };

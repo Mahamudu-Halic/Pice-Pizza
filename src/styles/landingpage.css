@@ -70,38 +70,6 @@
   flex-direction: column;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  right: 0; */
-  z-index: 100;
-}
-
-body .absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.navbar .navLinks {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-}
-
-.navLinks a {
-  display: inline-block;
-  padding: 10px;
-  font-size: 20px;
-  color: black;
-  font-weight: bold;
-}
-
 .heroContentImage {
   width: 100%;
   flex: 1;

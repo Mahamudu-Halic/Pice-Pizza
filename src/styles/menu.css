@@ -1,105 +1,85 @@
-.menuScreen{
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-bottom: 30px;
-}
-
-.menuHeader {
-  height: 100vh;
+.menuScreen {
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 60px;
+  margin-bottom: 30px;
 }
 
-.menuHeaderContentContainer{
-    z-index: 10;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* text-align: center; */
+.meal {
+  position: relative;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.activeMeal::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: solid 3px #f70303;
+  border-radius: 10px;
+}
+.inActiveMeal::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: solid 3px #f7030373;
+  border-radius: 10px;
 }
 
-.menuHeaderContent h1{
-    font-size: 100px;
+.mealContainer {
+  display: flex;
+  align-items: center;
 }
 
-.meal{
-    position: relative;
-    padding-bottom: 10px;
-    cursor: pointer;
-}
-.activeMeal::after{
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: solid 3px #F70303;
-    border-radius: 10px;
-}
-.inActiveMeal::after{
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: solid 3px #f7030373;
-    border-radius: 10px;
+.mealTitle {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.mealContainer{
-    display: flex;
-    align-items: center;
+.menu,
+.mealList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.mealTitle{
-    font-size: 20px;
-    font-weight: bold;
+.menuList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.menu, .mealList{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.menuListItem {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.menuList{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
+.menuItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
-.menuListItem{
-    width: 35%;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.topMenuItemContent {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
-.menuItemContent{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
+.menuItemPrice {
+  margin-left: auto;
 }
 
-.topMenuItemContent{
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.menuItemPrice{
-    margin-left: auto;
-}
-
-.bottomMenuItemContent{
-    font-size: 18px;
-    line-height: 25px;
+.bottomMenuItemContent {
+  font-size: 13px;
+  /* line-height: 25px; */
 }

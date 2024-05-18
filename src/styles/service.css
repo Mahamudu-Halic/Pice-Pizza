@@ -1,0 +1,102 @@
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.serviceHeading {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.serviceHeading h1 {
+  margin-bottom: 10px;
+}
+
+.serviceContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 10px;
+  position: relative;
+}
+
+.seviceContents {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 40px;
+  width: 50%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.serviceSize,
+.serviceSizeList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.serviceSizeList {
+  padding: 10px 20px;
+}
+
+#quantity {
+  display: block;
+  border-radius: 5px;
+  border: solid 1px #000;
+  width: 50px;
+  padding: 10px 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.serviceToppings h2 {
+  margin-bottom: 10px;
+}
+
+.serviceToppingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.serviceToppingsListItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.serviceToppingsListItem select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.addToCartBtnContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.addToCartBtn {
+  background: red;
+  color: white;
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.serviceImage {
+  position: absolute;
+  bottom: -100px;
+  left: 40px;
+  padding: 0;
+}

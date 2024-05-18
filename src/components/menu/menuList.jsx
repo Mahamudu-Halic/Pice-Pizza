@@ -1,4 +1,5 @@
 import Rectangle23 from "../../assets/Rectangle 23.png";
+
 const MenuList = ({ menu = {} }) => {
   const {
     image = Rectangle23,
