@@ -63,7 +63,7 @@ export const NavLinks = [
 export const CardListItems = [
   {
     icon: person,
-    title: "profile",
+    title: "Profile",
     desc: "Lorem ipsum dolor sit amet, consectetur..",
   },
   {

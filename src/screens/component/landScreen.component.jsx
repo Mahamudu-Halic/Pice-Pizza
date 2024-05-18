@@ -29,7 +29,7 @@ const LandScreen = (props) => {
       </div>
 
       {getStarted && (
-        <p className="getStarted leckerliOne white">Get creative</p>
+        <p className="getStarted leckerliOne white">Get Creative</p>
       )}
     </div>
   );

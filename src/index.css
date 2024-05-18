@@ -69,7 +69,6 @@ button {
   background: #f70303;
   color: white;
   font-weight: bold;
-  font-size: 19px;
 }
 
 .red {
@@ -155,6 +154,7 @@ body .white {
   margin-bottom: 50px;
   text-align: center;
   font-size: 20px;
+  letter-spacing: 3px;
 }
 
 .shoppingCartBtn {

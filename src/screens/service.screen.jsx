@@ -92,10 +92,10 @@ const Service = () => {
         </div>
 
         <div className="">
-          <img src={halfPizza} alt="" width={250} />
+          <img src={halfPizza} alt="" width={150} />
         </div>
         <div className="serviceImage">
-          <img src={slice} alt="" width={200} />
+          <img src={slice} alt="" width={150} />
         </div>
       </div>
     </div>

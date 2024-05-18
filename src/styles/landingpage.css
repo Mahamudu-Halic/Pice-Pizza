@@ -119,7 +119,6 @@
 
 .cardDesc {
   line-height: 25px;
-  font-size: 18px;
 }
 
 /* about us */
@@ -191,9 +190,9 @@
   font-size: 35px;
 }
 
-.testimonyDesc p {
+.testimonyDesc {
   font-size: 20px;
-  line-height: 30px;
+  line-height: 25px;
   color: #333;
 }
 

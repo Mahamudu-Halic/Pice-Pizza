@@ -9,7 +9,7 @@ const Card = ({ service = {} }) => {
   return (
     <div className="card">
       <div className="cardIcon">
-        <img src={icon} alt="" width={70} height={70} />
+        <img src={icon} alt="" width={50} height={50} />
       </div>
       <div className="cardContent">
         <p className="cardTitle">{title}</p>

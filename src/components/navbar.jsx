@@ -28,15 +28,15 @@ const Navbar = ({
             {item.title}
           </Link>
         ))}
-        <UserButton />
         {shoppingCart && (
           <Link to={"/shopping-cart"} className="shoppingCartBtn">
             <div className="cartNumberContainer">
               <p className="cartNumber">5</p>
             </div>
-            <img src={shoppingCartImg} alt="shopping cart" width={40} />
+            <img src={shoppingCartImg} alt="shopping cart" width={30} />
           </Link>
         )}
+        <UserButton />
       </div>
     </nav>
   );
