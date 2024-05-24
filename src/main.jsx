@@ -8,8 +8,8 @@ import App from "./App";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <ClerkProviderWithRoutes /> */}
-      <App />
+      <ClerkProviderWithRoutes />
+      {/* <App /> */}
     </BrowserRouter>
   </React.StrictMode>
 );
