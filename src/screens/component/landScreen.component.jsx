@@ -19,7 +19,8 @@ const LandScreen = (props) => {
       <div className="bgImage">
         <img src={image} alt={`${image}`} />
       </div>
-      <Navbar style={"white"} shoppingCart={shoppingCart} />
+
+      <Navbar style={"navColor"} bg="blueBg"/>
       <div className="landScreenContentContainer">
         <div className="menuHeaderContent">
           <MainHeading title={mainHeading} />

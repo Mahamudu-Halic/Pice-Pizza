@@ -1,4 +1,3 @@
-import { useState } from "react";
 import cafe from "../../assets/Cafe.png";
 
 const Meal = ({ meal = {}, setCurrentMeal, currentMeal }) => {
@@ -15,7 +14,7 @@ const Meal = ({ meal = {}, setCurrentMeal, currentMeal }) => {
     >
       <div className="mealContainer">
         <div className="mealImage">
-          <img src={icon} alt={title} width={100} />
+          <img src={icon} alt={title} />
         </div>
 
         <div className="mealContent">

@@ -12,28 +12,38 @@
   padding-bottom: 10px;
   cursor: pointer;
 }
-.activeMeal::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border: solid 3px #f70303;
-  border-radius: 10px;
-}
+
+.activeMeal::after,
 .inActiveMeal::after {
   position: absolute;
   content: "";
   bottom: 0;
   left: 0;
   right: 0;
-  border: solid 3px #f7030373;
   border-radius: 10px;
 }
 
+.activeMeal::after {
+  border: solid 3px #f70303;
+}
+.inActiveMeal::after {
+  border: solid 3px #f7030373;
+}
 .mealContainer {
   display: flex;
   align-items: center;
+}
+
+.mealImage {
+  width: 100px;
+}
+
+.mealImage img {
+  width: 100%;
+}
+
+.mealContent {
+  /* flex: 1; */
 }
 
 .mealTitle {
@@ -48,11 +58,17 @@
   gap: 40px;
 }
 
+.menuScreen .mealList .mealListContainer {
+  flex-wrap: nowrap;
+  padding: 0 10px;
+}
+
 .menuList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+  padding: 0 20px;
 }
 
 .menuListItem {
@@ -82,4 +98,42 @@
 .bottomMenuItemContent {
   font-size: 13px;
   /* line-height: 25px; */
+}
+
+@media screen and (max-width: 800px) {
+  .menuListItem {
+    flex: 1;
+    width: unset;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .meal {
+    flex: 1;
+  }
+
+  .mealImage {
+    width: 40px;
+  }
+
+  .activeMeal::after {
+    border: solid 1px #f70303;
+  }
+  .inActiveMeal::after {
+    border: solid 1px #f7030373;
+  }
+
+  .mealTitle {
+    font-size: 14px;
+  }
+
+  .mealCategory {
+    font-size: 13px;
+  }
+
+  .menuScreen .mealList .mealListContainer {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
 }

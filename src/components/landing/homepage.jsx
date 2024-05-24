@@ -6,7 +6,8 @@ const Homepage = () => {
   return (
     <>
       <div className="homePage">
-        <Navbar absolute="absolute" />
+        <Navbar absolute="absolute" style="navColor" bg="blueBg" />
+
         <div className="homePageContainer">
           <Overlay />
           <div className="bgImage">
@@ -15,9 +16,9 @@ const Homepage = () => {
 
           <div className="homePageContentContainer">
             <div className="homePageContent">
-              <h2>
+              <h1>
                 ENJOY OUR <br /> DELICIOUS MEALS
-              </h2>
+              </h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.

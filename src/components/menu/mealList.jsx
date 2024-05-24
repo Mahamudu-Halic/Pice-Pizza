@@ -7,7 +7,7 @@ const MealList = () => {
   const [currentMeal, setCurrentMeal] = useState("Breakfast");
   return (
     <div className="mealList">
-      <div className="cardList">
+      <div className="cardList mealListContainer">
         {MealListItems.map((meal) => (
           <Meal
             meal={meal}

@@ -9,7 +9,7 @@
 .homePage {
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
+  /* padding: 40px; */
   color: white;
   z-index: 2;
 }
@@ -45,16 +45,10 @@
   font-size: 40px;
   z-index: 2;
   color: white;
-  margin-bottom: 20px;
-}
-
-.homePageContentContainer h2 {
-  font-size: 40px;
-  /* width: 650px; */
 }
 
 .homePageContentContainer p {
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff88;
   line-height: 32px;
 }
@@ -71,16 +65,17 @@
 }
 
 .heroContentImage {
-  width: 100%;
+  width: 70%;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .heroContentImage img {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  /* height: 400px; */
 }
 
 /* cardList */
@@ -89,14 +84,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  /* padding: 50px 0; */
   width: 80%;
   margin: 0 auto;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .card {
-  background-color: #f3f3f3;
+  background: #f3f3f3;
   box-shadow: 5px 5px 5px 1px #00000079;
   padding: 20px;
   border-radius: 10px;
@@ -122,52 +118,93 @@
 }
 
 /* about us */
-.about {
+.aboutUs {
   display: flex;
   justify-content: space-between;
   min-height: 70vh;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 30px;
 }
 
 .imageGridContainer {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* align-items: center; */
+  justify-content: center;
 }
 
-.aboutContentContainer {
+.imageGridContainer img{
+  width: 100%;
+}
+
+.aboutUs .row1, .aboutUs .row2{
+  flex: 1;
+  display: flex;
+  gap: 30px;
+}
+
+.row1{
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.row2{
+  align-items: flex-start;
+}
+
+.aboutUs .small{
+  width: 60%;
+  min-width: 150px;
+}
+
+.aboutUs .medium{
+  width: 90%;
+  min-width: 200px;
+}
+.aboutUs .large{
+  width: 100%;
+  min-width: 250px;
+}
+
+.aboutUsContentContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 30px;
 }
 
-.aboutTitle {
+.aboutUsTitleContainer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.aboutUsTitleContainer hr{
+  border-color: #f70303;
+  flex: 1;
+}
+
+.aboutUsTitle {
   position: relative;
   font-size: 25px;
   letter-spacing: 3px;
-  width: 100%;
-}
-.aboutTitle::after {
-  content: "";
-  position: absolute;
-  height: 1px;
-  left: 180px;
-  right: 0;
-  top: 50%;
-  bottom: 50%;
-  background-color: #f70303;
 }
 
-.aboutContent {
+.aboutUsContent {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.aboutSubtitle {
+.aboutUsSubtitle {
   font-size: 30px;
 }
 
-.aboutContent p {
+.aboutUsContent p {
   font-size: 20px;
   line-height: 30px;
 }
@@ -178,6 +215,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .testimony {
@@ -189,7 +227,9 @@
 .testimonialSubtitle {
   font-size: 35px;
 }
-
+.testimonyHeaderContainer{
+  width: 70%;
+}
 .testimonyDesc {
   font-size: 20px;
   line-height: 25px;
@@ -201,4 +241,54 @@
   border-radius: 50%;
   padding: 5px;
   object-fit: cover;
+}
+
+
+@media screen and (max-width: 800px) {
+  .heroContent{
+    display: none;
+
+  }
+
+  .aboutUs{
+    flex-direction: column;
+  }
+
+  .testimonyHeaderContainer{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 510px ){
+  .aboutUs .small, .aboutUs .medium, .aboutUs .large{
+    min-width: 0px;
+  }
+
+  .homePage{
+    height: 80vh;
+  }
+
+  .homePageContent h1{
+    font-size: 30px;
+  }
+  .homePageContent p{
+    font-size: 13px;
+    line-height: 25px;
+
+  }
+
+  .aboutUsTitle{
+    font-size: 18px;
+  }
+  .aboutUsSubtitle, .testimonialSubtitle{
+    font-size: 20px;
+  }
+
+  .aboutUsContent p{
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .testimonialSubtitle{
+
+  }
 }

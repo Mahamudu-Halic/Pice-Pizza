@@ -1,12 +1,13 @@
-import Navbar from '../components/navbar'
+import Navbar from "../components/navbar";
 
 const About = () => {
   return (
     <div>
-        <Navbar />
-        <h1>About Page</h1>
-    </div>
-  )
-}
+      <Navbar style="navColor" bg="blueBg" />
 
-export default About
+      <h1>About Page</h1>
+    </div>
+  );
+};
+
+export default About;

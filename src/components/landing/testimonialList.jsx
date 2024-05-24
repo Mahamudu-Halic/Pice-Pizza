@@ -5,7 +5,9 @@ import Heading from "../heading";
 const TestimonialList = () => {
   return (
     <div className="testimonyList">
-      <Heading title={"Testimonial"} />
+      <div className="testimonyHeaderContainer">
+        <Heading title={"Testimonial"} />
+      </div>
 
       <h3 className="testimonialSubtitle">What our clients say</h3>
 

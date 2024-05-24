@@ -18,7 +18,6 @@
 .serviceContainer {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
   padding: 10px;
   position: relative;
 }
@@ -27,7 +26,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 0 40px;
   width: 50%;
   margin: 0 auto;
   z-index: 10;
@@ -44,14 +42,19 @@
   padding: 10px 20px;
 }
 
+.sizeGroup{
+  display: flex;
+  gap: 10px;
+}
+
 #quantity {
   display: block;
   border-radius: 5px;
   border: solid 1px #000;
-  width: 50px;
+  width: 70px;
   padding: 10px 5px;
   margin-top: 10px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .serviceToppings h2 {
@@ -99,4 +102,24 @@
   bottom: -100px;
   left: 40px;
   padding: 0;
+}
+
+@media screen and (max-width: 510px){
+  .serviceHeading h1 {
+    font-size: 20px;
+  }
+
+  .serviceContainer h2{
+    font-size: 18px;
+  }
+  .seviceContents{
+    width: 100%;
+    padding: 10px 20px;
+  }
+  .halfPizza{
+    position: absolute;
+    right: 0;
+  }
+
+ 
 }

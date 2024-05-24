@@ -1,17 +1,39 @@
+import rectangle9 from "../../assets/Rectangle 9.png";
+import rectangle10 from "../../assets/Rectangle 10.png";
+import rectangle11 from "../../assets/Rectangle 11.png";
+import rectangle12 from "../../assets/Rectangle 12.png";
+
 const AboutUs = () => {
   return (
-    <div className="about">
-      <div className="imageGridContainer">images here...</div>
-      <div className="aboutContentContainer">
-        <div className="aboutTitleContainer">
-          <h3 className="aboutTitle red leckerliOne">About Us</h3>
+    <div className="aboutUs">
+      <div className="imageGridContainer">
+        <div className="row1">
+          <div className="aboutUsImage small">
+            <img src={rectangle9} alt="" />
+          </div>
+          <div className="aboutUsImage large">
+            <img src={rectangle10} alt="" />
+          </div>
+        </div>
+        <div className="row2">
+          <div className="aboutUsImage medium">
+            <img src={rectangle11} alt="" />
+          </div>
+          <div className="aboutUsImage small">
+            <img src={rectangle12} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="aboutUsContentContainer">
+        <div className="aboutUsTitleContainer">
+          <h3 className="aboutUsTitle red leckerliOne">About Us</h3>
+          <hr />
         </div>
 
-
-        <div className="aboutContent">
-        <h2 className="aboutSubtitle">
-          WELCOME TO <span className="red">PICE PIZZA</span>
-        </h2>
+        <div className="aboutUsContent">
+          <h2 className="aboutUsSubtitle">
+            WELCOME TO <span className="red">PICE PIZZA</span>
+          </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
@@ -21,9 +43,9 @@ const AboutUs = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore{" "}
           </p>
+        <button className="redButton">READ MORE</button>
         </div>
 
-        <button className="redButton">READ MORE</button>
       </div>
     </div>
   );
