@@ -38,15 +38,15 @@ const Navbar = ({
               {item.title}
             </Link>
           ))}
-          <Link to={"/shopping-cart"} className={`${style} shoppingCartBtn`}>
-            <div className="cartNumberContainer">
-              <p className="cartNumber">5</p>
-            </div>
-            <img src={shoppingCartImg} alt="shopping cart" width={20} />
-          </Link>
         </div>
       </div>
-      <div>
+      <div className="cartContainer">
+        <Link to={"/shopping-cart"} className={`${style} shoppingCartBtn`}>
+          <div className="cartNumberContainer">
+            <p className="cartNumber">5</p>
+          </div>
+          <img src={shoppingCartImg} alt="shopping cart" width={30} />
+        </Link>
         <UserButton />
       </div>
     </nav>

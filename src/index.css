@@ -49,6 +49,11 @@ a {
   flex: 1;
 }
 
+.cartContainer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .navbar .navLinks {
   display: flex;
@@ -186,6 +191,7 @@ body .white {
   background: none;
   border: none;
   position: relative;
+  padding: 10px;
 }
 
 .cartNumberContainer {

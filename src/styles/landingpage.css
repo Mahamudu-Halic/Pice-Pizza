@@ -93,7 +93,7 @@
 
 .card {
   background: #f3f3f3;
-  box-shadow: 5px 5px 5px 1px #00000079;
+  box-shadow: 5px 5px 3px 1px #00000079;
   padding: 20px;
   border-radius: 10px;
   border: none;
@@ -136,35 +136,36 @@
   justify-content: center;
 }
 
-.imageGridContainer img{
+.imageGridContainer img {
   width: 100%;
 }
 
-.aboutUs .row1, .aboutUs .row2{
+.aboutUs .row1,
+.aboutUs .row2 {
   flex: 1;
   display: flex;
   gap: 30px;
 }
 
-.row1{
+.row1 {
   justify-content: center;
   align-items: flex-end;
 }
 
-.row2{
+.row2 {
   align-items: flex-start;
 }
 
-.aboutUs .small{
+.aboutUs .small {
   width: 60%;
   min-width: 150px;
 }
 
-.aboutUs .medium{
+.aboutUs .medium {
   width: 90%;
   min-width: 200px;
 }
-.aboutUs .large{
+.aboutUs .large {
   width: 100%;
   min-width: 250px;
 }
@@ -176,14 +177,14 @@
   gap: 20px;
 }
 
-.aboutUsTitleContainer{
+.aboutUsTitleContainer {
   display: flex;
   align-items: center;
   width: 100%;
   gap: 20px;
 }
 
-.aboutUsTitleContainer hr{
+.aboutUsTitleContainer hr {
   border-color: #f70303;
   flex: 1;
 }
@@ -227,7 +228,7 @@
 .testimonialSubtitle {
   font-size: 35px;
 }
-.testimonyHeaderContainer{
+.testimonyHeaderContainer {
   width: 70%;
 }
 .testimonyDesc {
@@ -243,52 +244,51 @@
   object-fit: cover;
 }
 
-
 @media screen and (max-width: 800px) {
-  .heroContent{
+  .heroContent {
     display: none;
-
   }
 
-  .aboutUs{
+  .aboutUs {
     flex-direction: column;
   }
 
-  .testimonyHeaderContainer{
+  .testimonyHeaderContainer {
     width: 100%;
   }
 }
-@media screen and (max-width: 510px ){
-  .aboutUs .small, .aboutUs .medium, .aboutUs .large{
+@media screen and (max-width: 510px) {
+  .aboutUs .small,
+  .aboutUs .medium,
+  .aboutUs .large {
     min-width: 0px;
   }
 
-  .homePage{
+  .homePage {
     height: 80vh;
   }
 
-  .homePageContent h1{
+  .homePageContent h1 {
     font-size: 30px;
   }
-  .homePageContent p{
+  .homePageContent p {
     font-size: 13px;
     line-height: 25px;
-
   }
 
-  .aboutUsTitle{
+  .aboutUsTitle {
     font-size: 18px;
   }
-  .aboutUsSubtitle, .testimonialSubtitle{
+  .aboutUsSubtitle,
+  .testimonialSubtitle {
     font-size: 20px;
   }
 
-  .aboutUsContent p{
+  .aboutUsContent p {
     font-size: 14px;
     line-height: 25px;
   }
-
-  .testimonialSubtitle{
-
+  .cardList .card {
+    box-shadow: 5px 5px 14px 1px #00000079;
   }
 }
