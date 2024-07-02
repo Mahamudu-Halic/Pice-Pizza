@@ -1,8 +1,15 @@
 import React from "react";
 import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
+import { useNavigate } from "react-router-dom";
 const Account = (props) => {
   const { handleShowModal } = props;
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <Overlay showModal={handleShowModal} />
@@ -21,9 +28,9 @@ const Account = (props) => {
           </div>
         </div>
 
-        <a className="signOut" href={"/"}>
-          <button>Sign Out</button>
-        </a>
+        <button className="signOut" onClick={handleSignOut}>
+          Sign Out
+        </button>
       </div>
     </>
   );

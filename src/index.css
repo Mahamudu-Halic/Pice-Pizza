@@ -195,14 +195,15 @@ body .navColor {
   color: black;
 }
 
-.cartContainer .userAccount .signOut button {
+.cartContainer .userAccount .signOut {
   background: #ff0000;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
+  color: white;
 }
 
-.userAccount .signOut button:hover {
+.userAccount .signOut:hover {
   background: #ff0000d8;
 }
 

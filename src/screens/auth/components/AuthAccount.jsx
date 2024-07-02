@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthAccount = ({ title, url }) => {
+  const navigate = useNavigate();
   const handleSignIn = (e) => {
     e.preventDefault();
-    window.location.pathname = "/dashboard";
+    // window.location.pathname = "/dashboard";
+    navigate("/dashboard");
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    window.location.pathname = "/dashboard";
+    navigate("/dashboard");
   };
   return (
     <div className={"auth"}>
