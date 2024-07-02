@@ -1,0 +1,115 @@
+.payment {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.payment h1 {
+  padding: 0 30px;
+}
+
+.orderInfo {
+  display: flex;
+  padding: 0 30px;
+  width: 90%;
+  gap: 60px;
+  /* justify-content: center; */
+  /* margin: 0 auto; */
+}
+
+.orderFormat,
+.orderList {
+  width: 580px;
+}
+
+.orderFormat,
+.delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.delivery {
+  gap: 20px;
+}
+
+.deliveryGroup {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.infoGroup input {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 1px #000;
+  padding: 15px;
+}
+
+.infoGroup label {
+  display: block;
+  margin: 10px 0 15px;
+  font-size: 13px;
+  color: #333;
+}
+
+.payWith {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orderImage {
+  min-width: 200px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.orderImage img {
+  width: 100%;
+}
+
+.orderInfoContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.orderInfoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.orderInfoContent p {
+  font-size: 13px;
+}
+
+.orderDetailsContainer h3 {
+  margin-bottom: 15px;
+}
+
+.orderDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orderDetails > div,
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #333;
+}

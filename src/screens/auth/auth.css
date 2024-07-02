@@ -1,0 +1,109 @@
+.authForm {
+  /* background-color: #0051ff; */
+  color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  /* overflow: hidden; */
+}
+
+.welcomeDash {
+  /* width: 60%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  /* background-color: black; */
+  flex: 1;
+}
+
+.welcomeDash .flexipay {
+  /* color: #0051ff; */
+  color: #f70303;
+  font-size: 30px;
+}
+.welcomeDash .image {
+  width: 100%;
+  max-width: 700px;
+  /* padding: 200px; */
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+}
+
+.welcomeDash img {
+  width: 80%;
+  /* height: 400px; */
+  margin: 0 auto;
+}
+
+.welcomeText h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #f70303;
+}
+
+.welcomeText p {
+  line-height: 20px;
+  color: #817d7d;
+  font-size: 14px;
+}
+.auth {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column;
+  /* background-color: #fff; */
+  height: 100vh;
+  flex: 1;
+  padding: 30px;
+}
+
+.auth h1 {
+  font-size: 40px;
+}
+
+.auth h2 {
+  color: #4678e4;
+  margin-bottom: 10px;
+}
+
+.auth .account {
+  font-size: 14px;
+}
+
+.auth form {
+  width: 70%;
+}
+
+.auth form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  background-color: #ccc;
+  margin: 20px 0;
+  outline-color: #0051ff;
+}
+
+.auth form button {
+  padding: 10px;
+  text-transform: capitalize;
+  background-color: #f70303;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .welcomeDash {
+    display: none;
+  }
+
+  .auth form {
+    width: 100%;
+  }
+}

@@ -44,7 +44,7 @@ import { nanoid } from "nanoid";
 export const NavLinks = [
   {
     title: "Home",
-    route: "/",
+    route: "/dashboard",
   },
   {
     title: "About",

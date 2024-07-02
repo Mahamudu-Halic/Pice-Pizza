@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap");
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey;  */
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background-color: #575a57; */
+  background-color: #ad4906;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #ad4906;
+
+  border-radius: 10px;
+}
 .poppins {
   font-family: "Poppins";
 }
@@ -49,7 +71,7 @@ a {
   flex: 1;
 }
 
-.cartContainer{
+.cartContainer {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -70,7 +92,7 @@ a {
   font-weight: bold;
 }
 
-.navLinks a:hover{
+.navLinks a:hover {
   color: #f703037a;
 }
 
@@ -102,7 +124,7 @@ button {
   background: #192639;
 }
 
-body .navColor{
+body .navColor {
   color: white;
 }
 
@@ -118,6 +140,87 @@ body .navColor{
 .bgImage img {
   width: 100%;
   height: 100%;
+}
+
+.accountOverlay {
+  position: fixed;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* background-color: #000000d8; */
+  z-index: 1;
+}
+
+.userAccount {
+  position: fixed;
+  top: 10%;
+  right: 3%;
+  min-width: 250px;
+  max-width: 50%;
+  min-height: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.userAccount .profile-pic {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userNameContainer,
+.userEmailContainer {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.cartContainer .userAccount img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cartContainer .userAccount .signOut {
+  width: 100%;
+  color: black;
+}
+
+.cartContainer .userAccount .signOut button {
+  background: #ff0000;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.userAccount .signOut button:hover {
+  background: #ff0000d8;
+}
+
+/* .cartContainer .userProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+} */
+
+.cartContainer .profile {
+  position: relative;
+}
+
+.cartContainer .profile button {
+  background: none;
+  color: white;
+  border: none;
 }
 
 body .white {
@@ -142,7 +245,7 @@ body .white {
   text-align: center;
 }
 
-.headingContainer hr{
+.headingContainer hr {
   flex: 1;
   border-color: red;
 }
@@ -160,7 +263,7 @@ body .white {
   position: relative;
 }
 
-.menuHeaderContent{
+.menuHeaderContent {
   width: 100%;
 }
 
@@ -175,8 +278,6 @@ body .white {
   width: 100%;
   height: 100%;
 }
-
-
 
 .getStarted {
   z-index: 10;
@@ -283,29 +384,33 @@ body .white {
     width: 100%;
   }
 
-  .landScreenHeader{
+  .landScreenHeader {
     height: 60vh;
   }
 }
 
-@media screen and (max-width: 510px){
-  .landScreenHeader{
+@media screen and (max-width: 510px) {
+  .landScreenHeader {
     height: 50vh;
   }
 
-  .mainHeading{
+  .mainHeading {
     font-size: 40px;
   }
 
-  .headingTitle{
+  .headingTitle {
     font-size: 18px;
   }
 
-  .headingContainer{
+  .headingContainer {
     width: 100%;
   }
 
-  .navbar{
+  .navbar {
     width: 60%;
+  }
+
+  .userAccount {
+    max-width: 80%;
   }
 }
