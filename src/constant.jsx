@@ -40,6 +40,10 @@ import Sausage from "./assets/menu/Sausage.jpeg";
 import MorningMargherita from "./assets/menu/Morning Margherita.jpeg";
 
 import { nanoid } from "nanoid";
+import { HiHome } from "react-icons/hi";
+import { MdNoFood } from "react-icons/md";
+import { TbReport } from "react-icons/tb";
+import { LuChefHat } from "react-icons/lu";
 
 export const NavLinks = [
   {
@@ -58,6 +62,13 @@ export const NavLinks = [
     title: "Menu",
     route: "/menu",
   },
+];
+
+export const AdminSidebarLinks = [
+  { icon: HiHome, route: "/admin/dashboard", title: "Dashboard" },
+  { icon: MdNoFood, route: "/admin/food-menu", title: "Food Menu" },
+  { icon: LuChefHat, route: "/admin/orders", title: "Orders" },
+  { icon: TbReport, route: "/admin/reports", title: "Reports" },
 ];
 
 export const CardListItems = [

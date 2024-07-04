@@ -33,6 +33,21 @@
 .leckerliOne {
   font-family: "Leckerli One";
 }
+
+.ordersBg {
+  background: #c3f4f0;
+}
+
+.revenueBg {
+  background: #eaefff;
+}
+.canceledBg {
+  background: #ffd9d9;
+}
+.deliveredBg {
+  background: #fff5da;
+}
+
 * {
   font-family: "Montserrat";
   margin: 0;
@@ -183,20 +198,20 @@ body .navColor {
   font-size: 13px;
 }
 
-.cartContainer .userAccount img {
+.userAccount img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.cartContainer .userAccount .signOut {
+.userAccount .signOut {
   width: 100%;
   color: black;
 }
 
-.cartContainer .userAccount .signOut {
-  background: #ff0000;
+.userAccount .signOut {
+  background: #ff0000a8;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
@@ -204,7 +219,30 @@ body .navColor {
 }
 
 .userAccount .signOut:hover {
-  background: #ff0000d8;
+  background: #ff0000;
+}
+.userAccount .accountSwitch {
+  width: 100%;
+}
+
+.userAccount .accountSwitch {
+  background: #192639d8;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.userAccount .accountSwitch:hover {
+  background: #192639;
+}
+
+.accountButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+  width: 100%;
 }
 
 /* .cartContainer .userProfile {
@@ -214,14 +252,17 @@ body .navColor {
   gap: 10px;
 } */
 
-.cartContainer .profile {
+.profile {
   position: relative;
 }
 
-.cartContainer .profile button {
+.profile button {
   background: none;
-  color: white;
   border: none;
+}
+
+.cartContainer .profile button {
+  color: white;
 }
 
 body .white {

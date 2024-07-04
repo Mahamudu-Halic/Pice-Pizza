@@ -1,0 +1,18 @@
+.admin {
+  display: flex;
+  height: 100vh;
+}
+
+.adminContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.adminPage {
+  flex: 1;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 20px;
+}

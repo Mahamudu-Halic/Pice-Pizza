@@ -1,13 +1,19 @@
 import React from "react";
 import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Account = (props) => {
   const { handleShowModal } = props;
   const navigate = useNavigate();
 
   const handleSignOut = () => {
     navigate("/");
+  };
+
+  const toggleAdminDashboard = () => {
+    window.location.pathname.includes("/admin")
+      ? navigate("/dashboard")
+      : navigate("/admin/dashboard");
   };
 
   return (
@@ -28,9 +34,18 @@ const Account = (props) => {
           </div>
         </div>
 
-        <button className="signOut" onClick={handleSignOut}>
-          Sign Out
-        </button>
+        <div className="accountButtonContainer">
+          {/* <Link to={window.location.pathname.includes("/admin") ? "/dashboard" : "/admin/dashboard" }></Link> */}
+          <button className="accountSwitch" onClick={toggleAdminDashboard}>
+            {window.location.pathname.includes("/admin")
+              ? "Client Dashboard"
+              : "Admin Dashboard"}
+          </button>
+
+          <button className="signOut" onClick={handleSignOut}>
+            Sign Out
+          </button>
+        </div>
       </div>
     </>
   );
