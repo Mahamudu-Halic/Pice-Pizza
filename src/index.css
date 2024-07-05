@@ -173,7 +173,7 @@ body .navColor {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #000000d8;
+  /* background-color: #000000d8; */
   z-index: 1;
 }
 

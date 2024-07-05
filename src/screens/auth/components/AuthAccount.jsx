@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const AuthAccount = ({ title, url }) => {
   const navigate = useNavigate();
@@ -27,11 +27,12 @@ const AuthAccount = ({ title, url }) => {
 
         {title == "Sign In" ? (
           <p className={"account"}>
-            Don&apos;t have an account? <a href={url}>Create an account</a>
+            Don&apos;t have an account?{" "}
+            <NavLink to={url}>Create an account</NavLink>
           </p>
         ) : (
           <p className={"account"}>
-            Already have an account? <a href={url}>Sign In</a>
+            Already have an account? <NavLink to={url}>Sign In</NavLink>
           </p>
         )}
 
