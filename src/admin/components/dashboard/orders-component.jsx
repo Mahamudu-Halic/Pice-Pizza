@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import LatestOrdersList from "./latest-orders-list";
 import OrderDetails from "./order-details";
 import { DashboardContext } from "../../services/dashboard/dashboard.context";
+import Overlay from "../../../screens/auth/components/Modal/Overlay";
+import { ToastContainer } from "react-toast";
 
 const OrdersComponent = () => {
   const { orderDetails, handleOrderDetails, clearOrderDetails } =
@@ -13,15 +15,14 @@ const OrdersComponent = () => {
         <LatestOrdersList handleOrderDetails={handleOrderDetails} />
       </div>
 
-      {orderDetails && (
-        <div className="orderDetailsContainer">
-          <h2>Order Details</h2>
-          <OrderDetails
-            order={orderDetails}
-            clearOrderDetails={clearOrderDetails}
-          />
-        </div>
-      )}
+      <div className={`orderDetailsContainer ${orderDetails && "orderScale"}`}>
+        <ToastContainer delay={3000} position="top-center" />
+
+        <OrderDetails
+          order={orderDetails}
+          clearOrderDetails={clearOrderDetails}
+        />
+      </div>
     </div>
   );
 };

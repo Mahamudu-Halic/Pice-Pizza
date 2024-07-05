@@ -53,3 +53,22 @@
   background: none;
   color: #bcbfce;
 }
+
+@media screen and (max-width: 800px) {
+  .sidebarBtn {
+    margin-right: 10px;
+    background: none;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .route {
+    display: none;
+  }
+}
+@media screen and (max-width: 510px) {
+  .navTitle {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

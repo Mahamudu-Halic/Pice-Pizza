@@ -14,7 +14,7 @@ import { ToastContainer } from "react-toast";
 const AdminDashboard = () => {
   return (
     <DashboardContextProvider>
-      <ToastContainer delay={3000} position="top-center" />
+      {/* <ToastContainer delay={3000} position="top-center" /> */}
       <div className="admin">
         <AdminSidebar />
         <div className="adminContent">

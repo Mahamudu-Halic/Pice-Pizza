@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import "../styles/adminNavbar.css";
 import { BiBell, BiSearch } from "react-icons/bi";
@@ -9,8 +9,10 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
 import { HiMenuAlt2 } from "react-icons/hi";
 import MobileAdminSidebar from "./.mobile-sidebar";
+import { DashboardContext } from "../services/dashboard/dashboard.context";
 
 const AdminNavbar = ({ title }) => {
+  const { searchValue, handleSearch } = useContext(DashboardContext);
   const [focus, setFocus] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,10 +28,11 @@ const AdminNavbar = ({ title }) => {
   const handleFocus = () => {
     setFocus((prev) => !prev);
   };
+
   return (
     <div className="adminNavbar">
       <button className="navMenuBtn sidebarBtn" onClick={handleShowSidebar}>
-        <HiMenuAlt2 color="white" size={25} />
+        <HiMenuAlt2 color="black" size={25} />
       </button>
       <MobileAdminSidebar
         showSidebar={showSidebar}
@@ -47,7 +50,9 @@ const AdminNavbar = ({ title }) => {
             type="text"
             onFocus={handleFocus}
             onBlur={handleFocus}
-            placeholder="Search Order ID"
+            value={searchValue}
+            onChange={(e) => handleSearch(e.target.value)}
+            placeholder="Search Order ID (e.g. 1234)"
           />
         </div>
 

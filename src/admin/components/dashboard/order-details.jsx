@@ -8,6 +8,7 @@ const OrderDetails = ({ clearOrderDetails, order }) => {
   return (
     <div className="orderDetails" id="orderDetails">
       <CgClose size={20} onClick={clearOrderDetails} className="closeButton" />
+      <h2>Order Details</h2>
       <div className="orderId">
         <p>Order ID #{order?.orderId}</p>
         <button onClick={() => copyToClipboard(order?.orderId)}>
