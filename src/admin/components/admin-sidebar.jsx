@@ -6,7 +6,7 @@ import { AdminSidebarLinks } from "../../constant";
 
 const AdminSidebar = () => {
   return (
-    <div className="adminSidebar">
+    <div className="adminSidebar hideSidebar">
       <h1 className="pice">PICE</h1>
 
       <div className="adminSidebarContent">

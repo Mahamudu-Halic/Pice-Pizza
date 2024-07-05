@@ -4,13 +4,18 @@
 
 .adminSidebar {
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   width: 250px;
   padding: 10px;
   gap: 30px;
+  background-color: white;
 }
 
+.mobileAdminSidebar {
+  display: none;
+}
 .adminSidebarContent {
   display: flex;
   flex-direction: column;
@@ -32,4 +37,24 @@
   font-weight: bold;
   background: #de4444;
   color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .hideSidebar {
+    display: none;
+  }
+  .mobileAdminSidebar {
+    display: flex;
+  }
+  .adminSidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    left: -300px;
+    transition: 0.3s ease-in-out;
+  }
+  .showSidebar {
+    left: 0;
+  }
 }
