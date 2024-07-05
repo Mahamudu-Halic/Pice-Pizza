@@ -36,3 +36,137 @@
 .containerItemTotal {
   font-size: 30px;
 }
+
+.ordersComponent {
+  display: flex;
+  gap: 20px;
+}
+
+.ordersComponent h2 {
+  color: #333b69;
+}
+
+.latestOrdersContainer {
+  flex: 1;
+}
+
+.orderDetailsContainer {
+  flex: 2;
+}
+
+.latestOrdersList {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.latestOrder {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.latestOrder:hover {
+  transform: scale(1.1);
+}
+
+.latestOrderInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.orderId {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.latestOrder h3 {
+  margin: 10px 0;
+}
+
+.time {
+  color: #94aacf;
+}
+
+.latestOrder select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #f4f4f4;
+  outline: none;
+  border-radius: 10px;
+  margin-top: auto;
+}
+
+.orderId button {
+  border: none;
+  background: none;
+}
+
+.orderStatus {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+}
+
+.orderDetails {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orderDetailList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phoneNumber {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: black;
+}
+
+.orderDetails section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderDetails section h3 {
+  margin-left: auto;
+}
+
+.completeBtn {
+  color: white;
+  background: #de4444;
+  border: solid 1px #de4444;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.closeButton {
+  margin-left: auto;
+  cursor: pointer;
+  margin-bottom: 10px;
+}

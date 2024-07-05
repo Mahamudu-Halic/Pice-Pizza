@@ -96,17 +96,17 @@
   font-size: 13px;
 }
 
-.orderDetailsContainer h3 {
+.payment .orderDetailsContainer h3 {
   margin-bottom: 15px;
 }
 
-.orderDetails {
+.payment .orderDetails {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.orderDetails > div,
+.payment .orderDetails > div,
 .total {
   display: flex;
   justify-content: space-between;

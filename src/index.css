@@ -55,6 +55,15 @@
   box-sizing: border-box;
 }
 
+.pending {
+  color: #e4b83c;
+  background: #fff5d9;
+}
+.completed {
+  color: #259b30;
+  background: #dafcdd;
+}
+
 body {
   /* overflow-x: hidden; */
 }

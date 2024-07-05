@@ -6,47 +6,26 @@ import "../styles/admin.css";
 import "../styles/dashboard.css";
 import StatCardComponent from "../components/dashboard/stat-card";
 import { BiMailSend } from "react-icons/bi";
+import StatCardList from "../components/dashboard/stat-card-list";
+import OrdersComponent from "../components/dashboard/orders-component";
+import { DashboardContextProvider } from "../services/dashboard/dashboard.context";
+import { ToastContainer } from "react-toast";
 
 const AdminDashboard = () => {
   return (
-    <div className="admin">
-      <AdminSidebar />
-      <div className="adminContent">
-        <AdminNavbar title={"Dashboard"} />
-        <div className="adminDashboard adminPage">
-          <div className="statCardList">
-            <StatCardComponent
-              Icon={BiMailSend}
-              title={"Total Orders"}
-              color={"#39BAAF"}
-              bg={"ordersBg"}
-              total={1750}
-            />
-            <StatCardComponent
-              Icon={BiMailSend}
-              title={"Total Delivered"}
-              color={"#E3B535"}
-              bg={"deliveredBg"}
-              total={1750}
-            />
-            <StatCardComponent
-              Icon={BiMailSend}
-              title={"Total Revenue"}
-              color={"#799AFF"}
-              bg={"revenueBg"}
-              total={1750}
-            />
-            <StatCardComponent
-              Icon={BiMailSend}
-              title={"Total Canceled"}
-              color={"#DF4B4B"}
-              bg={"canceledBg"}
-              total={1750}
-            />
+    <DashboardContextProvider>
+      <ToastContainer delay={3000} position="top-center" />
+      <div className="admin">
+        <AdminSidebar />
+        <div className="adminContent">
+          <AdminNavbar title={"Dashboard"} />
+          <div className="adminDashboard adminPage">
+            <StatCardList />
+            <OrdersComponent />
           </div>
         </div>
       </div>
-    </div>
+    </DashboardContextProvider>
   );
 };
 

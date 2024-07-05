@@ -39,11 +39,17 @@ import Smoked from "./assets/menu/Smoked.jpeg";
 import Sausage from "./assets/menu/Sausage.jpeg";
 import MorningMargherita from "./assets/menu/Morning Margherita.jpeg";
 
-import { nanoid } from "nanoid";
+import { customAlphabet, nanoid } from "nanoid";
 import { HiHome } from "react-icons/hi";
 import { MdNoFood } from "react-icons/md";
 import { TbReport } from "react-icons/tb";
 import { LuChefHat } from "react-icons/lu";
+import { toast } from "react-toast";
+
+export const copyToClipboard = (orderId) => {
+  navigator.clipboard.writeText(orderId);
+  toast.success("copied to clipboard");
+};
 
 export const NavLinks = [
   {
@@ -332,3 +338,63 @@ export const MenuListItems = {
     },
   ],
 };
+
+const orderId = customAlphabet("1234567890", 4);
+export const OrderListItems = [
+  {
+    orderId: orderId(),
+    time: "10:30AM",
+    total: "100.00",
+    status: "pending",
+    phoneNumber: "0552802788",
+    orderList: ["Pepperoni", "Margherita", "Hawaiian"],
+  },
+  {
+    orderId: orderId(),
+    time: "12:30PM",
+    total: "200.00",
+    status: "completed",
+    phoneNumber: "0507755962",
+    orderList: ["Marinara", "Arugula Salad", "Bruschetta Mista"],
+  },
+  {
+    orderId: orderId(),
+    time: "6:30AM",
+    total: "456.00",
+    status: "pending",
+    phoneNumber: "0552802788",
+    orderList: ["Vegetarian", "Caprese Salad", "Calamari Fritti"],
+  },
+  {
+    orderId: orderId(),
+    time: "7:30AM",
+    total: "345.00",
+    status: "pending",
+    phoneNumber: "0507755962",
+    orderList: ["Savory Calzone", "Vegetarian", "Breakfast Bruschetta"],
+  },
+  {
+    orderId: orderId(),
+    time: "8:30AM",
+    total: "34.00",
+    status: "completed",
+    phoneNumber: "0552802788",
+    orderList: ["Pepperoni"],
+  },
+  {
+    orderId: orderId(),
+    time: "9:30AM",
+    total: "453.00",
+    status: "pending",
+    phoneNumber: "0507755962",
+    orderList: ["Marinara", "Calamari Fritti"],
+  },
+  {
+    orderId: orderId(),
+    time: "11:30AM",
+    total: "99.00",
+    status: "pending",
+    phoneNumber: "0552802788",
+    orderList: ["Pepperoni", "Hawaiian", "Vegetarian"],
+  },
+];

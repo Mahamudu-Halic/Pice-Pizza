@@ -6,6 +6,7 @@ import { CgMail } from "react-icons/cg";
 import Account from "../../screens/auth/components/Modal/Account";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdArrowForwardIos } from "react-icons/md";
+import { RiArrowRightDoubleLine } from "react-icons/ri";
 
 const AdminNavbar = ({ title }) => {
   const [focus, setFocus] = useState(false);
@@ -21,7 +22,7 @@ const AdminNavbar = ({ title }) => {
   return (
     <div className="adminNavbar">
       <div className="route">
-        <MdArrowForwardIos />
+        <RiArrowRightDoubleLine />
         <h2 className="navTitle">{title}</h2>
       </div>
 
