@@ -7,15 +7,18 @@ const LatestOrdersList = ({ handleOrderDetails }) => {
   const { filteredOrderListItems } = useContext(DashboardContext);
   return (
     <div className="latestOrdersList">
-      {filteredOrderListItems.map((item) => (
-        <div
-          className="latestOrder"
-          key={item?.orderId}
-          onClick={() => handleOrderDetails(item)}
-        >
-          <LatestOrders order={item} />
-        </div>
-      ))}
+      {filteredOrderListItems
+        .slice()
+        .reverse()
+        .map((item) => (
+          <div
+            className="latestOrder"
+            key={item?.orderId}
+            onClick={() => handleOrderDetails(item)}
+          >
+            <LatestOrders order={item} />
+          </div>
+        ))}
     </div>
   );
 };
