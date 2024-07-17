@@ -2,7 +2,11 @@ import React from "react";
 import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useClerk, useUser } from "@clerk/clerk-react";
 const Account = (props) => {
+  const { user } = useUser();
+
+  console.log(user);
   const { handleShowModal } = props;
   const navigate = useNavigate();
 
@@ -12,7 +16,7 @@ const Account = (props) => {
 
   const toggleAdminDashboard = () => {
     window.location.pathname.includes("/admin")
-      ? navigate("/dashboard")
+      ? navigate("/")
       : navigate("/admin/dashboard");
   };
 

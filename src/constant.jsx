@@ -54,7 +54,7 @@ export const copyToClipboard = (orderId) => {
 export const NavLinks = [
   {
     title: "Home",
-    route: "/dashboard",
+    route: "/",
   },
   {
     title: "About",

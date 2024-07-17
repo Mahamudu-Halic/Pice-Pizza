@@ -11,16 +11,19 @@ import AdminDashboard from "./admin/features/dashboard";
 import Orders from "./admin/features/orders";
 import FoodMenu from "./admin/features/food-menu";
 import Reports from "./admin/features/reports";
+import VerifyEmail from "./screens/auth/verifyEmail";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<SignIn />} />
+        {/* auth */}
+        {/* <Route path="/" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/verify-email" element={<VerifyEmail />} /> */}
 
         {/* client */}
-        <Route path="/dashboard" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/menu" element={<Menu />} />
