@@ -61,6 +61,7 @@ const Navbar = ({
             <img src={shoppingCartImg} alt="shopping cart" width={30} />
           </Link>
 
+          {/* <UserButton /> */}
           <div className="profile">
             <button className={""} onClick={handleShowModal}>
               <FaRegUserCircle size={30} />

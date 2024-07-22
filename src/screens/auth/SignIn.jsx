@@ -6,7 +6,7 @@ const SignIn = () => {
   return (
     <div className="authForm">
       <WelcomeDash />
-      <AuthAccount title={"Sign In"} url={"/sign-up"} />
+      <AuthAccount title={"Sign In"} url={"/auth/sign-up"} />
     </div>
   );
 };

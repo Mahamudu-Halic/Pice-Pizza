@@ -5,7 +5,18 @@ import "../styles/service.css";
 
 import slice from "../assets/slice.png";
 import halfPizza from "../assets/halfPizza.png";
+import { useState } from "react";
 const Service = () => {
+  const [quantity, setQuantity] = useState(1);
+
+  const addQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+  const reduceQuantity = () => {
+    if (quantity != 1) {
+      setQuantity(quantity - 1);
+    }
+  };
   return (
     <div className="service">
       <LandScreen
@@ -43,13 +54,18 @@ const Service = () => {
 
           <div className="serviceQuantity">
             <h2>QUANTITY</h2>
-            <input
+            {/* <input
               type="number"
               name=""
               id="quantity"
               min={1}
               placeholder="0"
-            />
+            /> */}
+            <div className="quantity">
+              <button onClick={reduceQuantity}>-</button>
+              <p>{quantity}</p>
+              <button onClick={addQuantity}>+</button>
+            </div>
             {/* <select name="quantity" id="quantity">
           <option value="1">One</option>
           <option value="2">Two</option>
@@ -71,18 +87,7 @@ const Service = () => {
                   <option value="">Select Sauce</option>
                 </select>
               </div>
-              <div className="serviceToppingsListItem">
-                <label htmlFor="sauces">Sauces</label>
-                <select name="saurces" id="sauces">
-                  <option value="">Select Sauce</option>
-                </select>
-              </div>
-              <div className="serviceToppingsListItem">
-                <label htmlFor="sauces">Sauces</label>
-                <select name="saurces" id="sauces">
-                  <option value="">Select Sauce</option>
-                </select>
-              </div>
+              
             </div>
           </div>
 

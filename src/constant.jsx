@@ -52,22 +52,26 @@ export const copyToClipboard = (orderId) => {
 };
 
 export const NavLinks = [
+  // {
+  //   title: "Home",
+  //   route: "/home",
+  // },
   {
-    title: "Home",
-    route: "/",
-  },
-  {
-    title: "About",
-    route: "/about",
+    title: "Menu",
+    route: "/menu",
   },
   {
     title: "Service",
     route: "/service",
   },
   {
-    title: "Menu",
-    route: "/menu",
+    title: "About",
+    route: "/about",
   },
+  // {
+  //   title: "Admin Dashboard",
+  //   route: "/admin/dashboard",
+  // },
 ];
 
 export const AdminSidebarLinks = [

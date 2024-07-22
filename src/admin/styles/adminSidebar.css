@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   /* gap: 20px; */
 }
 
@@ -33,10 +34,27 @@
   border-radius: 10px;
 }
 
+.adminSidebarItem:hover {
+  background: #de44449c;
+  color: white;
+}
+
 .adminSidebar .active {
   font-weight: bold;
   background: #de4444;
   color: white;
+}
+
+.bottomAdminSidebarItem {
+  margin-top: auto;
+  background: #3fb4aa85;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.bottomAdminSidebarItem:hover {
+  background: #3fb4aa;
 }
 
 @media screen and (max-width: 800px) {

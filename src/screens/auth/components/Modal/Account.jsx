@@ -1,12 +1,10 @@
-import React from "react";
 import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
-import { Link, useNavigate } from "react-router-dom";
-import { useClerk, useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
+// import { useClerk, useUser } from "@clerk/clerk-react";
 const Account = (props) => {
-  const { user } = useUser();
+  // const { user } = useUser();
 
-  console.log(user);
   const { handleShowModal } = props;
   const navigate = useNavigate();
 
@@ -16,7 +14,7 @@ const Account = (props) => {
 
   const toggleAdminDashboard = () => {
     window.location.pathname.includes("/admin")
-      ? navigate("/")
+      ? navigate("/menu")
       : navigate("/admin/dashboard");
   };
 
@@ -30,10 +28,14 @@ const Account = (props) => {
         <div className="userInfo">
           <div className="userNameContainer">
             <p className="userName">Name:</p>
+            {/* <p className="userName">{user?.fullName}</p> */}
             <p className="userName">Mahamudu Halic</p>
           </div>
           <div className="userEmailContainer">
             <p className="">Email:</p>
+            {/* <p className="userEmail">
+              {user?.primaryEmailAddress?.emailAddress}
+            </p> */}
             <p className="userEmail">mahamuduhalic@gmail.com</p>
           </div>
         </div>
@@ -42,7 +44,7 @@ const Account = (props) => {
           {/* <Link to={window.location.pathname.includes("/admin") ? "/dashboard" : "/admin/dashboard" }></Link> */}
           <button className="accountSwitch" onClick={toggleAdminDashboard}>
             {window.location.pathname.includes("/admin")
-              ? "Client Dashboard"
+              ? "Client Menu"
               : "Admin Dashboard"}
           </button>
 

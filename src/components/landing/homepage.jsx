@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <>
       <div className="homePage">
-        <Navbar absolute="absolute" style="navColor" bg="blueBg" />
+        {/* <Navbar absolute="absolute" style="navColor" bg="blueBg" /> */}
 
         <div className="homePageContainer">
           <Overlay />
@@ -17,7 +17,7 @@ const Homepage = () => {
           <div className="homePageContentContainer">
             <div className="homePageContent">
               <h1>
-                ENJOY OUR <br /> DELICIOUS MEALS
+                ENJOY OUR DELICIOUS MEALS
               </h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -29,11 +29,11 @@ const Homepage = () => {
             <button className="redButton">ORDER NOW</button>
           </div>
         </div>
-        <div className="heroContent">
+        {/* <div className="heroContent">
           <div className="heroContentImage">
             <img src={heroImage} alt="" />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

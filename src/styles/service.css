@@ -57,6 +57,27 @@
   /* text-align: center; */
 }
 
+.quantity{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity button{
+  /* padding: 5px; */
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.quantity p{
+  width: 30px;
+  text-align: center;
+  cursor: default;
+}
 .serviceToppings h2 {
   margin-bottom: 10px;
 }

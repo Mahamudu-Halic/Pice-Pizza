@@ -10,6 +10,7 @@ import { RiArrowRightDoubleLine } from "react-icons/ri";
 import { HiMenuAlt2 } from "react-icons/hi";
 import MobileAdminSidebar from "./.mobile-sidebar";
 import { DashboardContext } from "../services/dashboard/dashboard.context";
+import { UserButton } from "@clerk/clerk-react";
 
 const AdminNavbar = ({ title }) => {
   const { searchValue, handleSearch } = useContext(DashboardContext);
@@ -64,6 +65,8 @@ const AdminNavbar = ({ title }) => {
             <BiBell size={20} />
           </button>
         </div>
+
+        {/* <UserButton /> */}
 
         <div className="profile">
           <button className={""} onClick={handleShowModal}>

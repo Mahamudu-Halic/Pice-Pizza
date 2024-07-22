@@ -39,7 +39,7 @@ const AuthAccount = ({ title, url }) => {
   };
 
   useEffect(() => {
-    status === 201 && error === null && navigate("/verify-email");
+    status === 201 && error === null && navigate("/verify");
   }, [status, error]);
 
   useEffect(() => {

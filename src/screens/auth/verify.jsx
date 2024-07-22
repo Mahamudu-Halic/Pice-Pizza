@@ -3,25 +3,25 @@ import { HashLoader } from "react-spinners";
 import { AuthContext } from "../../services/auth/auth.context";
 import { VscError } from "react-icons/vsc";
 
-const VerifyEmail = () => {
+const Verify = () => {
   const {
     isLoading,
     error,
+    verify,
     setVerificationCode,
     verificationCode,
     resendVerificationCode,
-    verifyCustomerEmail
   } = useContext(AuthContext);
 
-  const handleEmailVerification = () => {
-    console.log(verificationCode);
-    verifyCustomerEmail(verificationCode);
-  };
+  // const handleEmailVerification = () => {
+  //   console.log(verificationCode);
+  //   verifyCustomerEmail(verificationCode);
+  // };
 
   return (
     <div className="verify">
       <div className="verifyContainer">
-        <h2>Verify Email</h2>
+        <h2>Verification</h2>
         <div className="form-group">
           <label htmlFor="token">Enter Token</label>
           <input
@@ -48,7 +48,7 @@ const VerifyEmail = () => {
           {isLoading ? (
             <HashLoader color={"#4678e4"} loading={isLoading} size={25} />
           ) : (
-            <button onClick={handleEmailVerification}>submit</button>
+            <button onClick={verify}>submit</button>
           )}
         </div>
       </div>
@@ -56,4 +56,4 @@ const VerifyEmail = () => {
   );
 };
 
-export default VerifyEmail;
+export default Verify;

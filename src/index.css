@@ -200,6 +200,10 @@ body .navColor {
   object-fit: cover;
 }
 
+.userName {
+  text-transform: capitalize;
+}
+
 .userNameContainer,
 .userEmailContainer {
   display: flex;

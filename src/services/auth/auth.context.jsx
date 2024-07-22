@@ -106,6 +106,7 @@ export const AuthContextProvider = ({ children }) => {
           setVerificationId(response?.data?.verificationId);
         setStatus(response?.status);
         setMessage(response?.data?.message);
+        setIsVerified(true)
       })
       .catch((error) => setError(error?.response?.data?.message))
       .finally(() => setIsLoading(false));
