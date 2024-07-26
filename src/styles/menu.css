@@ -58,6 +58,11 @@
   gap: 40px;
 }
 
+.menu{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .menuScreen .mealList .mealListContainer {
   flex-wrap: nowrap;
   padding: 0 10px;
@@ -65,14 +70,13 @@
 
 .menuList {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 20px;
   padding: 0 20px;
 }
 
 .menuListItem {
-  width: 35%;
+  /* width: 35%; */
   display: flex;
   align-items: center;
   gap: 20px;
@@ -80,6 +84,11 @@
   border-radius: 5px;
   padding: 5px;
   transition: 0.3s ease-in-out;
+}
+
+.menuListItem img{
+  width: 100px;
+  height: 100px;
 }
 
 .menuListItem:hover{
@@ -97,7 +106,8 @@
 .topMenuItemContent {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  gap: 20px;
+  font-size: 14px;
 }
 
 .menuItemPrice {

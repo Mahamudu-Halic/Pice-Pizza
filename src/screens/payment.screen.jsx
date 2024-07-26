@@ -31,7 +31,7 @@ const Payment = () => {
           <OrderFormat
             confirmOrder={confirmOrder}
           />
-          <OrderList total={total} orders={orders} />
+          { postOrders.length > 0 && <OrderList total={total} orders={orders} />}
         </div>
       </div>
     </>

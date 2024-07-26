@@ -3,7 +3,7 @@ import Rectangle23 from "../../assets/Rectangle 23.png";
 import MenuModal from "../menu.modal";
 
 const MenuList = ({ menu }) => {
-  const { image, title, desc, price } = menu;
+  const { url, name, description, price, size } = menu;
 
   const [showModal, setShowModal] = useState(false);
   return (
@@ -16,17 +16,17 @@ const MenuList = ({ menu }) => {
       )}
       <div className="menuListItem" onClick={() => setShowModal(true)}>
         <div className="menuItemImage">
-          <img src={image} alt={title} width={150} />
+          <img src={url} alt={name} width={150} />
         </div>
 
         <div className="menuItemContent">
           <div className="topMenuItemContent">
-            <p className="menuItemTitle">{title}</p>
-            <p className="menuItemPrice red">${price}</p>
+            <p className="menuItemTitle">{name} ({size})</p>
+            <p className="menuItemPrice red">GHC {price}</p>
           </div>
           <hr />
           <div className="bottomMenuItemContent">
-            <p className="menuItemDesc">{desc}</p>
+            <p className="menuItemDesc">{description}</p>
           </div>
         </div>
       </div>

@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MealListItems, MenuListItems } from "../../constant";
 import Meal from "./meal";
 import MenuList from "./menuList";
+import { AdminContext } from "../../services/admin/admin.context";
 
 const MealList = () => {
   const [currentMeal, setCurrentMeal] = useState("Breakfast");
+
+  const {menu} = useContext(AdminContext)
+
   return (
     <div className="mealList">
-      <div className="cardList mealListContainer">
+      {/* <div className="cardList mealListContainer">
         {MealListItems.map((meal) => (
           <Meal
             meal={meal}
@@ -16,11 +20,11 @@ const MealList = () => {
             setCurrentMeal={setCurrentMeal}
           />
         ))}
-      </div>
+      </div> */}
 
       <div className="menuList">
-        {MenuListItems[currentMeal.toLowerCase()].map((menu) => (
-          <MenuList menu={menu} key={menu.id} />
+        {menu.map((menu) => (
+          <MenuList menu={menu} key={menu?._id} />
         ))}
       </div>
     </div>

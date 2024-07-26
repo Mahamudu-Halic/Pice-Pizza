@@ -2,47 +2,45 @@ import React, { useContext, useState } from "react";
 import { BiUpload } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
 import { AdminContext } from "../../services/admin/admin.context";
+import { ToastContainer } from "react-toast";
 
 const AddMenu = ({ toggleMenu }) => {
-  const {name, description, size, category, price, imageUrl, setName, setDescription, setSize, setCategory, setPrice, setImageUrl} = useContext(AdminContext)
+  const {name, fileName, setFileName, description, size, category, price, url, setName, setDescription, setSize, setCategory, setPrice, setUrl, postFood} = useContext(AdminContext)
 
   const handleMenuUpdate = () => {
-    if (
-      name.trim() &&
-      description.trim() &&
-      size.trim() &&
-      category.trim() &&
-      price.trim() &&
-      imageUrl.trim()
-    ) {
+    
       const newMenu = {
         name,
         description,
         size,
-        price,
+        price: Number(price),
         category,
-        imageUrl,
+        url,
+        fileName,
       };
 
       console.log(newMenu);
-      handleReset();
-    }
+      postFood(newMenu);
+
   };
 
-  const handleReset = () => {
-    setDescription("");
-    setName("");
-    setCategory("");
-    setPrice("");
-    setSize("");
-    setImageUrl("");
-  };
 
-  const handleImageUpload = (event) => {
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file)
+      fileReader.onload = () => resolve(fileReader.result);
+      fileReader.onerror = error => reject(error)
+    })
+  }
+
+  const handleImageUpload = async (event) => {
     const file = event.target.files?.[0];
     if (file) {
-      const url = URL.createObjectURL(file);
-      setImageUrl(url);
+      const base64 = await convertBase64(file)
+      setFileName(file.name)
+      setUrl(base64);
     }
   };
 
@@ -50,6 +48,7 @@ const AddMenu = ({ toggleMenu }) => {
     <div className="toggler">
       <div className="overlay" onClick={toggleMenu} />
       <div className="add-food-menu">
+      <ToastContainer delay={3000} position="top-center" />
         <div className="add-food-menu-header">
           <h2>Add Food Menu</h2>
 
@@ -58,8 +57,8 @@ const AddMenu = ({ toggleMenu }) => {
         <div className="menu-form form">
           <div className="form-group">
             <label className="image-container" htmlFor="image">
-              {imageUrl ? (
-                <img src={imageUrl} alt="image" />
+              {url ? (
+                <img src={url} alt="image" />
               ) : (
                 <div>
                   <BiUpload size={20} /> <p>Upload Image</p>
@@ -77,6 +76,7 @@ const AddMenu = ({ toggleMenu }) => {
             <input
               type="text"
               id="name"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -85,12 +85,13 @@ const AddMenu = ({ toggleMenu }) => {
             <textarea
               className="description"
               id="desc"
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="form-group">
             <label htmlFor="size">Size</label>
-            <select name="" id="size" onChange={(e) => setSize(e.target.value)}>
+            <select name="" id="size" onChange={(e) => setSize(e.target.value)} value={size}>
               <option value="">select size</option>
               <option value="Small">Small</option>
               <option value="Medium">Medium</option>
@@ -99,7 +100,7 @@ const AddMenu = ({ toggleMenu }) => {
           </div>
           <div className="form-group">
             <label htmlFor="cate">Category</label>
-            <select id="cate" onChange={(e) => setCategory(e.target.value)}>
+            <select id="cate" onChange={(e) => setCategory(e.target.value)} value={category}>
               <option value="">select food category</option>
               <option value="Local Food">Local Food</option>
               <option value="Pizza">Pizza</option>
@@ -112,6 +113,7 @@ const AddMenu = ({ toggleMenu }) => {
               type="text"
               className="price"
               id="price"
+              value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>

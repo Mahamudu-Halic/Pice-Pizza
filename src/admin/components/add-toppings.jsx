@@ -12,14 +12,12 @@ const AddToppings = ({ toggleToppings }) => {
     name,
     setPrice,
     setName,
+    postIngredients
   } = useContext(AdminContext);
 
   const handleUpdateTopping = () => {
-    if (price.trim() && name.trim()) {
-      const newTopping = { price, name };
-
+      const newTopping = { price: Number(price), name };
       addToppings(newTopping);
-    }
   };
 
   return (
@@ -78,7 +76,7 @@ const AddToppings = ({ toggleToppings }) => {
             <button className="add-topping" onClick={handleUpdateTopping}>
               Add Topping
             </button>
-            <button disabled={newIngredients.length === 0} className="post-toppings" onClick={handleUpdateTopping}>
+            <button disabled={newIngredients.length === 0} className="post-toppings" onClick={postIngredients}>
               Post Toppings
             </button>
           </div>

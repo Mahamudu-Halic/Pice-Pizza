@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
-import { requestIngredients, requestPostIngredients } from "./admin.service";
+import {
+  requestFood,
+  requestIngredients,
+  requestOrders,
+  requestPostFood,
+  requestPostIngredients,
+} from "./admin.service";
 import { toast } from "react-toast";
 
 export const AdminContext = createContext();
@@ -14,16 +20,33 @@ export const AdminContextProvider = ({ children }) => {
   const [size, setSize] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
-  const [imageUrl, setImageUrl] = useState(null);
+  const [url, setUrl] = useState(null);
+  const [fileName, setFileName] = useState("");
+  const [orders, setOrders] = useState([])
 
   const postIngredients = () => {
-    newIngredients.trim() &&
+    newIngredients &&
       requestPostIngredients(newIngredients)
         .then((response) => {
           toast.success(response?.data?.message);
           getIngredients();
         })
-        .catch((error) => toast.error(error?.response?.data?.error));
+        .catch((error) => {
+          toast.error(error?.response?.data?.message);
+        });
+  };
+
+  const postFood = (food) => {
+    requestPostFood(food)
+      .then((response) => {
+        toast.success(response?.data?.message);
+        getFood();
+        handleReset();
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error?.response?.data?.message);
+      });
   };
 
   const getIngredients = () => {
@@ -32,18 +55,26 @@ export const AdminContextProvider = ({ children }) => {
       .catch((error) => console.error(error.response?.data?.message));
   };
 
-  const addToppings = (newTopping) => {
-    const currentTopping = newIngredients.find(item => item.name === newTopping.name)
-    const oldTopping = ingredients.find(item => item.name === newTopping.name)
+  const getFood = () => {
+    requestFood().then((response) => setMenu(response.data));
+  };
 
-    if (!currentTopping && !oldTopping){
-        setNewIngredients((prev) => [...prev, newTopping]);
-        setName("")
-        setPrice("")
-        console.log(newTopping)
-        toast.success("added");
-    }else{
-        toast.error("topping already added")
+  const addToppings = (newTopping) => {
+    const currentTopping = newIngredients.find(
+      (item) => item.name === newTopping.name
+    );
+    const oldTopping = ingredients.find(
+      (item) => item.name === newTopping.name
+    );
+
+    if (!currentTopping && !oldTopping) {
+      setNewIngredients((prev) => [...prev, newTopping]);
+      setName("");
+      setPrice("");
+      console.log(newTopping);
+      toast.success("added");
+    } else {
+      toast.error("topping already added");
     }
   };
 
@@ -56,11 +87,27 @@ export const AdminContextProvider = ({ children }) => {
     toast.error("removed");
   };
 
+  const handleReset = () => {
+    setDescription("");
+    setName("");
+    setCategory("");
+    setPrice("");
+    setSize("");
+    setUrl("");
+    setFileName("");
+  };
+
+  const getOrders = () => {
+    requestOrders().then((response) => setOrders(response?.data)) 
+  }
+
   useEffect(() => {
     getIngredients();
+    getFood();
+    // getOrders();
   }, []);
 
-  console.log(ingredients);
+  // console.log(orders);
 
   const values = {
     ingredients,
@@ -73,15 +120,19 @@ export const AdminContextProvider = ({ children }) => {
     description,
     category,
     size,
-    imageUrl,
+    url,
+    fileName,
+    postFood,
+    setFileName,
     setName,
     setPrice,
     setDescription,
     setCategory,
     setSize,
-    setImageUrl,
+    setUrl,
     addToppings,
     removeToppings,
+    handleReset,
   };
   return (
     <AdminContext.Provider value={values}>{children}</AdminContext.Provider>

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { toppings as topping } from "../constant";
+import { AdminContext } from "../services/admin/admin.context";
 
 const Toppings = ({ addTopping, removeTopping }) => {
+  const {ingredients} = useContext(AdminContext)
   return (
     <div className="toppings-list">
       {
-        topping.map((item) => {
+        ingredients.map((item) => {
           return (
             <div className="toppings-item" key={item?.name}>
               <input

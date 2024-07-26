@@ -36,6 +36,13 @@
   margin-top: 0;
 }
 
+.orderFormat .redButton:hover{
+  background: #ff0000df;
+}
+.orderFormat .redButton:disabled{
+  cursor: no-drop;
+}
+
 .delivery {
   gap: 20px;
 }
@@ -66,6 +73,8 @@
   flex-direction: column;
   gap: 10px;
 }
+
+
 
 .order {
   display: flex;

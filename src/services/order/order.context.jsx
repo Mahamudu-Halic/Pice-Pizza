@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toast";
+import { requestPostUserOrder } from "./order.service";
 
 export const OrderContext = createContext();
 
@@ -48,6 +49,8 @@ export const OrderContextProvider = ({ children }) => {
   };
 
   const reset = () => {
+    sessionStorage.removeItem(`_orders`)
+    sessionStorage.removeItem(`_postOrders`)
     setPhoneNumber("")
     setLocation("")
     setTransport("")
@@ -56,12 +59,7 @@ export const OrderContextProvider = ({ children }) => {
   }
 
   const placeOrder = (email) => {
-    if (
-      phoneNumber.trim() &&
-      transport.trim() &&
-      location.trim() &&
-      orders.length > 0
-    ){
+   
 
       const order = {
         email,
@@ -70,15 +68,18 @@ export const OrderContextProvider = ({ children }) => {
         mode: transport,
         orderItems: postOrders,
       };
+
+      // console.log(order);
+      // reset();
   
-      console.log(order);
-      toast.success("order completed successfully");
-      reset()
-    } else if (orders.length === 0) {
-      toast.error("please place an order");
-    } else {
-      toast.error("all fields required");
-    }
+      requestPostUserOrder(order)
+      .then(response => {
+        toast.success(response?.data?.message)
+        reset()
+      })
+      .catch(error=> toast.error(error?.response?.data?.message));
+
+    
   };
 
   useEffect(() => {

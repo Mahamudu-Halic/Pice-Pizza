@@ -1,20 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AdminNavbar from "../components/admin-navbar";
 import AdminSidebar from "../components/admin-sidebar";
 import { DashboardContextProvider } from "../services/dashboard/dashboard.context";
 import AddMenu from "../components/add-menu";
 import AddToppings from "../components/add-toppings";
 import "../styles/foodMenu.css";
+import { AdminContext } from "../../services/admin/admin.context";
 
 const FoodMenu = () => {
   const [showToppings, setShowToppings] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const {handleReset} = useContext(AdminContext)
 
   const toggleToppings = () => {
     setShowToppings((prev) => !prev);
+    handleReset()
   };
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
+    handleReset()
   };
   return (
     <DashboardContextProvider>

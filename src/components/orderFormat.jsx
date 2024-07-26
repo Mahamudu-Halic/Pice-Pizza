@@ -3,7 +3,7 @@ import { OrderContext } from "../services/order/order.context";
 
 const OrderFormat = ({ confirmOrder }) => {
 
-  const { setLocation, setTransport, setPhoneNumber, location, phoneNumber, transport} = useContext(OrderContext)
+  const { setLocation, setTransport, setPhoneNumber, location, phoneNumber, transport, postOrders} = useContext(OrderContext)
   return (
     <div className="orderFormat">
       <div className="delivery">
@@ -62,7 +62,7 @@ const OrderFormat = ({ confirmOrder }) => {
         <p>Payment on Deleivery</p>
       </div>
 
-      <button className="redButton" onClick={confirmOrder}>ORDER NOW</button>
+      <button disabled={postOrders.length === 0} className="redButton" onClick={confirmOrder}>ORDER NOW</button>
      
     </div>
   );
