@@ -1,0 +1,159 @@
+.foodMenu {
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form input[type="text"] {
+  width: 100%;
+}
+
+.form select {
+    width: 100%;
+}
+
+.form input[type="text"], .form select {
+    outline-color: blue;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #000;
+
+}
+
+.form .description {
+  min-height: 200px;
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  outline-color: blue;
+}
+
+.form input.price, .form select{
+    /* width: 300px; */
+}
+
+.form .form-group img{
+    width: 100%;   
+    height: 150px; 
+    object-fit: cover;
+}
+
+.form .form-group .image-container{
+    border: solid 1px #000;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form .form-group .image-container div{
+    text-align: center;
+}
+
+.form .form-group input[type="file"] {
+    display: none;
+}
+
+.topping-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topping-btns button{
+
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    width: fit-content;
+}
+
+.add-topping{
+    background: #c63131;
+}
+
+.post-toppings{
+    background: #247424;
+}
+
+.add-topping:hover{
+    background: #c63131c9;
+}
+.post-toppings:hover{
+    background: #247424c9;
+}
+
+.add-toppings, .add-food-menu{
+    z-index: 200;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    max-height: 80%;
+    overflow: auto;
+    width: 400px;
+}
+
+.new-ingredients{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.new-ingredients .new-ingredient-item{
+    background-color: #ccc;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    gap: 10px;
+}
+
+.new-ingredient-item svg{
+    cursor: pointer;
+}
+
+.add-food-menu-header, .add-toppings-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-food-menu-header svg, .add-toppings-header svg{
+    cursor: pointer;
+}
+
+.toggler{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}

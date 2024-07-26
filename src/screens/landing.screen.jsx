@@ -21,12 +21,12 @@ const LandingPage = () => {
           >
             Order Now
           </button>
-          <button
+          {/* <button
             onClick={() => navigate("/auth/sign-up")}
             className="signUpBtn"
           >
             Sign up
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="homeScreen">

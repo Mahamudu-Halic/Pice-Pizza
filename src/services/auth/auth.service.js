@@ -45,14 +45,15 @@ export const requestCustomerEmailVerification = (
   });
 };
 
+// for password👇👇👇👇
 // Request verification code
 export const requestVerificationNumber = (email) => {
-  return axios.get(`http://localhost:8000/auth/verification/code/:${email}`);
+  return axios.get(`http://localhost:8000/auth/verification/code/${email}`);
 };
 
 // Verify code to reset password
 export const requestVerification = (verificationId, verificationCode) => {
-  return axios.post(`http://localhost:8000/auth/verify/code`, {
+  return axios.post(`http://localhost:8000/auth/verification`, {
     verificationCode,
     verificationId,
   });
@@ -60,7 +61,7 @@ export const requestVerification = (verificationId, verificationCode) => {
 
 // Update password
 export const requestPasswordUpdate = (verificationId, password) => {
-  return axios.post(`http://localhost:8000/auth/update/password`, {
+  return axios.post(`http://localhost:8000/auth/password`, {
     password,
     verificationId,
   });
@@ -68,7 +69,5 @@ export const requestPasswordUpdate = (verificationId, password) => {
 
 // Resend verification code
 export const requestVerificationResend = (verificationId) => {
-  return axios.get(`http://localhost:8000/auth/resend/verification`, {
-    params: { verificationId },
-  });
+  return axios.get(`http://localhost:8000/auth/resend/verification/${ verificationId }`);
 };

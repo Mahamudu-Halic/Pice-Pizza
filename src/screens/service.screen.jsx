@@ -5,9 +5,18 @@ import "../styles/service.css";
 
 import slice from "../assets/slice.png";
 import halfPizza from "../assets/halfPizza.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { OrderContext } from "../services/order/order.context";
 const Service = () => {
   const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState("");
+  const [toppings, setToppings] = useState();
+
+  const {addOrders} = useContext(OrderContext)
+
+  const handleOrder = () => {
+
+  }
 
   const addQuantity = () => {
     setQuantity(quantity + 1);

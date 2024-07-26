@@ -150,8 +150,6 @@ export const AuthContextProvider = ({ children }) => {
     setIsVerified(false);
   };
 
-  console.log(verificationId);
-
   const value = {
     registerUser,
     registerAdmin,

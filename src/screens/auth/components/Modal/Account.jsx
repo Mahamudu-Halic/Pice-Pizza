@@ -1,9 +1,9 @@
 import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
 import { useNavigate } from "react-router-dom";
-// import { useClerk, useUser } from "@clerk/clerk-react";
+import { useClerk, useUser } from "@clerk/clerk-react";
 const Account = (props) => {
-  // const { user } = useUser();
+  const { user } = useUser();
 
   const { handleShowModal } = props;
   const navigate = useNavigate();
@@ -28,15 +28,15 @@ const Account = (props) => {
         <div className="userInfo">
           <div className="userNameContainer">
             <p className="userName">Name:</p>
-            {/* <p className="userName">{user?.fullName}</p> */}
-            <p className="userName">Mahamudu Halic</p>
+            <p className="userName">{user?.fullName}</p>
+            {/* <p className="userName">Mahamudu Halic</p> */}
           </div>
           <div className="userEmailContainer">
             <p className="">Email:</p>
-            {/* <p className="userEmail">
+            <p className="userEmail">
               {user?.primaryEmailAddress?.emailAddress}
-            </p> */}
-            <p className="userEmail">mahamuduhalic@gmail.com</p>
+            </p>
+            {/* <p className="userEmail">mahamuduhalic@gmail.com</p> */}
           </div>
         </div>
 

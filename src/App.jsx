@@ -23,15 +23,15 @@ function App() {
         <Route path="/" element={<LandingPage />} />
 
         {/* auth */}
-        <Route path="/auth/sign-in" element={<SignIn />} />
+        {/* <Route path="/auth/sign-in" element={<SignIn />} />
         <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="/auth/verify" element={<Verify />} />
-        <Route path="/auth/verify-email" element={<VerifyEmail />} />
+        <Route path="/auth/verify-email" element={<VerifyEmail />} /> */}
 
         {/* client */}
         {/* <Route path="/home" element={<HomeScreen />} /> */}
         <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />} />
+        {/* <Route path="/service" element={<Service />} /> */}
         <Route path="/menu" element={<Menu />} />
         <Route path="/shopping-cart" element={<Payment />} />
 

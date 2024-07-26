@@ -1,14 +1,31 @@
-const OrderFormat = () => {
+import { useContext } from "react";
+import { OrderContext } from "../services/order/order.context";
+
+const OrderFormat = ({ confirmOrder }) => {
+
+  const { setLocation, setTransport, setPhoneNumber, location, phoneNumber, transport} = useContext(OrderContext)
   return (
     <div className="orderFormat">
       <div className="delivery">
         <h2>Delivery/Pickup</h2>
         <div className="deliveryGroup">
-          <input type="radio" name="delivery/pickup" id="pickup" />
+          <input
+            type="radio"
+            name="delivery/pickup"
+            id="pickup"
+            checked={transport === "pickup"}
+            onChange={(e) => e.target.checked && setTransport("pickup")}
+          />
           <label htmlFor="pickup">Pickup</label>
         </div>
         <div className="deliveryGroup">
-          <input type="radio" name="delivery/pickup" id="delivery" />
+          <input
+            type="radio"
+            name="delivery/pickup"
+            id="delivery"
+            checked={transport === "delivery"}
+            onChange={(e) => e.target.checked && setTransport("delivery")}
+          />
           <label htmlFor="delivery">Delivery</label>
         </div>
       </div>
@@ -19,14 +36,23 @@ const OrderFormat = () => {
             type="text"
             name="tel"
             id="tel"
+            value={phoneNumber}
             placeholder="Telephone Number"
+            onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <label htmlFor="tel">
             Please Provide a Telephone Number the Dispatch Rider Can Call
           </label>
         </div>
         <div className="infoGroup">
-          <input type="text" name="loc" id="loc" placeholder="Location" />
+          <input
+            type="text"
+            name="loc"
+            id="loc"
+            value={location}
+            placeholder="Location"
+            onChange={(e) => setLocation(e.target.value)}
+          />
         </div>
       </div>
 
@@ -36,7 +62,8 @@ const OrderFormat = () => {
         <p>Payment on Deleivery</p>
       </div>
 
-      <button className="redButton">ORDER NOW</button>
+      <button className="redButton" onClick={confirmOrder}>ORDER NOW</button>
+     
     </div>
   );
 };

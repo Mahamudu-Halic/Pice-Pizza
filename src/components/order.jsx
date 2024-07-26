@@ -1,45 +1,45 @@
+import { useContext } from "react";
 import pizza from "../assets/pizza.png";
-const Order = ({ order = {} }) => {
-  const {
-    name = "My Pizza",
-    desc = "A twist on the classic, featuring a base of fluffy scrambled eggs, topped with fresh mozzarella cheese, cherry tomatoes, and a drizzle of balsamic glaze. (Vegetarian)",
-    price = "$15",
-    image = pizza,
-  } = order;
+import { OrderContext } from "../services/order/order.context";
+const Order = ({ order }) => {
+  const { removeOrders } = useContext(OrderContext);
+  const { foodTitle, unitPrice, quantity, size, foodId } = order;
   return (
     <div className="order">
-      <div className="orderInfoContainer">
-        <div className="orderImage">
-          <img src={image} alt={name} />
-        </div>
+      {/* <div className="orderInfoContainer">
         <div className="orderInfoContent">
-          <h3>{name}</h3>
+          <h3>{foodTitle}</h3>
+          <p>x{quantity}</p>
           <hr />
-          <p>{desc}</p>
         </div>
-      </div>
+      </div> */}
 
-      <div className="orderDetailsContainer">
-        <h3>Product Details</h3>
-        <div className="orderDetails">
-          <div className="row1">
-            <p>Product</p>
-            <p>$150</p>
+      <div className="payment-order-details-container">
+        <h3>{foodTitle}</h3>
+        <div className="paymentOrderDetails">
+          <div className="row">
+            <p>Quantity</p>
+            <p>{quantity}</p>
           </div>
-          <div className="row2">
-            <p>Service Fee</p>
-            <p>$12</p>
+          <div className="row">
+            <p>Size</p>
+            <p>{size}</p>
           </div>
-          <div className="row3">
-            <p>User Discount</p>
-            <p>$0.50</p>
+          <div className="row">
+            <p>Unit Price</p>
+            <p>Ghc{unitPrice}</p>
+          </div>
+          <div className="row">
+            <p>Total Price</p>
+            <p>Ghc{unitPrice * quantity}</p>
           </div>
         </div>
-      </div>
-      <hr />
-      <div className="total">
-        <p>Total</p>
-        <p>$170</p>
+        <button
+          className="removeOrders-btn"
+          onClick={() => removeOrders(foodId)}
+        >
+          Remove from Cart
+        </button>
       </div>
     </div>
   );

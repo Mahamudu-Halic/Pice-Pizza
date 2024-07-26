@@ -5,10 +5,11 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 
 import shoppingCartImg from "../assets/ShoppingCart.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Account from "../screens/auth/components/Modal/Account";
 import { FaRegUserCircle } from "react-icons/fa";
 import Overlay from "../screens/auth/components/Modal/Overlay";
+import { OrderContext } from "../services/order/order.context";
 
 const Navbar = ({
   style = "",
@@ -18,6 +19,9 @@ const Navbar = ({
 }) => {
   const [showNav, setShowNav] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+  const { orders } = useContext(OrderContext);
+
   const handleShowModal = () => {
     setShowModal((prev) => !prev);
   };
@@ -56,7 +60,7 @@ const Navbar = ({
         <div className="cartContainer">
           <Link to={"/shopping-cart"} className={`${style} shoppingCartBtn`}>
             <div className="cartNumberContainer">
-              <p className="cartNumber">5</p>
+              <p className="cartNumber">{orders.length}</p>
             </div>
             <img src={shoppingCartImg} alt="shopping cart" width={30} />
           </Link>

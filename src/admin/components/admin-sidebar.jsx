@@ -21,12 +21,12 @@ const AdminSidebar = () => {
             {item?.title}
           </NavLink>
         ))}
-        <button
+        {/* <button
           onClick={() => navigate("/")}
           className="bottomAdminSidebarItem adminSidebarItem"
         >
           Client Dashboard
-        </button>
+        </button> */}
       </div>
     </div>
   );

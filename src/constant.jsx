@@ -60,10 +60,10 @@ export const NavLinks = [
     title: "Menu",
     route: "/menu",
   },
-  {
-    title: "Service",
-    route: "/service",
-  },
+  // {
+  //   title: "Service",
+  //   route: "/service",
+  // },
   {
     title: "About",
     route: "/about",
@@ -458,3 +458,43 @@ export const OrderListItems = [
     orderList: ["Pepperoni", "Hawaiian", "Vegetarian"],
   },
 ];
+
+
+// {
+//   unitPrice,
+//   title,
+//   size,
+//   image,
+//   category: "breakfast, lunch or diner",
+//   type: "pizza, beverage, etc",
+// }
+
+
+// {
+//   meat: [
+//     {name: "chicken", price: "3.00"}
+//   ],
+//   sause: [],
+//   veggies: [],
+//   cheese: []
+// }
+
+export const toppings = [
+
+      {name: "chicken", price: 1},
+      {name: "beef", price: 2},
+      {name: "pork", price: 3},
+      {name: "feta cheese", price: 3},
+      {name: "shaved parmesan", price: 5},
+      {name: "mozzarella", price: 6},
+      {name: "ricotta", price: 4},
+      {name: "cheddar cheese", price: 2},
+      {name: "parmesan", price: 1},
+      {name: "goat", price: 6},
+      {name: "blue", price: 4},
+      {name: "red", price: 5},
+      {name: "snake", price: 7},
+      {name: "butter", price: 5},
+      {name: "rabbit", price: 7},
+
+    ]
