@@ -3,8 +3,9 @@ import { OrderContext } from "../services/order/order.context";
 import { customAlphabet, nanoid } from "nanoid";
 import Toppings from "./toppings";
 import { toppings as topping } from "../constant";
+import { CgClose } from "react-icons/cg";
 
-const MenuModal = ({ menu }) => {
+const MenuModal = ({ menu, setShowModal }) => {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("small");
   const [toppings, setToppings] = useState([]);
@@ -22,7 +23,7 @@ const MenuModal = ({ menu }) => {
     setToppings(filteredMeat);
     setUnitPrice((prevPrice) => parseFloat((prevPrice - Number(price)).toFixed(2)));
   };
-  const { addOrders } = useContext(OrderContext);
+  const { addOrders, orders } = useContext(OrderContext);
   const nfoodId = customAlphabet("1234567890", 4);
 
   const handleOrder = () => {
@@ -44,6 +45,7 @@ const MenuModal = ({ menu }) => {
     };
 
     addOrders(order, postOrder);
+    setShowModal(false);
   };
 
   const addQuantity = () => {
@@ -58,7 +60,11 @@ const MenuModal = ({ menu }) => {
   return (
     <div className="menu-modal">
       {/* <h2>Customize Pizza</h2> */}
+      <div className="menu-modal-header">
+
       <h2>{menu?.title}</h2>
+      <CgClose size={20} onClick={() => setShowModal(false)}/>
+      </div>
 
       <section className="req">
         <div className="menu-modal-quantity">

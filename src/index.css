@@ -218,12 +218,8 @@ body .navColor {
   object-fit: cover;
 }
 
-.userAccount .signOut {
-  width: 100%;
-  color: black;
-}
 
-.userAccount .signOut {
+.userAccount .signOut button {
   background: #ff0000a8;
   width: 100%;
   padding: 10px;
@@ -231,7 +227,7 @@ body .navColor {
   color: white;
 }
 
-.userAccount .signOut:hover {
+.userAccount .signOut button:hover {
   background: #ff0000;
 }
 .userAccount .accountSwitch {
@@ -396,7 +392,7 @@ body .white {
   .navbarContainer {
     /* height: 100%; */
     /* width: fit-content; */
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
   }

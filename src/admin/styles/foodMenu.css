@@ -76,7 +76,7 @@
     align-items: center;
 }
 
-.topping-btns button{
+.topping-btns button, .food-menu-btn{
 
     padding: 10px;
     font-weight: bold;
@@ -91,14 +91,14 @@
     background: #c63131;
 }
 
-.post-toppings{
+.post-toppings, .food-menu-btn{
     background: #247424;
 }
 
 .add-topping:hover{
     background: #c63131c9;
 }
-.post-toppings:hover{
+.post-toppings:hover, .food-menu-btn:hover{
     background: #247424c9;
 }
 
@@ -156,4 +156,11 @@
     top: 0;
     left: 0;
     height: 100vh;
+}
+
+@media screen and (max-width: 510px) {
+    .add-toppings, .add-food-menu{
+        width: 80%;
+    }
+    
 }

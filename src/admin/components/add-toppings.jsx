@@ -78,7 +78,7 @@ const AddToppings = ({ toggleToppings }) => {
             <button className="add-topping" onClick={handleUpdateTopping}>
               Add Topping
             </button>
-            <button className="post-toppings" onClick={handleUpdateTopping}>
+            <button disabled={newIngredients.length === 0} className="post-toppings" onClick={handleUpdateTopping}>
               Post Toppings
             </button>
           </div>

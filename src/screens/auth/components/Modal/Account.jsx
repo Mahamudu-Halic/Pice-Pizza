@@ -1,9 +1,11 @@
 import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
 import { useNavigate } from "react-router-dom";
-import { useClerk, useUser } from "@clerk/clerk-react";
+import { SignOutButton, useClerk, useUser } from "@clerk/clerk-react";
 const Account = (props) => {
   const { user } = useUser();
+
+  console.log(user)
 
   const { handleShowModal } = props;
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ const Account = (props) => {
       <Overlay showModal={handleShowModal} />
       <div className={"userAccount"}>
         <div className="profile-pic">
-          <img src={hub} alt="profile pic" />
+          <img src={user?.imageUrl || hub} alt="profile pic" />
         </div>
         <div className="userInfo">
           <div className="userNameContainer">
@@ -48,9 +50,9 @@ const Account = (props) => {
               : "Admin Dashboard"}
           </button>
 
-          <button className="signOut" onClick={handleSignOut}>
-            Sign Out
-          </button>
+          <div className="signOut" >
+          <SignOutButton />
+          </div>
         </div>
       </div>
     </>

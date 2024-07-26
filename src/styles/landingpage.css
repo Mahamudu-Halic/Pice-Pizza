@@ -292,6 +292,14 @@
   .testimonyHeaderContainer {
     width: 100%;
   }
+
+  .landingNav h2{
+    font-size: 22px;
+  }
+
+  .landingNav .getStartedBtn{
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 510px) {
   .aboutUs .small,
@@ -326,5 +334,13 @@
   }
   .cardList .card {
     box-shadow: 5px 5px 14px 1px #00000079;
+  }
+
+  .landingNav h2{
+    font-size: 19px;
+  }
+
+  .landingNav .getStartedBtn{
+    font-size: 13px;
   }
 }

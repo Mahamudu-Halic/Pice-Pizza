@@ -2,8 +2,10 @@ import rectangle9 from "../../assets/Rectangle 9.png";
 import rectangle10 from "../../assets/Rectangle 10.png";
 import rectangle11 from "../../assets/Rectangle 11.png";
 import rectangle12 from "../../assets/Rectangle 12.png";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate()
   return (
     <div className="aboutUs">
       <div className="imageGridContainer">
@@ -43,7 +45,7 @@ const AboutUs = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore{" "}
           </p>
-        <button className="redButton">READ MORE</button>
+        <button className="redButton" onClick={() => navigate("/about")}>READ MORE</button>
         </div>
 
       </div>

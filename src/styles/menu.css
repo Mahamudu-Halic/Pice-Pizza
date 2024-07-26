@@ -77,13 +77,14 @@
   align-items: center;
   gap: 20px;
   cursor: pointer;
-  border: solid 1px #fff;
   border-radius: 5px;
   padding: 5px;
+  transition: 0.3s ease-in-out;
 }
 
 .menuListItem:hover{
-  border: solid 1px #000;
+  transform: scale(1.05);
+  /* background-color: red; */
 }
 
 .menuItemContent {
@@ -189,8 +190,16 @@
 }
 
 
+.menu-modal-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
+.menu-modal-header svg{
+  cursor: pointer;
+}
 
 
 
@@ -202,6 +211,20 @@
 }
 
 @media screen and (max-width: 510px) {
+  .menu-modal h2{
+    font-size: 18px;
+  }
+  .menu-modal{
+    width: 80%;
+  }
+
+  .menu-modal h3{
+    font-size: 16px;
+  }
+
+  .menu-modal label{
+    font-size: 13px;
+  }
   .meal {
     flex: 1;
   }

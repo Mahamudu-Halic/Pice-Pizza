@@ -11,7 +11,7 @@ const MenuList = ({ menu }) => {
       {showModal && (
         <div className="menu-modal-container">
           <div className="modal-overlay" onClick={() => setShowModal(false)} />
-          <MenuModal menu={menu} />
+          <MenuModal menu={menu} setShowModal={setShowModal} />
         </div>
       )}
       <div className="menuListItem" onClick={() => setShowModal(true)}>
