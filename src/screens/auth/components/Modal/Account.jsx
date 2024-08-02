@@ -5,8 +5,6 @@ import { SignOutButton, useClerk, useUser } from "@clerk/clerk-react";
 const Account = (props) => {
   const { user } = useUser();
 
-  console.log(user)
-
   const { handleShowModal } = props;
   const navigate = useNavigate();
 

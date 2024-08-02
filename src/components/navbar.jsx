@@ -1,4 +1,4 @@
-import { UserButton } from "@clerk/clerk-react";
+import { useClerk, UserButton } from "@clerk/clerk-react";
 import { NavLinks } from "../constant";
 import { Link } from "react-router-dom";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -19,6 +19,7 @@ const Navbar = ({
 }) => {
   const [showNav, setShowNav] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const {user} = useClerk()
 
   const { orders } = useContext(OrderContext);
 
@@ -67,8 +68,8 @@ const Navbar = ({
 
           {/* <UserButton /> */}
           <div className="profile">
-            <button className={""} onClick={handleShowModal}>
-              <FaRegUserCircle size={30} />
+            <button className={"profile-btn"} onClick={handleShowModal}>
+              <img src={user?.imageUrl} alt="profile pic" />
             </button>
             {showModal && <Account handleShowModal={handleShowModal} />}
           </div>

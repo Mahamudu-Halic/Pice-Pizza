@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Rectangle23 from "../../assets/Rectangle 23.png";
 import MenuModal from "../menu.modal";
 
 const MenuList = ({ menu }) => {

@@ -16,7 +16,8 @@ const OrdersComponent = () => {
       </div>
 
       <div className={`orderDetailsContainer ${orderDetails && "orderScale"}`}>
-        <ToastContainer delay={3000} position="top-center" />
+        <div className="overlay" onClick={clearOrderDetails}/>
+        
 
         <OrderDetails
           order={orderDetails}

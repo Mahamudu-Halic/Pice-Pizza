@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const StatCardComponent = ({ Icon, title, total, bg, color }) => {
   const [count, setCount] = useState(0);
@@ -18,7 +18,9 @@ const StatCardComponent = ({ Icon, title, total, bg, color }) => {
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [total]);
+
+  
 
   return (
     <div className="statCard">

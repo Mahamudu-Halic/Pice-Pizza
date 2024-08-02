@@ -6,20 +6,32 @@ import { DashboardContext } from "../../services/dashboard/dashboard.context";
 const LatestOrdersList = ({ handleOrderDetails }) => {
   const { filteredOrderListItems } = useContext(DashboardContext);
   return (
+    <>
     <div className="latestOrdersList">
       {filteredOrderListItems
-        .slice()
-        .reverse()
         .map((item) => (
-          <div
-            className="latestOrder"
-            key={item?.orderId}
-            onClick={() => handleOrderDetails(item)}
+          item?.status === "pending" && <div
+          className="latestOrderInfo"
+          key={item?._id}
+          onClick={() => handleOrderDetails(item, item?._id)}
           >
             <LatestOrders order={item} />
           </div>
         ))}
     </div>
+    <div className="latestOrdersList">
+      {filteredOrderListItems
+        .map((item) => (
+          item?.status !== "pending" && <div
+          className="latestOrderInfo"
+          key={item?._id}
+          onClick={() => handleOrderDetails(item, item?._id)}
+          >
+            <LatestOrders order={item} />
+          </div>
+        ))}
+    </div>
+        </>
   );
 };
 

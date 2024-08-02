@@ -10,15 +10,11 @@ import { AdminContextProvider } from "./services/admin/admin.context";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <AdminContextProvider>
-        <OrderContextProvider>
-          <BrowserRouter>
+    <BrowserRouter>
+      
             <ClerkProviderWithRoutes />
             {/* <App /> */}
-          </BrowserRouter>
-        </OrderContextProvider>
-      </AdminContextProvider>
-    </AuthContextProvider>
+         
+    </BrowserRouter>
   </React.StrictMode>
 );

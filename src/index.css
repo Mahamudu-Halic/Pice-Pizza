@@ -59,9 +59,15 @@
   color: #e4b83c;
   background: #fff5d9;
 }
+
 .completed {
   color: #259b30;
   background: #dafcdd;
+}
+
+.cancelled{
+  background: #ffd9d9;
+  color: #b92020;
 }
 
 body {
@@ -268,6 +274,18 @@ body .navColor {
 .profile button {
   background: none;
   border: none;
+}
+
+.profile .profile-btn{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.profile .profile-btn img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .cartContainer .profile button {

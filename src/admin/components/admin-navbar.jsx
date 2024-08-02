@@ -10,13 +10,14 @@ import { RiArrowRightDoubleLine } from "react-icons/ri";
 import { HiMenuAlt2 } from "react-icons/hi";
 import MobileAdminSidebar from "./.mobile-sidebar";
 import { DashboardContext } from "../services/dashboard/dashboard.context";
-import { UserButton } from "@clerk/clerk-react";
+import { useClerk, UserButton } from "@clerk/clerk-react";
 
 const AdminNavbar = ({ title }) => {
   const { searchValue, handleSearch } = useContext(DashboardContext);
   const [focus, setFocus] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const {user} = useClerk()
 
   const handleShowSidebar = () => {
     setShowSidebar((prev) => !prev);
@@ -69,9 +70,9 @@ const AdminNavbar = ({ title }) => {
         {/* <UserButton /> */}
 
         <div className="profile">
-          <button className={""} onClick={handleShowModal}>
-            <FaRegUserCircle size={30} />
-          </button>
+        <button className={"profile-btn"} onClick={handleShowModal}>
+              <img src={user?.imageUrl} alt="profile pic" />
+            </button>
           {showModal && <Account handleShowModal={handleShowModal} />}
         </div>
       </div>

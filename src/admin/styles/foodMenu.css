@@ -19,15 +19,15 @@
 }
 
 .form select {
-    width: 100%;
+  width: 100%;
 }
 
-.form input[type="text"], .form select {
-    outline-color: blue;
-    padding: 10px;
-    border-radius: 10px;
-    border: solid 1px #000;
-
+.form input[type="text"],
+.form select {
+  outline-color: blue;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px #000;
 }
 
 .form .description {
@@ -39,128 +39,222 @@
   outline-color: blue;
 }
 
-.form input.price, .form select{
-    /* width: 300px; */
+.form input.price,
+.form select {
+  /* width: 300px; */
 }
 
-.form .form-group img{
-    width: 100%;   
-    height: 150px; 
-    object-fit: cover;
+.form .form-group img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
-.form .form-group .image-container{
-    border: solid 1px #000;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    padding: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.form .form-group .image-container {
+  border: solid 1px #000;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.form .form-group .image-container div{
-    text-align: center;
+.form .form-group .image-container div {
+  text-align: center;
 }
 
 .form .form-group input[type="file"] {
-    display: none;
+  display: none;
 }
 
-.topping-btns{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.topping-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.topping-btns button, .food-menu-btn{
-
-    padding: 10px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    margin-top: 20px;
-    width: fit-content;
+.topping-btns button,
+.food-menu-btn {
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  margin-top: 20px;
+  width: fit-content;
 }
 
-.add-topping{
-    background: #c63131;
+.add-topping {
+  background: #c63131;
 }
 
-.post-toppings, .food-menu-btn{
-    background: #247424;
+.post-toppings,
+.food-menu-btn {
+  background: #247424;
 }
 
-.add-topping:hover{
-    background: #c63131c9;
+.add-topping:hover {
+  background: #c63131c9;
 }
-.post-toppings:hover, .food-menu-btn:hover{
-    background: #247424c9;
-}
-
-.add-toppings, .add-food-menu{
-    z-index: 200;
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    position: absolute;
-    max-height: 80%;
-    overflow: auto;
-    width: 400px;
+.post-toppings:hover,
+.food-menu-btn:hover {
+  background: #247424c9;
 }
 
-.new-ingredients{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.add-toppings,
+.add-food-menu {
+  z-index: 200;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  max-height: 80%;
+  overflow: auto;
+  width: 400px;
+}
+
+.new-ingredients {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.new-ingredients .new-ingredient-item {
+  background-color: #ccc;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 10px;
+}
+
+.new-ingredient-item svg {
+  cursor: pointer;
+}
+
+.add-food-menu-header,
+.add-toppings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-food-menu-header svg,
+.add-toppings-header svg {
+  cursor: pointer;
+}
+
+.toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.admin-menu-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
     flex-wrap: wrap;
-    
 }
 
-.new-ingredients .new-ingredient-item{
-    background-color: #ccc;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
+.admin-menu-item{
     display: flex;
-    align-items: center;
-    font-size: 13px;
-    gap: 10px;
-}
-
-.new-ingredient-item svg{
-    cursor: pointer;
-}
-
-.add-food-menu-header, .add-toppings-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.add-food-menu-header svg, .add-toppings-header svg{
-    cursor: pointer;
-}
-
-.toggler{
-    display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
+    gap: 20px;
+    border-bottom: #ccc solid 1px;
+    padding-bottom: 15px;
+}
+
+.admin-menu-item img{
+    width: 70px;
+}
+
+.admin-menu-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* flex: 1; */
+    width: 100%;
+}
+
+.edit-container{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.toggle-group{
+    display: flex;
+    gap: 5px;
+}
+
+.status {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.status input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5a6069;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider{
+  background: #523bda;
+}
+
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.foodMenu svg{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 510px) {
-    .add-toppings, .add-food-menu{
-        width: 80%;
-    }
-    
+  .add-toppings,
+  .add-food-menu {
+    width: 80%;
+  }
 }

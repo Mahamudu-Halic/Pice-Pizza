@@ -45,6 +45,7 @@ import { MdNoFood } from "react-icons/md";
 import { TbReport } from "react-icons/tb";
 import { LuChefHat } from "react-icons/lu";
 import { toast } from "react-toast";
+import { FaUsers } from "react-icons/fa";
 
 export const copyToClipboard = (orderId) => {
   navigator.clipboard.writeText(orderId);
@@ -79,6 +80,7 @@ export const AdminSidebarLinks = [
   { icon: MdNoFood, route: "/admin/food-menu", title: "Food Menu" },
   { icon: LuChefHat, route: "/admin/orders", title: "Orders" },
   { icon: TbReport, route: "/admin/reports", title: "Reports" },
+  { icon: FaUsers, route: "/admin/admins", title: "Admins" },
 ];
 
 export const CardListItems = [

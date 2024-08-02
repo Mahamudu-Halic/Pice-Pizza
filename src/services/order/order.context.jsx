@@ -1,17 +1,24 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toast";
-import { requestPostUserOrder } from "./order.service";
+import { requestCurrentUserOrder, requestPostUserOrder } from "./order.service";
+import { useUser } from "@clerk/clerk-react";
+import { AdminContext } from "../admin/admin.context";
 
 export const OrderContext = createContext();
 
 export const OrderContextProvider = ({ children }) => {
   const [orders, setOrders] = useState([]);
   const [postOrders, setPostOrders] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(null);
   const [transport, setTransport] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [location, setLocation] = useState("");
+  const [currentUserOrder, setCurrentUserOrder] = ([])
+
+  const {getAllOrders} = useContext(AdminContext)
+
+  const {user} = useUser()
 
   const getOrders = () => {
     const order = sessionStorage.getItem(`_orders`);
@@ -58,23 +65,19 @@ export const OrderContextProvider = ({ children }) => {
     setPostOrders([])
   }
 
-  const placeOrder = (email) => {
-   
-
+  const placeOrder = () => {
       const order = {
-        email,
+        email: user?.primaryEmailAddress?.emailAddress,
         location,
         phoneNumber,
         mode: transport,
         orderItems: postOrders,
       };
-
-      // console.log(order);
-      // reset();
   
       requestPostUserOrder(order)
       .then(response => {
         toast.success(response?.data?.message)
+        getAllOrders()
         reset()
       })
       .catch(error=> toast.error(error?.response?.data?.message));
@@ -82,14 +85,21 @@ export const OrderContextProvider = ({ children }) => {
     
   };
 
+  const getCurrentUserOrder = () => {
+    requestCurrentUserOrder(user?.primaryEmailAddress?.emailAddress)
+    .then(response => setCurrentUserOrder(response?.data))
+  }
+
   useEffect(() => {
     getOrders();
   }, []);
 
   const value = {
+    getCurrentUserOrder,
+    currentUserOrder,
     orders,
-    loading,
-    error,
+    // loading,
+    // error,
     postOrders,
     getOrders,
     addOrders,

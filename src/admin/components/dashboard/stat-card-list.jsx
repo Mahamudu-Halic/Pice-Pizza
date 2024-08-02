@@ -1,9 +1,13 @@
 import StatCardComponent from "./stat-card";
 import { FaBoxOpen } from "react-icons/fa";
-import { GiCardboardBox, GiCardboardBoxClosed } from "react-icons/gi";
+import { GiCardboardBox } from "react-icons/gi";
 import { BsBoxSeamFill, BsFillBoxFill } from "react-icons/bs";
+import { useContext } from "react";
+import { AdminContext } from "../../../services/admin/admin.context";
 
 const StatCardList = () => {
+  const { orders } = useContext(AdminContext);
+
   return (
     <div className="statCardList">
       <StatCardComponent
@@ -11,28 +15,28 @@ const StatCardList = () => {
         title={"Total Orders"}
         color={"#39BAAF"}
         bg={"ordersBg"}
-        total={1750}
+        total={orders.length}
       />
       <StatCardComponent
         Icon={GiCardboardBox}
         title={"Total Delivered"}
         color={"#E3B535"}
         bg={"deliveredBg"}
-        total={567}
+        total={56}
       />
       <StatCardComponent
         Icon={BsBoxSeamFill}
         title={"Total Revenue"}
         color={"#799AFF"}
         bg={"revenueBg"}
-        total={750}
+        total={75}
       />
       <StatCardComponent
         Icon={FaBoxOpen}
         title={"Total Canceled"}
         color={"#DF4B4B"}
         bg={"canceledBg"}
-        total={150}
+        total={15}
       />
     </div>
   );

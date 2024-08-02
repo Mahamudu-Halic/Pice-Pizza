@@ -9,16 +9,11 @@ import { useUser } from "@clerk/clerk-react";
 import { toast, ToastContainer } from "react-toast";
 
 const Payment = () => {
-  const { orders, placeOrder, postOrders } = useContext(OrderContext);
+  const { orders, postOrders } = useContext(OrderContext);
   const { user } = useUser();
 
   let total = 0;
   orders.map((order) => (total += order?.quantity * order?.unitPrice));
-
-  const confirmOrder = () => {
-      const email = user?.primaryEmailAddress?.emailAddress;
-      placeOrder(email);
-  };
 
   return (
     <>
@@ -28,10 +23,8 @@ const Payment = () => {
 
         <h1>CONFIRM AND ORDER</h1>
         <div className="orderInfo">
-          <OrderFormat
-            confirmOrder={confirmOrder}
-          />
-          { postOrders.length > 0 && <OrderList total={total} orders={orders} />}
+          <OrderFormat />
+          {postOrders.length > 0 && <OrderList total={total} orders={orders} />}
         </div>
       </div>
     </>
