@@ -7,6 +7,7 @@ import StatCardList from "../components/dashboard/stat-card-list";
 import OrdersComponent from "../components/dashboard/orders-component";
 import { DashboardContextProvider } from "../services/dashboard/dashboard.context";
 import {AdminContextProvider } from "../../services/admin/admin.context";
+import { ToastContainer } from "react-toast";
 
 const AdminDashboard = () => {
   return (
@@ -14,6 +15,8 @@ const AdminDashboard = () => {
 
     <DashboardContextProvider>
       {/* <ToastContainer delay={3000} position="top-center" /> */}
+      <ToastContainer delay={3000} position="top-center" />
+
       <div className="admin">
         <AdminSidebar />
         <div className="adminContent">

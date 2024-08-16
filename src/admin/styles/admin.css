@@ -20,3 +20,59 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.add-admin-btn {
+  margin-left: auto;
+}
+
+.add-admin-btn button, .add-admin {
+  transition: 0.3s ease-in-out;
+  padding: 10px;
+  border: solid 1px #7e7c7c;
+  border-radius: 5px;
+  background: none;
+}
+
+.add-admin-btn button:hover{
+  background: #000000;
+  color: white;
+
+}
+.add-admin:hover{
+  background: #02721a;
+  color: white;
+  border-color: #02721a;
+
+}
+
+.admin-form svg{
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.admin-form{
+  z-index: 100;
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  border: none;
+   border-radius: 10px;
+   gap: 15px;
+
+}
+
+.admin-form label{
+  display: block;
+  margin-bottom: 3px;
+  font-size: 13px;
+
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+

@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import LatestOrdersList from "./latest-orders-list";
 import OrderDetails from "./order-details";
 import { DashboardContext } from "../../services/dashboard/dashboard.context";
-import Overlay from "../../../screens/auth/components/Modal/Overlay";
-import { ToastContainer } from "react-toast";
+import { AdminContext } from "../../../services/admin/admin.context";
+import { Loader } from "../../../components/loader";
 
 const OrdersComponent = () => {
   const { orderDetails, handleOrderDetails, clearOrderDetails } =
     useContext(DashboardContext);
-  return (
+
+  const { isLoading } = useContext(AdminContext);
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="ordersComponent">
       <div className="latestOrdersContainer">
         <h2>Latest Orders</h2>
@@ -16,8 +20,7 @@ const OrdersComponent = () => {
       </div>
 
       <div className={`orderDetailsContainer ${orderDetails && "orderScale"}`}>
-        <div className="overlay" onClick={clearOrderDetails}/>
-        
+        <div className="overlay" onClick={clearOrderDetails} />
 
         <OrderDetails
           order={orderDetails}

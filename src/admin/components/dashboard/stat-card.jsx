@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AdminContext } from "../../../services/admin/admin.context";
+import { Loader } from "../../../components/loader";
 
 const StatCardComponent = ({ Icon, title, total, bg, color }) => {
   const [count, setCount] = useState(0);
+
+  const { isLoading } = useContext(AdminContext);
 
   useEffect(() => {
     // Set up an interval to update the count every second
@@ -20,18 +24,22 @@ const StatCardComponent = ({ Icon, title, total, bg, color }) => {
     return () => clearInterval(interval);
   }, [total]);
 
-  
-
   return (
     <div className="statCard">
-      <div className={`iconContainer ${bg}`}>
-        <Icon color={color} size={23} />
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className={`iconContainer ${bg}`}>
+            <Icon color={color} size={23} />
+          </div>
 
-      <div className="containerItem">
-        <p className="containerItemTitle">{title}</p>
-        <h3 className="containerItemTotal">{count}</h3>
-      </div>
+          <div className="containerItem">
+            <p className="containerItemTitle">{title}</p>
+            <h3 className="containerItemTotal">{count}</h3>
+          </div>
+        </>
+      )}
     </div>
   );
 };

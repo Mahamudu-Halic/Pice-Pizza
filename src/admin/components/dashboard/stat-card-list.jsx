@@ -2,11 +2,22 @@ import StatCardComponent from "./stat-card";
 import { FaBoxOpen } from "react-icons/fa";
 import { GiCardboardBox } from "react-icons/gi";
 import { BsBoxSeamFill, BsFillBoxFill } from "react-icons/bs";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AdminContext } from "../../../services/admin/admin.context";
 
 const StatCardList = () => {
   const { orders } = useContext(AdminContext);
+
+  const totalDelivered = orders.filter((item) => item?.status == "completed");
+
+  const totalCanceled = orders.filter((item) => item?.status == "canceled");
+
+  let totalRevenue = 0;
+  orders.map((item) => {
+    if (item?.status === "completed") {
+      totalRevenue += Number(item?.totalPrice);
+    }
+  });
 
   return (
     <div className="statCardList">
@@ -22,14 +33,14 @@ const StatCardList = () => {
         title={"Total Delivered"}
         color={"#E3B535"}
         bg={"deliveredBg"}
-        total={56}
+        total={totalDelivered.length}
       />
       <StatCardComponent
         Icon={BsBoxSeamFill}
         title={"Total Revenue"}
         color={"#799AFF"}
         bg={"revenueBg"}
-        total={75}
+        total={totalRevenue}
       />
       <StatCardComponent
         Icon={FaBoxOpen}
