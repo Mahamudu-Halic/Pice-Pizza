@@ -179,7 +179,7 @@ export const AdminContextProvider = ({ children }) => {
     requestUpdateOrderStatus(orderStatus)
       .then(() => {
         toast.success(orderStatus?.status);
-        func(orderStatus?.status)
+        func(orderStatus?.status);
         getAllOrders();
       })
       .finally(() => {
@@ -210,7 +210,6 @@ export const AdminContextProvider = ({ children }) => {
         setIsLoading(false);
       });
   };
-
   const getAdmins = () => {
     setIsLoading(true);
     requestAdmins()
@@ -223,8 +222,8 @@ export const AdminContextProvider = ({ children }) => {
   const registerAdmin = (admin) => {
     setIsLoading(true);
     requestRegisterAdmin(admin)
-      .then(() => {
-        toast.success("admin added");
+      .then((response) => {
+        toast.success(response?.data?.message);
         getAdmins();
       })
       .finally(() => {
@@ -261,6 +260,7 @@ export const AdminContextProvider = ({ children }) => {
     getFood();
     getAllOrders();
     getIsAdmin();
+    getAdmins();
   }, []);
 
   // * pass values to children components

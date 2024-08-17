@@ -9,6 +9,9 @@ import AdminSidebar from "../components/admin-sidebar";
 import { AddAdminForm } from "../components/admin/add-admin-form";
 import { Empty } from "../../components/empty";
 import { Loader } from "../../components/loader";
+import { FiDelete } from "react-icons/fi";
+import { MdDeleteOutline } from "react-icons/md";
+import AdminList from "../components/admin/admin-list";
 
 const Admins = () => {
   const [addAdmin, setAddAdmin] = useState(false);
@@ -17,7 +20,9 @@ const Admins = () => {
     setAddAdmin((prev) => !prev);
   };
 
-  const { admins, isLoading } = useContext(AdminContext);
+  const { admins, isLoading, registerAdmin } = useContext(AdminContext);
+
+  console.log(admins);
   return (
     <AdminContextProvider>
       <DashboardContextProvider>
@@ -30,14 +35,20 @@ const Admins = () => {
                 <button onClick={toggleAdmin}>add admin</button>
               </div>
 
-              {addAdmin && <AddAdminForm toggleAdmin={toggleAdmin} />}
+              {addAdmin && (
+                <AddAdminForm
+                  toggleAdmin={toggleAdmin}
+                  registerAdmin={registerAdmin}
+                  isLoading={isLoading}
+                />
+              )}
 
               {isLoading ? (
                 <Loader />
               ) : (
                 <div>
                   {admins.length > 0 ? (
-                    <p>admins here</p>
+                    <AdminList admins={admins} />
                   ) : (
                     <Empty caption="no admins found" />
                   )}

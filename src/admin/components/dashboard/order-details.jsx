@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { copyToClipboard } from "../../../constant";
 import { FaRegCopy } from "react-icons/fa";
 import { PiPhone } from "react-icons/pi";
@@ -7,13 +7,12 @@ import { ToastContainer } from "react-toast";
 import DateTimeDisplay from "../date-time";
 import { AdminContext } from "../../../services/admin/admin.context";
 import { MdDeliveryDining } from "react-icons/md";
-import { IoLocation } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { ClipLoader } from "react-spinners";
 
 const OrderDetails = ({ clearOrderDetails, order }) => {
   const { changeOrderStatus, isLoading } = useContext(AdminContext);
-  const [status, setStatus] = useState(order?.status)
+  const [status, setStatus] = useState(order?.status);
 
   const handleStatus = () => {
     const orderStatus = {
@@ -24,14 +23,20 @@ const OrderDetails = ({ clearOrderDetails, order }) => {
   };
 
   useEffect(() => {
-    setStatus(order?.status)
-  }, [order])
+    setStatus(order?.status);
+  }, [order]);
 
   return (
     <div className="orderDetails" id="orderDetails">
       <ToastContainer delay={3000} position="top-center" />
-      <CgClose size={20} onClick={clearOrderDetails} className="closeButton" />
-      <h2>Order Details</h2>
+      <div className="flex justify-between items-center">
+        <h2>Order Details</h2>
+        <CgClose
+          size={20}
+          onClick={clearOrderDetails}
+          className="closeButton"
+        />
+      </div>
       <div className="orderId">
         <p>Order ID #{order?._id}</p>
         <button onClick={() => copyToClipboard(order?._id)}>
@@ -64,7 +69,8 @@ const OrderDetails = ({ clearOrderDetails, order }) => {
               <div key={item?.foodId} className="flex flex-col order-item">
                 <div className="food-info flex justify-between">
                   <p>
-                  {index + 1}. food name {item?.foodName} <span>x{item?.quantity}</span>
+                    {index + 1}. food name {item?.foodName}{" "}
+                    <span>x{item?.quantity}</span>
                   </p>
                   <p>GHC {item?.unitPrice}</p>
                 </div>
@@ -104,7 +110,7 @@ const OrderDetails = ({ clearOrderDetails, order }) => {
       <section>
         {status === "pending" && (
           <button className="completeBtn" onClick={handleStatus}>
-            {isLoading ? <ClipLoader color="white" size={20}/> : "Complete"}
+            {isLoading ? <ClipLoader color="white" size={20} /> : "Complete"}
           </button>
         )}
         {/* {order?.status === "pending" && (

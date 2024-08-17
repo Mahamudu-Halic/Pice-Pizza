@@ -19,14 +19,16 @@ const OrdersComponent = () => {
         <LatestOrdersList handleOrderDetails={handleOrderDetails} />
       </div>
 
-      <div className={`orderDetailsContainer ${orderDetails && "orderScale"}`}>
-        <div className="overlay" onClick={clearOrderDetails} />
+      {orderDetails && (
+        <div className={`orderDetailsContainer`}>
+          <div className="overlay" onClick={clearOrderDetails} />
 
-        <OrderDetails
-          order={orderDetails}
-          clearOrderDetails={clearOrderDetails}
-        />
-      </div>
+          <OrderDetails
+            order={orderDetails}
+            clearOrderDetails={clearOrderDetails}
+          />
+        </div>
+      )}
     </div>
   );
 };

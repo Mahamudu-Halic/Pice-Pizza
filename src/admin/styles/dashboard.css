@@ -67,9 +67,6 @@
 }
 
 .orderDetailsContainer {
-  /* width: 500px; */
-  /* height: 100vh; */
-  /* background: #000000d8; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,14 +75,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* z-index: 3; */
   margin: auto;
-  transform: scale(0);
   transition: 0.2s ease-in-out;
-}
-
-.orderScale {
-  transform: scale(1);
 }
 
 .latestOrdersList {
@@ -115,7 +106,6 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  /* font-weight: bold; */
   font-size: 11px;
 }
 
@@ -168,7 +158,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 100vh;
+  max-height: 80vh;
   z-index: 200;
   overflow-y: auto;
 }
@@ -179,19 +169,18 @@
   align-items: center;
 }
 
-.details, .order-item {
+.details,
+.order-item {
   gap: 10px;
 }
 
-.orderDetails .order{
+.orderDetails .order {
   gap: 20px;
 }
 
-.food-info{
+.food-info {
   gap: 5px;
 }
-
-
 
 .orderDetailList {
   display: flex;
@@ -228,13 +217,12 @@
 }
 
 .closeButton {
-  margin-left: auto;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 510px) {
   .orderDetails {
     width: 80%;
+    /* height: 80vh; */
   }
 }
