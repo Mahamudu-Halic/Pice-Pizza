@@ -223,6 +223,5 @@
 @media screen and (max-width: 510px) {
   .orderDetails {
     width: 80%;
-    /* height: 80vh; */
   }
 }
