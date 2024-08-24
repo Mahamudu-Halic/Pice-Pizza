@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.0.7",
+    "@react-three/drei": "^9.111.3",
+    "@react-three/rapier": "^1.4.0",
     "axios": "^1.7.2",
     "date-and-time": "^3.3.0",
     "nanoid": "^5.0.7",
@@ -22,7 +24,8 @@
     "react-router-dom": "^6.23.1",
     "react-spinners": "^0.14.1",
     "react-toast": "^1.0.3",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "three": "^0.167.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

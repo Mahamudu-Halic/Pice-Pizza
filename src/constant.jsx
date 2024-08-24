@@ -69,6 +69,10 @@ export const NavLinks = [
     title: "About",
     route: "/about",
   },
+  {
+    title: "Customization",
+    route: "/customization",
+  },
   // {
   //   title: "Admin Dashboard",
   //   route: "/admin/dashboard",

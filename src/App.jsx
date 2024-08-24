@@ -18,6 +18,7 @@ import { AuthContextProvider } from "./services/auth/auth.context";
 import { AdminContextProvider } from "./services/admin/admin.context";
 import { OrderContextProvider } from "./services/order/order.context";
 import Admins from "./admin/features/admins";
+import Customization from "./screens/customize.screen";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               {/* <Route path="/service" element={<Service />} /> */}
               <Route path="/menu" element={<Menu />} />
               <Route path="/shopping-cart" element={<Payment />} />
+              <Route path="/customization" element={<Customization />} />
 
               {/* admin */}
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
