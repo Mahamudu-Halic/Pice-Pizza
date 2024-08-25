@@ -23,7 +23,7 @@ const MenuList = ({ menu }) => {
             <p className="menuItemTitle">{name} ({size})</p>
             <p className="menuItemDesc">{description}</p>
           {/* </div> */}
-            <p className="menuItemPrice red">GHC {price}</p>
+            <p className="menuItemPrice red" style={{fontWeight: "bold"}}>GHC {price}</p>
           {/* <div className="bottomMenuItemContent"> */}
           {/* </div> */}
         {/* </div> */}
