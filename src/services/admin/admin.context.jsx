@@ -234,13 +234,11 @@ export const AdminContextProvider = ({ children }) => {
   const getIsAdmin = () => {
     setIsLoading(true);
     requestIsAdmin(user?.primaryEmailAddress?.emailAddress)
-      .then(() => setIsAdmin(true))
+      .then(response => setIsAdmin(response?.data?.isAdmin))
       .finally(() => {
         setIsLoading(false);
       });
   };
-
-  console.log(isAdmin)
 
   const toggleMenu = (toggleStatus) => {
     requestToggleMenu(toggleStatus);

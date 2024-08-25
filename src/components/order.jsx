@@ -35,7 +35,7 @@ const Order = ({ order }) => {
           </div>
         </div>
         <button
-          className="removeOrders-btn"
+          className="add-to-cart-btn"
           onClick={() => removeOrders(foodId)}
         >
           Remove from Cart
