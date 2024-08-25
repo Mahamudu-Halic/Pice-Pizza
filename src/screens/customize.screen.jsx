@@ -22,32 +22,34 @@ const toppingsData = [
 
 const Customization = () => {
   const [activeToppings, setActiveToppings] = useState([]);
-  const [quantity, setQuantity] = useState(1)
-  const [size, setSize] = useState("small")
-  const [unitPrice, setUnitPrice] = useState(0)
-  const formRef = useRef()
-  
+  const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState("small");
+  const [unitPrice, setUnitPrice] = useState(0);
+  const formRef = useRef();
 
   const { addOrders, orders } = useContext(OrderContext);
   // const nfoodId = customAlphabet("1234567890", 4);
 
   const handleOrder = (e) => {
-    e.preventDefault()
-    if(unitPrice != 0){const order = {
-      unitPrice,
-      quantity,
-      size,
-      foodId: nanoid()
-    };
+    e.preventDefault();
+    if (unitPrice != 0) {
+      const order = {
+        unitPrice,
+        quantity,
+        size,
+        foodId: nanoid(),
+        foodTitle: "Customized Pizza"
+      };
 
-    addOrders(order, order);
-    setActiveToppings([]);
-    formRef.current.reset()
-}
+      addOrders(order);
+      setActiveToppings([]);
+      formRef.current.reset();
+    }
   };
 
   const pizzaModel = useLoader(GLTFLoader, "./dough.glb", (loader) => {
-    loader.manager.onError = (url) => console.error(`There was an issue loading ${url}`);
+    loader.manager.onError = (url) =>
+      console.error(`There was an issue loading ${url}`);
   });
 
   const handleToppingChange = (modelPath, isChecked) => {
@@ -59,9 +61,9 @@ const Customization = () => {
   };
 
   const OnHandleClick = (value) => {
-    const input = document.getElementById(value)
-    input.click()
-  }
+    const input = document.getElementById(value);
+    input.click();
+  };
 
   const addTopping = (modelPath) => {
     // if (!activeToppings.some((topping) => topping.model === modelPath)) {
@@ -74,20 +76,20 @@ const Customization = () => {
   };
 
   const removeTopping = (modelPath) => {
-    setActiveToppings(activeToppings.filter((topping) => topping.model !== modelPath));
+    setActiveToppings(
+      activeToppings.filter((topping) => topping.model !== modelPath)
+    );
   };
 
   const handleQuantityReduce = () => {
-    if (quantity != 1){
-      setQuantity(quantity -1)
+    if (quantity != 1) {
+      setQuantity(quantity - 1);
     }
-  }
+  };
 
   useEffect(() => {
-    setUnitPrice(activeToppings.length * 30)
-
-  }, [activeToppings])
-
+    setUnitPrice(activeToppings.length * 30);
+  }, [activeToppings]);
 
   return (
     <>
@@ -100,7 +102,9 @@ const Customization = () => {
             <ambientLight />
             <Physics>
               <Stage environment="city" intensity={0.1}>
-                <RigidBody type="fixed"> {/* Static pizza, no movement */}
+                <RigidBody type="fixed">
+                  {" "}
+                  {/* Static pizza, no movement */}
                   <primitive object={pizzaModel.scene} scale={20} />
                 </RigidBody>
               </Stage>
@@ -116,44 +120,95 @@ const Customization = () => {
           </Canvas>
         </div>
 
-        <form ref={formRef} className="checkbox-container" onSubmit={e => handleOrder(e)}>
+        <form
+          ref={formRef}
+          className="checkbox-container"
+          onSubmit={(e) => handleOrder(e)}
+        >
           <h2>Customize Your Pizza</h2>
           <h4>Add Toppings</h4>
           <div className="checkbox-list">
             {toppingsData.map((topping) => (
-              <div key={topping.name} className="checkbox-item" onClick={() => OnHandleClick(topping.name)}>
+              <div
+                key={topping.name}
+                className="checkbox-item"
+                onClick={() => OnHandleClick(topping.name)}
+              >
                 <input
                   type="checkbox"
                   id={topping.name}
-                  onChange={(e) => handleToppingChange(topping.model, e.target.checked)}
+                  onChange={(e) =>
+                    handleToppingChange(topping.model, e.target.checked)
+                  }
                 />
                 <label htmlFor={topping.name}>{topping.name}</label>
               </div>
             ))}
           </div>
-          <div className="menu-div" style={{width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: "10px"}}>
-            <div className="" style={{display: 'flex', justifyContent: "space-between", alignItems: "center", gap: "20px"}}>
-
-          <div className="">
-          <h3 style={{textAlign: 'center'}}>Quantity</h3>
-          <div className="quantity">
-            <button style={{background: "orange", color: "white"}} onClick={handleQuantityReduce} type="button">-</button>
-            <p>{quantity}</p>
-            <button style={{background: "green", color: "white"}} onClick={() => setQuantity(quantity + 1)} type="button">+</button>
-          </div>
-        </div>
-        <div className="size">
-        <h3 style={{textAlign: 'center'}}>Size</h3>
-            <select value={size} onChange={(e) => setSize(e.target.value)} style={{width: "100%", padding: "10px", borderRadius: "5px"}}>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
-          </div>
+          <div
+            className="menu-div"
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <div
+              className=""
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: "20px",
+              }}
+            >
+              
+              <div className="size">
+                <h3 style={{ textAlign: "center" }}>Size</h3>
+                <select
+                  value={size}
+                  onChange={(e) => setSize(e.target.value)}
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    borderRadius: "5px",
+                  }}
+                >
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                </select>
+              </div>
+              <div className="">
+                <h3 style={{ textAlign: "center" }}>Quantity</h3>
+                <div className="quantity">
+                  <button
+                    style={{ background: "orange", color: "white" }}
+                    onClick={handleQuantityReduce}
+                    type="button"
+                  >
+                    -
+                  </button>
+                  <p>{quantity}</p>
+                  <button
+                    style={{ background: "green", color: "white" }}
+                    onClick={() => setQuantity(quantity + 1)}
+                    type="button"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
             </div>
-          <button style={{padding: "15px 20px"}} className="add-to-cart-btn" type="submit">
-        Add to cart
-      </button>
+            <button
+              style={{ padding: "15px 20px" }}
+              className="add-to-cart-btn"
+              type="submit"
+            >
+              Add to cart
+            </button>
           </div>
         </form>
       </div>
@@ -163,7 +218,8 @@ const Customization = () => {
 
 const Topping = ({ model, onRemove }) => {
   const toppingModel = useLoader(GLTFLoader, model, (loader) => {
-    loader.manager.onError = (url) => console.error(`There was an issue loading ${url}`);
+    loader.manager.onError = (url) =>
+      console.error(`There was an issue loading ${url}`);
   });
 
   return (
