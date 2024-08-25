@@ -41,11 +41,13 @@ export const AdminContextProvider = ({ children }) => {
   const [userOrders, setUserOrders] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { user } = useUser();
 
   // * post new ingredients / toppings to database
   const postIngredients = () => {
+    setIsLoading(true);
     newIngredients &&
       requestPostIngredients(newIngredients)
         .then((response) => {
@@ -54,11 +56,15 @@ export const AdminContextProvider = ({ children }) => {
         })
         .catch((error) => {
           toast.error(error?.response?.data?.message);
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
   };
 
   // * post food menu to database
   const postFood = (food) => {
+    setIsLoading(true);
     requestPostFood(food)
       .then((response) => {
         toast.success(response?.data?.message);
@@ -68,19 +74,31 @@ export const AdminContextProvider = ({ children }) => {
       .catch((error) => {
         console.log(error);
         toast.error(error?.response?.data?.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
   // * fetch all ingredients / toppings in the database
   const getIngredients = () => {
+    setIsLoading(true);
     requestIngredients()
       .then((response) => setIngredients(response.data))
-      .catch((error) => console.error(error.response?.data?.message));
+      .catch((error) => console.error(error.response?.data?.message))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   // * fetch all menu in the database
   const getFood = () => {
-    requestFood().then((response) => setMenu(response.data));
+    setIsLoading(true);
+    requestFood()
+      .then((response) => setMenu(response.data))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   // * add new toppings to be uploaded to the database
@@ -126,63 +144,107 @@ export const AdminContextProvider = ({ children }) => {
 
   // * fetch all orders made by users on client page
   const getAllOrders = () => {
-    requestOrders().then((response) => setOrders(response?.data));
+    setIsLoading(true);
+    requestOrders()
+      .then((response) => setOrders(response?.data))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const getClientUserOrders = () => {
-    requestUserOrder(user?.primaryEmailAddress?.emailAddress).then((response) =>
-      setUserOrders(response?.data)
-    );
+    setIsLoading(true);
+    requestUserOrder(user?.primaryEmailAddress?.emailAddress)
+      .then((response) => setUserOrders(response?.data))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const getClientUserOrderDetails = (item, id) => {
-    requestUserOrderItems(id).then((response) =>
-      setOrderDetails({ ...item, orderItems: response?.data })
-    );
+    setIsLoading(true);
+    requestUserOrderItems(id)
+      .then((response) =>
+        setOrderDetails({ ...item, orderItems: response?.data })
+      )
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
-  const changeOrderStatus = (orderStatus) => {
-    requestUpdateOrderStatus(orderStatus).then(() => {
-      toast.success(status);
-      getAllOrders();
-    });
+  // console.log(orders)
+
+  const changeOrderStatus = (orderStatus, func) => {
+    setIsLoading(true);
+    requestUpdateOrderStatus(orderStatus)
+      .then(() => {
+        toast.success(orderStatus?.status);
+        func(orderStatus?.status);
+        getAllOrders();
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const editIngredient = (ingredientUpdate) => {
-    requestUpdateIngredientPrice(ingredientUpdate).then((response) => {
-      toast.success(response?.data?.message);
-      getIngredients();
-    });
+    setIsLoading(true);
+    requestUpdateIngredientPrice(ingredientUpdate)
+      .then((response) => {
+        toast.success(response?.data?.message);
+        getIngredients();
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const editMenu = (menu) => {
-    requestUpdateMenu(menu).then((response) => {
-      toast.success(response?.data?.message);
-      getFood();
-    });
+    setIsLoading(true);
+    requestUpdateMenu(menu)
+      .then((response) => {
+        toast.success(response?.data?.message);
+        getFood();
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
-
   const getAdmins = () => {
-    requestAdmins().then((response) => setAdmins(response?.data));
+    setIsLoading(true);
+    requestAdmins()
+      .then((response) => setAdmins(response?.data))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const registerAdmin = (admin) => {
-    requestRegisterAdmin(admin).then(() => {
-      toast.success("admin added");
-      getAdmins();
-    });
+    setIsLoading(true);
+    requestRegisterAdmin(admin)
+      .then((response) => {
+        toast.success(response?.data?.message);
+        getAdmins();
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const getIsAdmin = () => {
-    requestIsAdmin(user?.primaryEmailAddress?.emailAddress).then(() =>
-      setIsAdmin(true)
-    );
+    setIsLoading(true);
+    requestIsAdmin(user?.primaryEmailAddress?.emailAddress)
+      .then(() => setIsAdmin(true))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const toggleMenu = (toggleStatus) => {
-    requestToggleMenu(toggleStatus).then(() => {
-      getFood();
-    });
+    requestToggleMenu(toggleStatus);
+    // .then(() => {
+    //   getFood();
+    // })
   };
 
   const toggleIngredients = (toggleStatus) => {
@@ -198,10 +260,12 @@ export const AdminContextProvider = ({ children }) => {
     getFood();
     getAllOrders();
     getIsAdmin();
+    getAdmins();
   }, []);
 
   // * pass values to children components
   const values = {
+    isLoading,
     ingredients,
     menu,
     postIngredients,

@@ -252,6 +252,35 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.menu-buttons{
+  gap: 10px;
+}
+
+.menu-buttons button{
+  background: none;
+  padding: 10px;
+  border: solid 1px #bdbaba;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.add-btns button{
+  background: #e9e4e4;
+}
+.add-btns button:hover{
+  background: #5f5e5e;
+  color: white;
+}
+
+.main-buttons .isActive{
+  background: #0fb30f;
+  color: white;
+}
+.main-buttons button:hover{
+  color: white;
+  background: #398339;
+}
+
 @media screen and (max-width: 510px) {
   .add-toppings,
   .add-food-menu {

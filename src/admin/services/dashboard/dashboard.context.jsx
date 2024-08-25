@@ -20,6 +20,7 @@ export const DashboardContextProvider = ({ children }) => {
     requestUserOrderItems(id).then(response => setOrderDetails({...item, orderItems: response?.data}))
   };
 
+  // console.log(orderDetails)
 
   const clearOrderDetails = () => {
     setOrderDetails(null);

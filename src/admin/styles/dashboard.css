@@ -1,3 +1,19 @@
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 .statCardList {
   display: flex;
   justify-content: space-between;
@@ -24,8 +40,8 @@
   justify-content: center;
   border-radius: 50%;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 .containerItemTitle {
@@ -51,9 +67,6 @@
 }
 
 .orderDetailsContainer {
-  /* width: 500px; */
-  /* height: 100vh; */
-  /* background: #000000d8; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,14 +75,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* z-index: 3; */
   margin: auto;
-  transform: scale(0);
   transition: 0.2s ease-in-out;
-}
-
-.orderScale {
-  transform: scale(1);
 }
 
 .latestOrdersList {
@@ -99,16 +106,15 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  /* font-weight: bold; */
   font-size: 11px;
 }
 
-.order-email{
+.order-email {
   font-size: 13px;
   margin: 10px 0;
 }
 
-.total-price{
+.total-price {
   margin: 10px 0 0 auto;
   font-size: 16px;
   font-weight: bold;
@@ -152,8 +158,28 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 100vh;
+  max-height: 80vh;
   z-index: 200;
+  overflow-y: auto;
+}
+
+.mode,
+.location {
+  gap: 5px;
+  align-items: center;
+}
+
+.details,
+.order-item {
+  gap: 10px;
+}
+
+.orderDetails .order {
+  gap: 20px;
+}
+
+.food-info {
+  gap: 5px;
 }
 
 .orderDetailList {
@@ -187,18 +213,15 @@
   border-radius: 10px;
   font-weight: bold;
   padding: 10px;
+  min-width: 150px;
 }
 
 .closeButton {
-  margin-left: auto;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 510px) {
   .orderDetails {
     width: 80%;
   }
-
-
 }

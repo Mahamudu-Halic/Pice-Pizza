@@ -20,3 +20,143 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.add-admin-btn {
+  margin-left: auto;
+}
+
+.add-admin-btn button,
+.add-admin {
+  transition: 0.3s ease-in-out;
+  padding: 10px;
+  border: solid 1px #7e7c7c;
+  border-radius: 5px;
+  background: none;
+}
+
+.add-admin-btn button:hover {
+  background: #000000;
+  color: white;
+}
+.add-admin:hover {
+  background: #02721a;
+  color: white;
+  border-color: #02721a;
+}
+
+.add-admin-form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.admin-form svg {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.admin-form {
+  z-index: 200;
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  gap: 15px;
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 10px;
+  border: solid 1px #bebebe;
+  border-radius: 5px;
+  outline-color: #0c0cda;
+}
+
+.show-password {
+  background: none;
+  border: none;
+  font-size: 13px;
+}
+
+.admin-list {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.admin-item {
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.delete-admin-btn {
+  border: none;
+  background: none;
+}
+
+.admin-email {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-role {
+  font-size: 13px;
+}
+
+.remove-admin {
+  background: white;
+  width: 300px;
+  z-index: 200;
+  padding: 10px;
+  gap: 20px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.remove-admin svg {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.remove-admin span {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.remove-admin-btn {
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #e44b4b;
+}
+
+.remove-admin-btn:hover {
+  background: #ff0000;
+}
+
+.remove-admin h2 {
+  text-align: center;
+}
+
+@media screen and (max-width: 510px) {
+  .admin-item {
+    width: 100%;
+  }
+
+  .remove-admin,
+  .admin-form {
+    width: 80%;
+  }
+}
