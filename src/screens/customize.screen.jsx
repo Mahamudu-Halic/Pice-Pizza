@@ -8,6 +8,7 @@ import { Physics, RigidBody } from "@react-three/rapier";
 import "../styles/service.css";
 import MenuModal from "../components/menu.modal";
 import { OrderContext } from "../services/order/order.context";
+import { nanoid } from "nanoid";
 
 const toppingsData = [
   { name: "Cheese", model: "./cheese.glb" },
@@ -35,7 +36,8 @@ const Customization = () => {
     if(unitPrice != 0){const order = {
       unitPrice,
       quantity,
-      size
+      size,
+      foodId: nanoid()
     };
 
     addOrders(order, order);
@@ -135,9 +137,9 @@ const Customization = () => {
           <div className="">
           <h3 style={{textAlign: 'center'}}>Quantity</h3>
           <div className="quantity">
-            <button style={{background: "orange", color: "white"}} onClick={handleQuantityReduce}>-</button>
+            <button style={{background: "orange", color: "white"}} onClick={handleQuantityReduce} type="button">-</button>
             <p>{quantity}</p>
-            <button style={{background: "green", color: "white"}} onClick={() => setQuantity(quantity + 1)}>+</button>
+            <button style={{background: "green", color: "white"}} onClick={() => setQuantity(quantity + 1)} type="button">+</button>
           </div>
         </div>
         <div className="size">
