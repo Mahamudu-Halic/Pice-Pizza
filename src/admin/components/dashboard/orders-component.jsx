@@ -8,7 +8,6 @@ import { Loader } from "../../../components/loader";
 const OrdersComponent = () => {
   const { orderDetails, handleOrderDetails, clearOrderDetails } =
     useContext(DashboardContext);
-
   const { isLoading } = useContext(AdminContext);
   return isLoading ? (
     <Loader />

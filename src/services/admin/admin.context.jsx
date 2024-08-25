@@ -240,6 +240,8 @@ export const AdminContextProvider = ({ children }) => {
       });
   };
 
+  console.log(isAdmin)
+
   const toggleMenu = (toggleStatus) => {
     requestToggleMenu(toggleStatus);
     // .then(() => {
