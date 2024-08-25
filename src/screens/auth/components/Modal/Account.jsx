@@ -2,6 +2,8 @@ import Overlay from "./Overlay";
 import hub from "../../../../assets/hub.png";
 import { useNavigate } from "react-router-dom";
 import { SignOutButton, useClerk, useUser } from "@clerk/clerk-react";
+import { useContext } from "react";
+import { AdminContext } from "../../../../services/admin/admin.context";
 const Account = (props) => {
   const { user } = useUser();
 
@@ -11,6 +13,8 @@ const Account = (props) => {
   const handleSignOut = () => {
     navigate("/");
   };
+
+  const { isAdmin } = useContext(AdminContext);
 
   const toggleAdminDashboard = () => {
     window.location.pathname.includes("/admin")
@@ -42,14 +46,16 @@ const Account = (props) => {
 
         <div className="accountButtonContainer">
           {/* <Link to={window.location.pathname.includes("/admin") ? "/dashboard" : "/admin/dashboard" }></Link> */}
-          <button className="accountSwitch" onClick={toggleAdminDashboard}>
-            {window.location.pathname.includes("/admin")
-              ? "Client Menu"
-              : "Admin Dashboard"}
-          </button>
+          {isAdmin && (
+            <button className="accountSwitch" onClick={toggleAdminDashboard}>
+              {window.location.pathname.includes("/admin")
+                ? "Client Menu"
+                : "Admin Dashboard"}
+            </button>
+          )}
 
-          <div className="signOut" >
-          <SignOutButton />
+          <div className="signOut">
+            <SignOutButton />
           </div>
         </div>
       </div>

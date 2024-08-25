@@ -22,7 +22,6 @@ const Admins = () => {
 
   const { admins, isLoading, registerAdmin } = useContext(AdminContext);
 
-  console.log(admins);
   return (
     <AdminContextProvider>
       <DashboardContextProvider>

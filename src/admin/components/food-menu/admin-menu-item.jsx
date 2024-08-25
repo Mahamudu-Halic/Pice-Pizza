@@ -12,12 +12,12 @@ const AdminMenuItem = ({ menu }) => {
   const [edit, setEdit] = useState(false);
 
   const handleToggle = () => {
-    setStatus(prev => !prev);
+    setStatus((prev) => !prev);
     const toggleStatus = {
       id: _id,
       status: !status ? "enable" : "disable",
     };
-    // toggleMenu(toggleStatus);
+    toggleMenu(toggleStatus);
   };
 
   const toggleEdit = () => {
@@ -42,7 +42,6 @@ const AdminMenuItem = ({ menu }) => {
         </div>
       </div>
       <div className="edit-container">
-
         <div className="status">
           <input
             type="checkbox"

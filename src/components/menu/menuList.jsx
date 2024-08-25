@@ -13,21 +13,21 @@ const MenuList = ({ menu }) => {
           <MenuModal menu={menu} setShowModal={setShowModal} />
         </div>
       )}
-      <div className="menuListItem" onClick={() => setShowModal(true)}>
+      <div className="menuListItem" >
         <div className="menuItemImage">
           <img src={url} alt={name} width={150} />
         </div>
 
-        <div className="menuItemContent">
-          <div className="topMenuItemContent">
+        {/* <div className="menuItemContent"> */}
+          {/* <div className="topMenuItemContent"> */}
             <p className="menuItemTitle">{name} ({size})</p>
-            <p className="menuItemPrice red">GHC {price}</p>
-          </div>
-          <hr />
-          <div className="bottomMenuItemContent">
             <p className="menuItemDesc">{description}</p>
-          </div>
-        </div>
+          {/* </div> */}
+            <p className="menuItemPrice red">GHC {price}</p>
+          {/* <div className="bottomMenuItemContent"> */}
+          {/* </div> */}
+        {/* </div> */}
+        <button onClick={() => setShowModal(true)} className="add-to-cart-btn">Add to cart</button>
       </div>
     </>
   );

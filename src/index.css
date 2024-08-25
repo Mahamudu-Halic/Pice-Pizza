@@ -23,6 +23,11 @@
   border-radius: 10px;
 }
 
+.dev-banner{
+  display: none;
+  background: white;
+}
+
 button:disabled {
   cursor: no-drop;
 }

@@ -22,7 +22,7 @@ const MenuModal = ({ menu, setShowModal }) => {
     setToppings(filteredMeat);
     setUnitPrice((prevPrice) => parseFloat((prevPrice - Number(price)).toFixed(2)));
   };
-  const { addOrders, orders } = useContext(OrderContext);
+  const { addOrders } = useContext(OrderContext);
   // const nfoodId = customAlphabet("1234567890", 4);
 
   const handleOrder = () => {
@@ -32,17 +32,12 @@ const MenuModal = ({ menu, setShowModal }) => {
       unitPrice,
       quantity,
       size: menu?.size,
-    };
-
-    const postOrder = {
-      foodId: menu?._id,
-      unitPrice,
-      quantity,
-      size: menu?.size,
       toppings,
     };
 
-    addOrders(order, postOrder);
+
+
+    addOrders(order);
     setShowModal(false);
   };
 
@@ -68,9 +63,9 @@ const MenuModal = ({ menu, setShowModal }) => {
         <div className="menu-modal-quantity">
           <h3>Quantity</h3>
           <div className="quantity">
-            <button onClick={reduceQuantity}>-</button>
+            <button onClick={reduceQuantity} style={{color: "white", background: 'orange'}}>-</button>
             <p>{quantity}</p>
-            <button onClick={addQuantity}>+</button>
+            <button onClick={addQuantity} style={{color: "white", background: 'green'}}>+</button>
           </div>
         </div>
         {/* <div className="menu-modal-size">
