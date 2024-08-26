@@ -58,7 +58,7 @@
   gap: 40px;
 }
 
-.menu{
+.menu {
   width: 90%;
   margin: 0 auto;
 }
@@ -89,13 +89,13 @@
   width: 200px;
 }
 
-.menuListItem img{
+.menuListItem img {
   width: 70px;
   height: 70px;
   object-fit: cover;
 }
 
-.menuListItem:hover{
+.menuListItem:hover {
   transform: scale(1.05);
   /* background-color: red; */
 }
@@ -120,12 +120,13 @@
   /* line-height: 25px; */
 }
 
-.menuItemTitle, .menuItemDesc{
+.menuItemTitle,
+.menuItemDesc {
   text-align: center;
   font-size: 0.8rem;
 }
 
-.modal-overlay{
+.modal-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -135,7 +136,7 @@
   z-index: 100;
 }
 
-.menu-modal{
+.menu-modal {
   /* position: fixed; */
   z-index: 200;
   background: #ffffff;
@@ -151,33 +152,33 @@
   width: 400px;
 }
 
-.menu-modal .toppings{
+.menu-modal .toppings {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.menu-modal .toppings div label{
+.menu-modal .toppings div label {
   margin-left: 10px;
 }
 
-.menu-modal .req{
+.menu-modal .req {
   display: flex;
   /* align-items: center; */
   gap: 20px;
 }
 
-.menu-modal-size select{
+.menu-modal-size select {
   border: solid 1px #fff;
   border-radius: 10px;
   padding: 10px;
 }
 
-.menu-modal-size select:hover{
+.menu-modal-size select:hover {
   border-color: #000000;
 }
 
-.menu-modal-container{
+.menu-modal-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +190,27 @@
   z-index: 100;
 }
 
-.add-to-cart-btn{
+.menu-modal .quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.menu-modal .quantity button {
+  border: none;
+  /* padding: 10px; */
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.menu-modal .quantity p {
+  width: 30px;
+  text-align: center;
+}
+
+.add-to-cart-btn {
   background: #a83939;
   border: none;
   color: white;
@@ -199,30 +220,25 @@
   margin-top: auto;
 }
 
-.add-to-cart-btn:hover{
+.add-to-cart-btn:hover {
   background: #f70303;
 }
 
-
-.toppings-list{
+.toppings-list {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-
-.menu-modal-header{
+.menu-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-.menu-modal-header svg{
+.menu-modal-header svg {
   cursor: pointer;
 }
-
-
 
 @media screen and (max-width: 800px) {
   .menuListItem {
@@ -232,18 +248,18 @@
 }
 
 @media screen and (max-width: 510px) {
-  .menu-modal h2{
+  .menu-modal h2 {
     font-size: 18px;
   }
-  .menu-modal{
+  .menu-modal {
     width: 80%;
   }
 
-  .menu-modal h3{
+  .menu-modal h3 {
     font-size: 16px;
   }
 
-  .menu-modal label{
+  .menu-modal label {
     font-size: 13px;
   }
   .meal {

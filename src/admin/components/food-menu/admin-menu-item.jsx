@@ -18,6 +18,7 @@ const AdminMenuItem = ({ menu }) => {
       status: !status ? "enable" : "disable",
     };
     toggleMenu(toggleStatus);
+    console.log(toggleStatus);
   };
 
   const toggleEdit = () => {

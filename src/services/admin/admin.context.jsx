@@ -240,18 +240,24 @@ export const AdminContextProvider = ({ children }) => {
       });
   };
 
+  const fetchMenu = () => {
+    requestFood().then((response) => setMenu(response.data));
+  };
+
+  const fetchIngredients = () => {
+    requestIngredients().then((response) => setIngredients(response.data));
+  };
+
   const toggleMenu = (toggleStatus) => {
-    requestToggleMenu(toggleStatus);
-    // .then(() => {
-    //   getFood();
-    // })
+    requestToggleMenu(toggleStatus).then(() => {
+      fetchMenu();
+    });
   };
 
   const toggleIngredients = (toggleStatus) => {
-    requestToggleIngredients(toggleStatus);
-    // .then(() => {
-    //   getIngredients()
-    // })
+    requestToggleIngredients(toggleStatus).then(() => {
+      fetchIngredients();
+    });
   };
 
   // * excutes when mounted
@@ -261,6 +267,22 @@ export const AdminContextProvider = ({ children }) => {
     getAllOrders();
     getIsAdmin();
     getAdmins();
+  }, []);
+
+  useEffect(() => {
+    // Function to fetch orders
+    const fetchOrders = () => {
+      requestOrders().then((response) => setOrders(response?.data));
+    };
+
+    // Initial fetch when the component mounts
+    fetchOrders();
+
+    // Set up the interval to run fetchOrders every 5 seconds
+    const intervalId = setInterval(fetchOrders, 5000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, []);
 
   // setInterval(() => {

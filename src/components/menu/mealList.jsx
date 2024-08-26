@@ -16,7 +16,10 @@ const MealList = () => {
       ) : (
         <div className="menuList">
           {menu.length > 0 ? (
-            menu.map((menu) => <MenuList menu={menu} key={menu?._id} />)
+            menu.map(
+              (menu) =>
+                menu?.enabled && <MenuList menu={menu} key={menu?._id} />
+            )
           ) : (
             <Empty caption="no menus found" />
           )}

@@ -6,6 +6,7 @@ import OrderList from "../components/orderList";
 import "../styles/payment.css";
 import { OrderContext } from "../services/order/order.context";
 import { ToastContainer } from "react-toast";
+import { Empty } from "../components/empty";
 
 const Payment = () => {
   const { orders } = useContext(OrderContext);
@@ -22,7 +23,13 @@ const Payment = () => {
         <h1>CONFIRM AND ORDER</h1>
         <div className="orderInfo">
           <OrderFormat />
-          {orders.length > 0 && <OrderList total={total} orders={orders} />}
+          {orders.length > 0 ? (
+            <OrderList total={total} orders={orders} />
+          ) : (
+            <div className="orderList">
+              <Empty caption={"no items in cart"} />
+            </div>
+          )}
         </div>
       </div>
     </>
