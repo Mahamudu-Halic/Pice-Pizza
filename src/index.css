@@ -28,6 +28,31 @@
   background: white;
 }
 
+.unauthorized{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: black;
+  color: white;
+}
+
+.unauthorized button{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ad490694;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.unauthorized button:hover{
+  background-color: #ad4906;
+
+}
+
 button:disabled {
   cursor: no-drop;
 }

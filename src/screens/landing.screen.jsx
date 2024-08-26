@@ -4,6 +4,7 @@ import Homepage from "../components/landing/homepage";
 import CardList from "../components/landing/cardList";
 import AboutUs from "../components/landing/aboutUs";
 import TestimonialList from "../components/landing/testimonialList";
+import "../styles/landingpage.css"
 
 const LandingPage = () => {
   const navigate = useNavigate();

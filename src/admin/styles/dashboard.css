@@ -27,11 +27,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 10px;
   flex: 1;
   min-width: 230px;
   padding: 20px;
   border-radius: 20px;
+}
+
+.statCardItem{
+  align-items: center;
+  gap: 5px;
 }
 
 .iconContainer {

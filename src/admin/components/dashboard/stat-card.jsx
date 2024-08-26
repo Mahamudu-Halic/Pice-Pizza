@@ -30,12 +30,15 @@ const StatCardComponent = ({ Icon, title, total, bg, color }) => {
         <Loader />
       ) : (
         <>
-          <div className={`iconContainer ${bg}`}>
-            <Icon color={color} size={23} />
+          <div className="statCardItem flex align-center">
+            <div className={`iconContainer ${bg}`}>
+              <Icon color={color} size={23} />
+            </div>
+
+            <p className="containerItemTitle">{title}</p>
           </div>
 
           <div className="containerItem">
-            <p className="containerItemTitle">{title}</p>
             <h3 className="containerItemTotal">{count}</h3>
           </div>
         </>
