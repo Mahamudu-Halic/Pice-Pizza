@@ -40,7 +40,7 @@ export const AdminContextProvider = ({ children }) => {
   const [orderDetails, setOrderDetails] = useState(null);
   const [userOrders, setUserOrders] = useState([]);
   const [admins, setAdmins] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   const { user } = useUser();
