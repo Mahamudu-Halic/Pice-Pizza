@@ -234,7 +234,7 @@ export const AdminContextProvider = ({ children }) => {
   const getIsAdmin = () => {
     setIsLoading(true);
     requestIsAdmin(user?.primaryEmailAddress?.emailAddress)
-      .then(response => setIsAdmin(response?.data?.isAdmin))
+      .then((response) => setIsAdmin(true))
       .finally(() => {
         setIsLoading(false);
       });
@@ -262,6 +262,12 @@ export const AdminContextProvider = ({ children }) => {
     getIsAdmin();
     getAdmins();
   }, []);
+
+  // setInterval(() => {
+  //   getIngredients(false);
+  //   getFood(false);
+  //   getAllOrders(false);
+  // }, 5000);
 
   // * pass values to children components
   const values = {

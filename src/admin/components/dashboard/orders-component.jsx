@@ -5,7 +5,7 @@ import { DashboardContext } from "../../services/dashboard/dashboard.context";
 import { AdminContext } from "../../../services/admin/admin.context";
 import { Loader } from "../../../components/loader";
 
-const OrdersComponent = () => {
+const OrdersComponent = ({title, stat=""}) => {
   const { orderDetails, handleOrderDetails, clearOrderDetails } =
     useContext(DashboardContext);
   const { isLoading } = useContext(AdminContext);
@@ -14,8 +14,8 @@ const OrdersComponent = () => {
   ) : (
     <div className="ordersComponent">
       <div className="latestOrdersContainer">
-        <h2>Latest Orders</h2>
-        <LatestOrdersList handleOrderDetails={handleOrderDetails} />
+        <h2>{title}</h2>
+        <LatestOrdersList handleOrderDetails={handleOrderDetails} stat={stat}/>
       </div>
 
       {orderDetails && (

@@ -17,7 +17,7 @@ const Orders = () => {
           <div className="adminContent">
             <AdminNavbar title={"Orders"} />
             <div className="orders adminPage">
-              <OrdersComponent />
+              <OrdersComponent title={""}/>
             </div>
           </div>
         </div>

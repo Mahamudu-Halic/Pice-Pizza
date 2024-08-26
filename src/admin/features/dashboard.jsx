@@ -26,7 +26,7 @@ const AdminDashboard = () => {
               <AdminNavbar title={"Dashboard"} />
               <div className="adminDashboard adminPage">
                 <StatCardList />
-                <OrdersComponent />
+                <OrdersComponent title={"Pending Orders"} stat="pending"/>
               </div>
             </div>
           </div>

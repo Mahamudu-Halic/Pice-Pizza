@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { useContext } from "react";
 import { AdminContext } from "../../services/admin/admin.context";
 import Unauthorized from "../components/unauthorized";
+import { Empty } from "../../components/empty";
 
 const Reports = () => {
   const { isAdmin } = useContext(AdminContext);
@@ -15,7 +16,9 @@ const Reports = () => {
           <AdminSidebar />
           <div className="adminContent">
             <AdminNavbar title={"Reports"} />
-            <div className="reports adminPage"></div>
+            <div className="reports adminPage">
+              <Empty caption={"no reports"}/>
+            </div>
           </div>
         </div>
       ) : (

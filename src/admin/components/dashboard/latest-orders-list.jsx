@@ -1,27 +1,48 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import LatestOrders from "./latest-orders";
 import { OrderListItems } from "../../../constant";
 import { DashboardContext } from "../../services/dashboard/dashboard.context";
 import { Empty } from "../../../components/empty";
 
-const LatestOrdersList = ({ handleOrderDetails }) => {
+const LatestOrdersList = ({ handleOrderDetails, stat = "" }) => {
   const { filteredOrderListItems } = useContext(DashboardContext);
+  const [pendingItems, setPendingItems] =
+    useState([]);
+
+    useEffect(() => {
+      setPendingItems(() =>
+        filteredOrderListItems.filter((item) => item?.status === "pending")
+      );
+    }, [filteredOrderListItems])
   return filteredOrderListItems.length > 0 ? (
-    <>
+    stat === "pending" ? (
+      // <div className="latestOrdersList">
+      //   {filteredOrderListItems.map((item) =>
+      //     item?.status === "pending" && (
+      //       <div
+      //         className="latestOrderInfo"
+      //         key={item?._id}
+      //         onClick={() => handleOrderDetails(item, item?._id)}
+      //       >
+      //         <LatestOrders order={item} />
+      //       </div>
+      //     )
+      //   )}
+      // </div>
       <div className="latestOrdersList">
-        {filteredOrderListItems.map(
-          (item) =>
-            item?.status === "pending" && (
-              <div
-                className="latestOrderInfo"
-                key={item?._id}
-                onClick={() => handleOrderDetails(item, item?._id)}
-              >
-                <LatestOrders order={item} />
-              </div>
-            )
-        )}
+        {pendingItems.length > 0 ? pendingItems.map((item) =>
+         (
+            <div
+              className="latestOrderInfo"
+              key={item?._id}
+              onClick={() => handleOrderDetails(item, item?._id)}
+            >
+              <LatestOrders order={item} />
+            </div>
+          )
+        ): <Empty caption={"no pending orders"} />}
       </div>
+    ) : (
       <div className="latestOrdersList">
         {filteredOrderListItems.map(
           (item) =>
@@ -36,7 +57,7 @@ const LatestOrdersList = ({ handleOrderDetails }) => {
             )
         )}
       </div>
-    </>
+    )
   ) : (
     <Empty caption={"no orders"} />
   );
