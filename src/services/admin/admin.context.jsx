@@ -40,7 +40,7 @@ export const AdminContextProvider = ({ children }) => {
   const [orderDetails, setOrderDetails] = useState(null);
   const [userOrders, setUserOrders] = useState([]);
   const [admins, setAdmins] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const { user } = useUser();
@@ -234,7 +234,7 @@ export const AdminContextProvider = ({ children }) => {
   const getIsAdmin = () => {
     setIsLoading(true);
     requestIsAdmin(user?.primaryEmailAddress?.emailAddress)
-      .then((response) => setIsAdmin(true))
+      .then((response) => setIsAdmin(response?.data?.isAdmin))
       .finally(() => {
         setIsLoading(false);
       });
