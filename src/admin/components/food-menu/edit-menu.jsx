@@ -49,7 +49,7 @@ const EditMenu = ({ toggleEdit, menu }) => {
       editMenu(newMenu);
       toggleEdit();
 
-      // console.log(newMenu)
+      // 
     }
   };
 

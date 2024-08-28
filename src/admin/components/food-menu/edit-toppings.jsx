@@ -31,7 +31,7 @@ const EditToppings = ({toggleEdit, ingredient}) => {
       editIngredient(newIngredient);
       // toggleEdit();
 
-      console.log(newIngredient)
+      
     }
   };
 
