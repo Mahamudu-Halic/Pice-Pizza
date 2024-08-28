@@ -1,9 +1,6 @@
-import menu from "../assets/menu.png";
-
 import "../styles/menu.css";
 import Heading from "../components/heading";
 import MealList from "../components/menu/mealList";
-import LandScreen from "./component/landScreen.component";
 import Navbar from "../components/navbar";
 import { useContext, useEffect, useState } from "react";
 import { AdminContext } from "../services/admin/admin.context";

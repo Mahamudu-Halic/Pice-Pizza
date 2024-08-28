@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import pizza from "../assets/pizza.png";
 import { OrderContext } from "../services/order/order.context";
 const Order = ({ order }) => {
   const { removeOrders } = useContext(OrderContext);

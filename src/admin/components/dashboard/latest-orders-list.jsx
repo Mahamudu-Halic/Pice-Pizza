@@ -1,6 +1,5 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import LatestOrders from "./latest-orders";
-import { OrderListItems } from "../../../constant";
 import { DashboardContext } from "../../services/dashboard/dashboard.context";
 import { Empty } from "../../../components/empty";
 

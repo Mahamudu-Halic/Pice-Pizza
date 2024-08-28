@@ -1,6 +1,4 @@
-import { useContext, useState } from "react";
-import { MealListItems, MenuListItems } from "../../constant";
-import Meal from "./meal";
+import { useContext } from "react";
 import MenuList from "./menuList";
 import { AdminContext } from "../../services/admin/admin.context";
 import { Empty } from "../empty";

@@ -1,7 +1,5 @@
-import heroImage from "../../assets/heroImage.png";
 import bgImage from "../../assets/bgImage.png";
 import Overlay from "../../modules/overlay.module";
-import Navbar from "../navbar";
 import { useNavigate } from "react-router-dom";
 const Homepage = () => {
   const navigate = useNavigate()
