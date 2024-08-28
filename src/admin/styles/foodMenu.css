@@ -167,40 +167,54 @@
   display: flex;
   gap: 20px;
   align-items: center;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.admin-menu-item{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
-    border-bottom: #ccc solid 1px;
-    padding-bottom: 15px;
+.admin-menu-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  border: #ccc solid 1px;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 170px;
+  max-width: 250px;
 }
 
-.admin-menu-item img{
-    width: 70px;
+.menuItemDesc {
+  width: 100%;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide the overflowed text */
+  text-overflow: ellipsis; /* Add ellipsis (...) when text is too long */
+  display: inline-block;
 }
 
-.admin-menu-content{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* flex: 1; */
-    width: 100%;
+.admin-menu-item img {
+  width: 70px;
 }
 
-.edit-container{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-left: auto;
+.admin-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  /* flex: 1; */
+  width: 100%;
 }
 
-.toggle-group{
-    display: flex;
-    gap: 5px;
+.edit-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 5px;
 }
 
 .status {
@@ -239,24 +253,23 @@
   transition: 0.4s;
 }
 
-input:checked + .slider{
+input:checked + .slider {
   background: #523bda;
 }
-
 
 input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-.foodMenu svg{
+.foodMenu svg {
   cursor: pointer;
 }
 
-.menu-buttons{
+.menu-buttons {
   gap: 10px;
 }
 
-.menu-buttons button{
+.menu-buttons button {
   background: none;
   padding: 10px;
   border: solid 1px #bdbaba;
@@ -264,19 +277,19 @@ input:checked + .slider:before {
   transition: 0.3s ease-in-out;
 }
 
-.add-btns button{
+.add-btns button {
   background: #e9e4e4;
 }
-.add-btns button:hover{
+.add-btns button:hover {
   background: #5f5e5e;
   color: white;
 }
 
-.main-buttons .isActive{
+.main-buttons .isActive {
   background: #0fb30f;
   color: white;
 }
-.main-buttons button:hover{
+.main-buttons button:hover {
   color: white;
   background: #398339;
 }
