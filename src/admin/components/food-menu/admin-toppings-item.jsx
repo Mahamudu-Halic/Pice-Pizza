@@ -18,28 +18,32 @@ const AdminToppingsItem = ({ ingredient }) => {
     setStatus((prev) => !prev);
     const toggleStatus = {
       name,
-      enable: !enable,
+      enable: !status,
     };
     toggleIngredients(toggleStatus);
-    console.log(toggleStatus, enable);
+    
   };
 
   return (
-    <div>
-      <p>{name}</p>
-      <p>Price: {price}</p>
-      <div className="status">
-        <input
-          type="checkbox"
-          id="toggle-checkbox"
-          className=""
-          checked={status}
-          // onChange={e => console.log("clic")}
-        />
-        <span className="slider" onClick={handleToggle}></span>
+    <div className="admin-menu-item">
+      <div className="admin-menu-content">
+        <p className="menuItemTitle">{name}</p>
+        <p className="menuItemPrice red">GHS {price}</p>
       </div>
+      <div className="edit-container">
+        <div className="status">
+          <input
+            type="checkbox"
+            id="toggle-checkbox"
+            className=""
+            checked={status}
+            // onChange={e => }
+          />
+          <span className="slider" onClick={handleToggle}></span>
+        </div>
 
-      <BiEdit size={20} onClick={toggleEdit} ingredient={ingredient} />
+        <BiEdit size={20} onClick={toggleEdit} ingredient={ingredient} />
+      </div>
       {edit && <EditToppings ingredient={ingredient} toggleEdit={toggleEdit} />}
     </div>
   );
