@@ -18,7 +18,7 @@ const AdminMenuItem = ({ menu }) => {
       status: !status ? "enable" : "disable",
     };
     toggleMenu(toggleStatus);
-    console.log(toggleStatus);
+    
   };
 
   const toggleEdit = () => {
@@ -31,16 +31,16 @@ const AdminMenuItem = ({ menu }) => {
       </div>
 
       <div className="admin-menu-content">
-        <div className="topMenuItemContent">
-          <p className="menuItemTitle">
-            {name} ({size})
-          </p>
-          <p className="menuItemPrice red">GHC {price}</p>
-        </div>
+        <p className="menuItemTitle">
+          {name} ({size})
+        </p>
+        <p className="menuItemPrice red">GHS {price}</p>
+        {/* <div className="topMenuItemContent">
+        </div> */}
         <hr />
-        <div className="bottomMenuItemContent">
-          <p className="menuItemDesc">{description}</p>
-        </div>
+        <p className="menuItemDesc">{description}</p>
+        {/* <div className="bottomMenuItemContent">
+        </div> */}
       </div>
       <div className="edit-container">
         <div className="status">
@@ -49,7 +49,7 @@ const AdminMenuItem = ({ menu }) => {
             id="toggle-checkbox"
             className=""
             checked={status}
-            // onChange={e => console.log("clic")}
+            // onChange={e => }
           />
           <span className="slider" onClick={handleToggle}></span>
         </div>
