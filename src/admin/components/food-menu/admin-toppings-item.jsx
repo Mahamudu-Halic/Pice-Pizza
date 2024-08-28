@@ -18,7 +18,7 @@ const AdminToppingsItem = ({ ingredient }) => {
     setStatus((prev) => !prev);
     const toggleStatus = {
       name,
-      enable: !status,
+      status: !status ? "enable" : "disable",
     };
     toggleIngredients(toggleStatus);
     
