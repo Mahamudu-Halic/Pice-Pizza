@@ -39,10 +39,10 @@ export const NavLinks = [
     title: "Customization",
     route: "/customization",
   },
-  // {
-  //   title: "Admin Dashboard",
-  //   route: "/admin/dashboard",
-  // },
+  {
+    title: "History",
+    route: "/history",
+  },
 ];
 
 export const AdminSidebarLinks = [
@@ -98,4 +98,3 @@ export const TestimonialListItem = [
     profile: customer,
   },
 ];
-
