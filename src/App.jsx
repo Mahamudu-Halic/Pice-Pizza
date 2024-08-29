@@ -13,6 +13,7 @@ import { AdminContextProvider } from "./services/admin/admin.context";
 import { OrderContextProvider } from "./services/order/order.context";
 import Admins from "./admin/features/admins";
 import Customization from "./screens/customize.screen";
+import HistoryScreen from "./screens/history";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/menu" element={<Menu />} />
               <Route path="/shopping-cart" element={<Payment />} />
               <Route path="/customization" element={<Customization />} />
+              <Route path="/history" element={<HistoryScreen />} />
 
               {/* admin */}
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
