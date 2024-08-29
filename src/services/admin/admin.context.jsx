@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createContext } from "react";
 import {
   requestAdmins,
+  requestDeleteMenu,
   requestFood,
   requestIngredients,
   requestIsAdmin,
@@ -325,6 +326,13 @@ export const AdminContextProvider = ({ children }) => {
     });
   };
 
+  const DeleteMenu = (id) => {
+    requestDeleteMenu(id).then((response) => {
+      toast.success(response?.data?.message)
+      fetchMenu();
+    });
+  }
+
   // * excutes when mounted
   useEffect(() => {
     getIngredients();
@@ -392,6 +400,7 @@ export const AdminContextProvider = ({ children }) => {
     editMenu,
     changeOrderStatus,
     admins,
+    DeleteMenu
   };
   return (
     <AdminContext.Provider value={values}>{children}</AdminContext.Provider>

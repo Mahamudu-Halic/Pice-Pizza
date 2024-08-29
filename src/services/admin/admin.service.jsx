@@ -79,4 +79,6 @@ export const requestToggleIngredients = status => {
   return axios.post(`${url}/admin/toggle/ingredient`, status)
 }
 
-
+export const requestDeleteMenu = id => {
+  return axios.delete(`${url}/admin/food/${id}`)
+}
