@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import { AdminContext } from "../../../services/admin/admin.context";
 import { BiEdit } from "react-icons/bi";
 import EditMenu from "./edit-menu";
+import { MdDeleteOutline } from "react-icons/md";
 
-const AdminMenuItem = ({ menu }) => {
+const AdminMenuItem = ({ menu, toggleRemoveFood }) => {
   const { url, name, size, description, price, _id, enabled } = menu;
 
+  console.log(menu)
   const { toggleMenu } = useContext(AdminContext);
 
   const [status, setStatus] = useState(enabled);
@@ -54,7 +56,10 @@ const AdminMenuItem = ({ menu }) => {
           <span className="slider" onClick={handleToggle}></span>
         </div>
 
+        <div className="flex items-center">
         <BiEdit size={20} onClick={toggleEdit} />
+        <MdDeleteOutline size={25} onClick={() => toggleRemoveFood(_id, name)}/>
+        </div>
       </div>
 
       {edit && <EditMenu toggleEdit={toggleEdit} menu={menu} />}
