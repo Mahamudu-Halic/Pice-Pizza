@@ -27,7 +27,7 @@ const MenuModal = ({ menu, setShowModal }) => {
 
   const handleOrder = () => {
     const order = {
-      foodTitle: menu?.name,
+      foodName: menu?.name,
       foodId: menu?._id,
       unitPrice,
       quantity,
@@ -59,6 +59,7 @@ const MenuModal = ({ menu, setShowModal }) => {
       <CgClose size={20} onClick={() => setShowModal(false)}/>
       </div>
 
+        <p>{menu?.description}</p>
       <section className="req">
         <div className="menu-modal-quantity">
           <h3>Quantity</h3>

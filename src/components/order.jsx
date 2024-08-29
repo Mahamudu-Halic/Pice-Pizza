@@ -2,19 +2,19 @@ import { useContext } from "react";
 import { OrderContext } from "../services/order/order.context";
 const Order = ({ order }) => {
   const { removeOrders } = useContext(OrderContext);
-  const { foodTitle, unitPrice, quantity, size, foodId } = order;
+  const { foodName, unitPrice, quantity, size, foodId } = order;
   return (
     <div className="order">
       {/* <div className="orderInfoContainer">
         <div className="orderInfoContent">
-          <h3>{foodTitle}</h3>
+          <h3>{foodName}</h3>
           <p>x{quantity}</p>
           <hr />
         </div>
       </div> */}
 
       <div className="payment-order-details-container">
-        <h3>{foodTitle}</h3>
+        <h3>{foodName}</h3>
         <div className="paymentOrderDetails">
           <div className="row">
             <p>Quantity</p>

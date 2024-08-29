@@ -69,8 +69,8 @@ const OrderDetails = ({ clearOrderDetails, order }) => {
               <div key={item?.foodId} className="flex flex-col order-item">
                 <div className="food-info flex justify-between">
                   <p>
-                    {index + 1}. food name {item?.foodName}{" "}
-                    <span>x{item?.quantity}</span>
+                    {index + 1}. {item?.foodName}{" "}
+                    <span><strong>x{item?.quantity}</strong></span>
                   </p>
                   <p>GHC {item?.unitPrice}</p>
                 </div>

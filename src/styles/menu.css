@@ -86,7 +86,8 @@
   padding: 10px;
   transition: 0.3s ease-in-out;
   box-shadow: 0 0 7px 3px #0303033d;
-  width: 200px;
+  min-width: 170px;
+  max-width: 250px;
 }
 
 .menuListItem img {
@@ -243,7 +244,7 @@
 @media screen and (max-width: 800px) {
   .menuListItem {
     flex: 1;
-    width: unset;
+    max-width: unset;
   }
 }
 

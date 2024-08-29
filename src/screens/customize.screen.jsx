@@ -38,7 +38,7 @@ const Customization = () => {
         quantity,
         size,
         foodId: nanoid(),
-        foodTitle: "Customized Pizza"
+        foodName: "Customized Pizza"
       };
 
       addOrders(order);

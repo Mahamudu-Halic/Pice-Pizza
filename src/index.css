@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap");
 
-textarea{
+.historyScreen {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+textarea {
   resize: none;
 }
 
-hr{
+hr {
   width: 100%;
   height: 1px;
 }
@@ -32,12 +37,12 @@ hr{
   border-radius: 10px;
 }
 
-.dev-banner{
+.dev-banner {
   display: none;
   background: white;
 }
 
-.unauthorized{
+.unauthorized {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -48,7 +53,7 @@ hr{
   color: white;
 }
 
-.unauthorized button{
+.unauthorized button {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -57,9 +62,8 @@ hr{
   transition: 0.3s ease-in-out;
 }
 
-.unauthorized button:hover{
+.unauthorized button:hover {
   background-color: #ad4906;
-
 }
 
 button:disabled {
