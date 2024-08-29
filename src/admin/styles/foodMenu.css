@@ -186,13 +186,10 @@
 
 .menuItemDesc {
   width: 100%;
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  overflow: hidden; /* Hide the overflowed text */
-  text-overflow: ellipsis; /* Add ellipsis (...) when text is too long */
   display: inline-block;
 }
 
-.admin-menu-item img {
+.admin-menu-item img, .menuItemImage img {
   width: 100px;
   height: 90px;
   object-fit: cover;

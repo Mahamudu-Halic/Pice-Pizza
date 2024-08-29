@@ -86,8 +86,7 @@
   padding: 10px;
   transition: 0.3s ease-in-out;
   box-shadow: 0 0 7px 3px #0303033d;
-  min-width: 170px;
-  max-width: 250px;
+  width: 250px;
 }
 
 .menuListItem img {
@@ -124,7 +123,11 @@
 .menuItemTitle,
 .menuItemDesc {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
+}
+
+.menuItemTitle{
+  font-weight: bold;
 }
 
 .modal-overlay {
