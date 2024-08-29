@@ -178,8 +178,10 @@
   border: #ccc solid 1px;
   padding: 10px;
   border-radius: 10px;
-  min-width: 170px;
-  max-width: 250px;
+  background: #fff;
+  width: 250px;
+  min-height: 250px;
+  
 }
 
 .menuItemDesc {
@@ -191,8 +193,15 @@
 }
 
 .admin-menu-item img {
-  width: 70px;
+  width: 100px;
+  height: 90px;
+  object-fit: cover;
 }
+
+.admin-menu-item h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+} 
 
 .admin-menu-content {
   display: flex;

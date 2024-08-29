@@ -20,7 +20,10 @@ export const AddAdminForm = ({ toggleAdmin, registerAdmin, isLoading }) => {
   };
   return (
     <>
-      <div className="add-admin-form flex justify-center items-center">
+      <div
+        className="add-admin-form flex justify-center items-center"
+        style={{ zIndex: "100000" }}
+      >
         <div className="overlay" onClick={toggleAdmin} />
 
         <div className="admin-form flex flex-col">
@@ -60,7 +63,7 @@ export const AddAdminForm = ({ toggleAdmin, registerAdmin, isLoading }) => {
             onClick={handleAdminRegistration}
             disabled={isLoading}
           >
-            {isLoading ? <ClipLoader size={25} /> : "save"}
+            {isLoading ? <ClipLoader size={25} color="red"/> : "save"}
           </button>
         </div>
       </div>

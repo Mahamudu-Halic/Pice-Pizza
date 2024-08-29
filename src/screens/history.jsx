@@ -7,15 +7,21 @@ import ClientOrders from "../components/history/client-orders";
 
 const HistoryScreen = () => {
   const { isLoading } = useContext(AdminContext);
-  return isLoading ? (
-    <Loader />
-  ) : (
+  return (
     <DashboardContextProvider>
       <div className="historyScreen">
-        <Navbar style={"navColor"} bg="blueBg" />
-        <div className="ordersComponent">
-          <ClientOrders />
-        </div>
+        {isLoading ? (
+          <div className="" style={{ height: "100vh" }}>
+            <Loader />
+          </div>
+        ) : (
+          <>
+            <Navbar style={"navColor"} bg="blueBg" />
+            <div className="ordersComponent">
+              <ClientOrders />
+            </div>
+          </>
+        )}
       </div>
     </DashboardContextProvider>
   );

@@ -15,7 +15,7 @@ export const OrderContextProvider = ({ children }) => {
   const [location, setLocation] = useState("");
   const [currentUserOrder, setCurrentUserOrder] = [];
 
-  const { getAllOrders } = useContext(AdminContext);
+  const { getClientUserOrders } = useContext(AdminContext);
 
   const { user } = useUser();
 
@@ -64,7 +64,7 @@ export const OrderContextProvider = ({ children }) => {
     requestPostUserOrder(order)
       .then((response) => {
         toast.success(response?.data?.message);
-        getAllOrders();
+        getClientUserOrders();
         reset();
       })
       .catch((error) => toast.error(error?.response?.data?.message));

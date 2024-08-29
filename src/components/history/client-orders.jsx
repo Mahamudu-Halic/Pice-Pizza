@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { AdminContext } from "../../services/admin/admin.context";
 import LatestOrders from "../../admin/components/dashboard/latest-orders";
 import { DashboardContext } from "../../admin/services/dashboard/dashboard.context";
-import OrderDetails from "../../admin/components/dashboard/order-details";
 import ClientOrderItem from "./client-order-item";
 import { Empty } from "../empty";
 
@@ -10,7 +9,6 @@ const ClientOrders = () => {
   const { userOrders, orders } = useContext(AdminContext);
   const { orderDetails, handleOrderDetails, clearOrderDetails } =
     useContext(DashboardContext);
-  console.log(orders);
   return (
     <>
       <div className="latestOrdersContainer">
