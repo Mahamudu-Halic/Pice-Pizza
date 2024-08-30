@@ -3,12 +3,23 @@ import axios from "axios";
 // * sever url
 const url = import.meta.env.VITE_SERVER_URL;
 
-// * get request for all ingredients
+/**
+ * @function requestIngredients
+ * @description Get request for all ingredients
+ * @returns {Promise<AxiosResponse<any>>} - Promise with a response object
+ */
 export const requestIngredients = () => {
   return axios.get(`${url}/admin/ingredient`);
 };
 
-// * post request for ingredients
+/**
+ * @function requestPostIngredients
+ * @description Post request to add ingredients to the database.
+ * This function sends a POST request to the server with an array of objects containing the ingredient name and price.
+ * The request returns a Promise with a response object from the server.
+ * @param {Object[]} ingredients - An array of objects containing the ingredient name and price
+ * @returns {Promise<AxiosResponse<any>>} - Promise with a response object
+ */
 export const requestPostIngredients = (ingredients) => {
   return axios.post(`${url}/admin/ingredient`, ingredients);
 };
@@ -28,7 +39,12 @@ export const requestOrders = () => {
   return axios.get(`${url}/admin/order`);
 }
 
-// TODO: get request for specific user order
+/**
+ * @function requestUserOrder
+ * @description Get request for specific user order
+ * @param {string} email - user's email
+ * @returns {Promise<AxiosResponse<any>>} - Promise with a response object
+ */
 export const requestUserOrder = (email) => {
   return axios.get(`${url}/user/order/${email}`)
 }

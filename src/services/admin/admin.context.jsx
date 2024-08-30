@@ -43,7 +43,7 @@ export const AdminContextProvider = ({ children }) => {
   const [admins, setAdmins] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [adminLoading, setAdminLoading] = useState(false)
+  const [adminLoading, setAdminLoading] = useState(false);
 
   const { user } = useUser();
 
@@ -111,18 +111,29 @@ export const AdminContextProvider = ({ children }) => {
       });
   };
 
-
-  // * fetch all menu in the database
+  /**
+   * Fetch all menu items in the database
+   * Sets the menu state to the response data
+   * Shows an error toast if the request fails
+   * Finally, set isLoading to false to hide the loading indicator.
+   */
   const getFood = () => {
     setIsLoading(true);
     requestFood()
       .then((response) => setMenu(response.data))
+      .catch((error) => {
+        toast.error(error?.response?.data?.message);
+      })
       .finally(() => {
         setIsLoading(false);
       });
   };
 
-  // * add new toppings to be uploaded to the database
+  /**
+   * Add a new topping to the list of toppings to be uploaded to the database
+   * @param {Object} newTopping - An object containing the name and price of the new topping
+   * @returns {void}
+   */
   const addToppings = (newTopping) => {
     // * check if newTopping already exists
     const currentTopping = newIngredients.find(
@@ -132,90 +143,168 @@ export const AdminContextProvider = ({ children }) => {
       (item) => item.name === newTopping.name
     );
 
+    /**
+     * If the topping does not exist in the current list of toppings or the
+     * list of toppings from the database, add it to the list of new toppings
+     * and clear the name and price input fields.
+     */
     if (!currentTopping && !oldTopping) {
       setNewIngredients((prev) => [...prev, newTopping]);
       setName("");
       setPrice("");
       toast.success("added");
     } else {
+      // * if the topping already exists, show an error toast
       toast.error("topping already added");
     }
   };
 
-  // * delete topping from list
+  /**
+   * Remove a topping from the list of new toppings to be uploaded to the database
+   * @param {string} name - The name of the topping to be removed
+   * @returns {void}
+   */
   const removeToppings = (name) => {
+    // * filter out the topping from the list of new toppings
     const filteredToppings = newIngredients.filter(
       (item) => item.name !== name
     );
 
+    // * set the new list of toppings to the filtered list
     setNewIngredients(filteredToppings);
+
+    // * show a toast message indicating that the topping has been removed
     toast.error("removed");
   };
 
-  // * reset state variables to default
+  /**
+   * Resets all state variables to their default values.
+   * This function is called whenever the user wants to add a new menu item.
+   * @returns {void}
+   */
   const handleReset = () => {
+    // * reset description to default
     setDescription("");
+    // * reset name to default
     setName("");
+    // * reset category to default
     setCategory("");
+    // * reset price to default
     setPrice("");
+    // * reset size to default
     setSize("");
+    // * reset url to default
     setUrl("");
+    // * reset file name to default
     setFileName("");
   };
 
-  // * fetch all orders made by users on client page
+  /**
+   * Fetch all orders made by users on the client side
+   * @returns {Promise<void>}
+   * A promise that resolves when the request is finished
+   */
   const getAllOrders = () => {
+    // * set isLoading to true to display a loading indicator
     setIsLoading(true);
+    // * fetch all orders from the database
     requestOrders()
-      .then((response) => setOrders(response?.data))
+      .then((response) => {
+        // * set the orders state to the response data
+        setOrders(response?.data);
+      })
       .finally(() => {
+        // * set isLoading to false to hide the loading indicator
         setIsLoading(false);
       });
   };
 
+  /**
+   * Fetch all orders made by the current user on the client side
+   * @returns {Promise<void>}
+   * A promise that resolves when the request is finished
+   */
   const getClientUserOrders = () => {
-    requestUserOrder(user?.primaryEmailAddress?.emailAddress)
-      .then((response) => setUserOrders(response?.data))
+    // * fetch all orders made by the current user from the database
+    requestUserOrder(user?.primaryEmailAddress?.emailAddress).then(
+      (response) => {
+        // * set the userOrders state to the response data
+        setUserOrders(response?.data);
+      }
+    );
   };
 
+  /**
+   * Fetch the order details of a specific order made by the current user
+   * @param {Object} item - The order item to fetch the details for
+   * @param {string} id - The id of the order to fetch the details for
+   * @returns {Promise<void>}
+   * A promise that resolves when the request is finished
+   */
   const getClientUserOrderDetails = (item, id) => {
+    // * set isLoading to true to display a loading indicator
     setIsLoading(true);
+    // * fetch the order items of the specific order from the database
     requestUserOrderItems(id)
-      .then((response) =>
-        setOrderDetails({ ...item, orderItems: response?.data })
-      )
+      .then((response) => {
+        // * set the orderDetails state to the response data
+        setOrderDetails({ ...item, orderItems: response?.data });
+      })
       .finally(() => {
+        // * set isLoading to false to hide the loading indicator
         setIsLoading(false);
       });
   };
 
+  /**
+   * Update the status of an order in the database
+   * @param {Object} orderStatus - The order status to update
+   * @param {Function} func - A callback function to execute after the request is finished
+   * @returns {Promise<void>}
+   * A promise that resolves when the request is finished
+   */
   const changeOrderStatus = (orderStatus, func) => {
+    // * set isLoading to true to display a loading indicator
     setIsLoading(true);
+    // * update the order status in the database
     requestUpdateOrderStatus(orderStatus)
       .then(() => {
+        // * show a success toast with the updated order status
         toast.success(orderStatus?.status);
+        // * execute the callback function with the updated order status
         func(orderStatus?.status);
+        // * refetch the orders list
         getAllOrders();
       })
       .finally(() => {
+        // * set isLoading to false to hide the loading indicator
         setIsLoading(false);
       });
   };
 
-
+  /**
+   * Update an ingredient in the database
+   * @param {Object} ingredientUpdate - The ingredient to update
+   * @returns {Promise<void>}
+   * A promise that resolves when the request is finished
+   */
   const editIngredient = (ingredientUpdate) => {
+    // * set isLoading to true to display a loading indicator
     setIsLoading(true);
+
+    // * update the ingredient in the database
     requestUpdateIngredientPrice(ingredientUpdate)
       .then((response) => {
+        // * show a success toast with the response message
         toast.success(response?.data?.message);
+        // * refetch the ingredients
         getIngredients();
       })
       .finally(() => {
+        // * set isLoading to false to hide the loading indicator
         setIsLoading(false);
       });
   };
-
-
 
   /**
    * Update a menu item in the database
@@ -299,8 +388,6 @@ export const AdminContextProvider = ({ children }) => {
     requestIngredients().then((response) => setIngredients(response.data));
   };
 
-
-
   /**
    * Toggle the status of a menu item in the database
    * @param {{id: string, status: "enable" | "disable"}} toggleStatus
@@ -326,12 +413,25 @@ export const AdminContextProvider = ({ children }) => {
     });
   };
 
+  /**
+   * Delete a menu item from the database
+   * @param {string} id - The id of the menu item to delete
+   * @returns {Promise<void>} - A promise that resolves when the request is finished
+   */
   const DeleteMenu = (id) => {
+    /**
+     * Send a DELETE request to the server to delete the menu item
+     * @param {string} id - The id of the menu item to delete
+     * @returns {Promise<AxiosResponse>} - The response from the server
+     */
+
     requestDeleteMenu(id).then((response) => {
-      toast.success(response?.data?.message)
+      /* Show a success toast with the response message */
+      toast.success(response?.data?.message);
+      /* Refetch the menu items */
       fetchMenu();
     });
-  }
+  };
 
   // * excutes when mounted
   useEffect(() => {
@@ -340,12 +440,20 @@ export const AdminContextProvider = ({ children }) => {
     getAllOrders();
     getIsAdmin();
     getAdmins();
-    getClientUserOrders()
+    getClientUserOrders();
   }, []);
 
   useEffect(() => {
-    // Function to fetch orders
+    /**
+     * Function to fetch all orders from the database
+     * @returns {Promise<void>}
+     * A promise that resolves when the request is finished
+     */
     const fetchOrders = () => {
+      /**
+       * Fetch all orders from the database
+       * Set the orders state to the response data
+       */
       requestOrders().then((response) => setOrders(response?.data));
     };
 
@@ -374,7 +482,7 @@ export const AdminContextProvider = ({ children }) => {
     size,
     url,
     fileName,
-    setAdminLoading,
+    adminLoading,
     postFood,
     setFileName,
     setName,
@@ -400,7 +508,7 @@ export const AdminContextProvider = ({ children }) => {
     editMenu,
     changeOrderStatus,
     admins,
-    DeleteMenu
+    DeleteMenu,
   };
   return (
     <AdminContext.Provider value={values}>{children}</AdminContext.Provider>
