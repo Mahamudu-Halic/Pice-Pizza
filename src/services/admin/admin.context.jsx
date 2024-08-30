@@ -389,6 +389,25 @@ export const AdminContextProvider = ({ children }) => {
   };
 
   /**
+   * Function to fetch all orders from the database
+   * @returns {Promise<void>}
+   * A promise that resolves when the request is finished
+   */
+  const fetchOrders = () => {
+    /**
+     * Fetch all orders from the database
+     * Set the orders state to the response data
+     */
+    requestOrders().then((response) => setOrders(response?.data));
+  };
+
+  const fetchAllItems = () => {
+    requestFood().then((response) => setMenu(response.data));
+    requestIngredients().then((response) => setIngredients(response.data));
+    requestOrders().then((response) => setOrders(response?.data));
+  };
+
+  /**
    * Toggle the status of a menu item in the database
    * @param {{id: string, status: "enable" | "disable"}} toggleStatus
    * The object containing the id of the menu item and the status to toggle to
@@ -447,24 +466,11 @@ export const AdminContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    /**
-     * Function to fetch all orders from the database
-     * @returns {Promise<void>}
-     * A promise that resolves when the request is finished
-     */
-    const fetchOrders = () => {
-      /**
-       * Fetch all orders from the database
-       * Set the orders state to the response data
-       */
-      requestOrders().then((response) => setOrders(response?.data));
-    };
-
     // Initial fetch when the component mounts
-    fetchOrders();
+    fetchAllItems();
 
-    // Set up the interval to run fetchOrders every 5 seconds
-    const intervalId = setInterval(fetchOrders, 5000);
+    // Set up the interval to run fetchAllItems every 5 seconds
+    const intervalId = setInterval(fetchAllItems, 5000);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
