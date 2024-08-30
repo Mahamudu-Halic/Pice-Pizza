@@ -418,7 +418,7 @@ export const AdminContextProvider = ({ children }) => {
    * @param {string} id - The id of the menu item to delete
    * @returns {Promise<void>} - A promise that resolves when the request is finished
    */
-  const DeleteMenu = (id) => {
+  const DeleteMenu = (id, toggleRemoveFood) => {
     /**
      * Send a DELETE request to the server to delete the menu item
      * @param {string} id - The id of the menu item to delete
@@ -428,6 +428,9 @@ export const AdminContextProvider = ({ children }) => {
     requestDeleteMenu(id).then((response) => {
       /* Show a success toast with the response message */
       toast.success(response?.data?.message);
+      setTimeout(() => {
+        toggleRemoveFood();
+      }, 1200);
       /* Refetch the menu items */
       fetchMenu();
     });

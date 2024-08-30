@@ -23,7 +23,7 @@ const RemoveMenu = ({ id, toggleRemoveFood, name }) => {
           Are you sure you want to remove <span>{name}</span> from admin
         </p>
         <button
-          onClick={() => DeleteMenu(id)}
+          onClick={() => DeleteMenu(id, toggleRemoveFood)}
           className="remove-admin-btn"
           disabled={isLoading}
         >
