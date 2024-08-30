@@ -5,13 +5,7 @@ import { AdminContext } from "../../../services/admin/admin.context";
 import { ClipLoader } from "react-spinners";
 
 const RemoveMenu = ({ id, toggleRemoveFood, name }) => {
-  const { isLoading } = useContext(AdminContext);
-
-  const handleRemoveMenu = () => {
-    const menu = {
-      id,
-    };
-  };
+  const { isLoading, DeleteMenu } = useContext(AdminContext);
 
   return (
     <div className="add-admin-form flex justify-center items-center">
@@ -29,7 +23,7 @@ const RemoveMenu = ({ id, toggleRemoveFood, name }) => {
           Are you sure you want to remove <span>{name}</span> from admin
         </p>
         <button
-          onClick={handleRemoveMenu}
+          onClick={() => DeleteMenu(id)}
           className="remove-admin-btn"
           disabled={isLoading}
         >
